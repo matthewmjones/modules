@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 4 Week 4: Optimisation | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="4.1 Optimisation and business modelling This course is mainly concerned with using mathematics to model business problems and solve them. For the next two weeks we will learn to model and solve...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 4 Week 4: Optimisation | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="4.1 Optimisation and business modelling This course is mainly concerned with using mathematics to model business problems and solve them. For the next two weeks we will learn to model and solve...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 4 Week 4: Optimisation | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="4.1 Optimisation and business modelling This course is mainly concerned with using mathematics to model business problems and solve them. For the next two weeks we will learn to model and solve...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="active" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="week-4-optimisation" class="section level1" number="4">
+<h1>
+<span class="header-section-number">Topic 4</span> Week 4: Optimisation<a class="anchor" aria-label="anchor" href="#week-4-optimisation"><i class="fas fa-link"></i></a>
+</h1>
+<div id="optimisation-and-business-modelling" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Optimisation and business modelling<a class="anchor" aria-label="anchor" href="#optimisation-and-business-modelling"><i class="fas fa-link"></i></a>
+</h2>
+<p>This course is mainly concerned with using mathematics to model business problems and solve them. For the next two weeks we will learn to model and solve optimisation problems. Optimisation prolems aim to find the maximum or minimum value of a given function.</p>
+</div>
+<div id="unconstrained-optimisation-for-functions-of-one-variable" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Unconstrained optimisation for functions of one variable<a class="anchor" aria-label="anchor" href="#unconstrained-optimisation-for-functions-of-one-variable"><i class="fas fa-link"></i></a>
+</h2>
+<p>In an unconstrained optimisation problem we have a function
+<span class="math display">\[ f\colon \mathbb{R}\to\mathbb{R},\qquad\qquad f\text{ continuous}\]</span>
+In a maximisation problem, our aim is then to find a value <span class="math inline">\(x_0\)</span> so that
+<span class="math display">\[ \text{for all }x, \qquad f(x)\le f(x_0).\]</span>
+The point <span class="math inline">\(x_0\)</span> is called the <strong>optimum point</strong> and we write
+<span class="math display">\[ \max f(x) = f(x_0).\]</span>
+For a minimisation problem we reverse the inequality, <span class="math inline">\(f(x)\ge f(x_0)\)</span> and write
+<span class="math display">\[\min f(x) = f(x_0)\]</span>
+<strong>Note:</strong> There is no discernable difference between the maximisation problem and minimisation problem. In fact since
+<span class="math display">\[ \min f(x) = - \max (-f(x)) \]</span>
+the two problems are interchangable if we replace <span class="math inline">\(f(x)\)</span> with <span class="math inline">\(-f(x)\)</span>.</p>
+<p>In general the unconstrained optimisation problem does not have a solution. The following examples demonstrate two ways in which a function may not attain its maximum.</p>
+<div id="example-1" class="section level3" number="4.2.1">
+<h3>
+<span class="header-section-number">4.2.1</span> Example 1<a class="anchor" aria-label="anchor" href="#example-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>The logistic function is given by:
+<span class="math display">\[
+\begin{aligned}
+    f\colon \mathbb{R}&amp;\to\mathbb{R}\\
+    x&amp;\mapsto \dfrac{1}{1+e^{-x}}
+\end{aligned}
+\]</span>
+It is strictly increasing for all values of <span class="math inline">\(x\)</span> and its range is <span class="math inline">\(f(\mathbb{R}) = (0,1)\)</span>. There is however no value <span class="math inline">\(x_0\)</span> so that <span class="math inline">\(f(x)\le f(x_0)\)</span> for all <span class="math inline">\(x\)</span>.</p>
+</div>
+<div id="example-2" class="section level3" number="4.2.2">
+<h3>
+<span class="header-section-number">4.2.2</span> Example 2<a class="anchor" aria-label="anchor" href="#example-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>A simple function such as the square function
+<span class="math display">\[
+\begin{aligned}
+    f\colon \mathbb{R}&amp;\to\mathbb{R}\\
+    x&amp;\mapsto x^2
+\end{aligned}
+\]</span>
+is <strong>unbounded</strong>: its range is <span class="math inline">\(f(\mathbb{R}) = [0,\infty)\)</span>. Therefore, again, the maximisation problem has no solution.</p>
+</div>
+</div>
+<div id="local-maximums-and-minimums" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Local maximums and minimums<a class="anchor" aria-label="anchor" href="#local-maximums-and-minimums"><i class="fas fa-link"></i></a>
+</h2>
+<p>In general the unconstrained optimisation problem seems hopeless. However there is still some useful information we can get from problems like this.</p>
+<p>For a continuous function <span class="math inline">\(f\)</span> we call a point <span class="math inline">\(x_0\)</span> a <strong>local maximum value</strong> if <span class="math inline">\(f(x)\le f(x_0)\)</span> for all <span class="math inline">\(x\)</span> ‘near’ <span class="math inline">\(x_0\)</span>. More precisely we usually require that the inequality is true in an <strong>open</strong> interval <span class="math inline">\((c,d)\)</span> that contains the point <span class="math inline">\(x_0\)</span> – although we don’t prescribe any particular size of interval.</p>
+<p>A similar definition holds for <strong>local minimum value</strong>.</p>
+<p>One way of finding local optimal points is to find solve the equation
+<span class="math display">\[ f'(x) = 0\]</span>
+for <span class="math inline">\(x\)</span>, so-called <strong>stationary points</strong>. This is unsatisfactory however since it pre-supposes the derivative exists. Since the optimisation problem only assumes our function <span class="math inline">\(f\)</span> is continuous this technique is quite limited. In the next section we will solve this entirely.</p>
+</div>
+<div id="constrained-optimisation-for-functions-of-one-variable" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Constrained optimisation for functions of one variable<a class="anchor" aria-label="anchor" href="#constrained-optimisation-for-functions-of-one-variable"><i class="fas fa-link"></i></a>
+</h2>
+<p>In contrast to unconstrained optimisation problems the constrained problem attempts to find an optimum point in a given interval, <span class="math inline">\([a,b]\)</span>.</p>
+<p>Given a continuous function <span class="math inline">\(f\colon\mathbb{R}\to\mathbb{R}\)</span> the constrained maximisation problem is to find a value <span class="math inline">\(x_0 \in [a,b]\)</span> so that
+<span class="math display">\[\text{for all }x\in[a,b], \qquad f(x)\le f(x_0).\]</span>
+This is written
+<span class="math display">\[ \max_{x\in[a,b]} f(x) = f(x_0)\]</span>
+<strong>Important:</strong> constrained optimisation problems <strong>can always be solved</strong>. This is a dramatic difference to the unconstrained problem, and so we will learn a technique for finding the optimal point.</p>
+<p>First we will examine an example.</p>
+<div id="example" class="section level3" number="4.4.1">
+<h3>
+<span class="header-section-number">4.4.1</span> Example<a class="anchor" aria-label="anchor" href="#example"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose we want to find the maximum and minimum of the function
+<span class="math display">\[ f(x) = x + x|\cos x|, \qquad\pi\le x \le 2\pi.\]</span>
+The graph of this function is in figure <span class="math inline">\(\ref{constrained first example}\)</span>.</p>
+<div class="figure">
+<img src="img/ConstrainedFirstExample.png" alt=""><p class="caption">An example of a constrained optimistion problem</p>
+</div>
+<p>From the graph we can see that
+<span class="math display">\[\min_{x\in [\pi, 2\pi]} f(x) = f\left(\frac{3\pi}2\right) = \frac{3\pi}2,\]</span>
+and
+<span class="math display">\[\max_{x\in [\pi, 2\pi]} f(x) = f(2\pi) = 4\pi\]</span></p>
+<p>If you examine the graph of this function you should see the following interesting properties:</p>
+<ul>
+<li>The maximum point, <span class="math inline">\(2\pi\)</span> is not a point where the derivative is <span class="math inline">\(0\)</span>
+</li>
+<li>The minimum point, <span class="math inline">\(3\pi/2\)</span> is a point where <span class="math inline">\(f'\)</span> does not exist, since there’s no tangent to the curve at this point</li>
+<li>There is a local maximum between <span class="math inline">\(\pi\)</span> and <span class="math inline">\(3\pi/2\)</span> but this is not the maximum value</li>
+</ul>
+<p>All these suggest a broader approach to finding optimal points is needed.</p>
+</div>
+</div>
+<div id="critical-points" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> Critical points<a class="anchor" aria-label="anchor" href="#critical-points"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose <span class="math inline">\(f\colon\mathbb{R}\to \mathbb{R}\)</span> is continuous, then we define a <strong>critical point</strong> on the graph of <span class="math inline">\(f\)</span> to be any point <span class="math inline">\((x,f(x))\)</span> such that</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(f\)</span> is <strong>not differentiable</strong> at <span class="math inline">\(x\)</span>; or</li>
+<li>
+<span class="math inline">\(f\)</span> is <strong>differentiable</strong> at <span class="math inline">\(x\)</span> and <span class="math inline">\(f'(x) = 0\)</span>.</li>
+</ol>
+<p>The second of these are commonly called <strong>stationary points</strong>.</p>
+<p>In the example above there were two critical points, one stationary point between <span class="math inline">\(\pi\)</span> and <span class="math inline">\(3\pi/2\)</span> and one non-differentiable point when <span class="math inline">\(x=3\pi/2\)</span>.</p>
+<p>Critical points allow us to solve constrained optimisation problems.</p>
+<div id="fermats-theorem" class="section level3" number="4.5.1">
+<h3>
+<span class="header-section-number">4.5.1</span> Fermat’s Theorem<a class="anchor" aria-label="anchor" href="#fermats-theorem"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose <span class="math inline">\(f\colon\mathbb{R}\to \mathbb{R}\)</span> is continuous. Then for <span class="math inline">\(a\le x\le b\)</span> there is an optimal point <span class="math inline">\(x_0\)</span>. Furthermore <span class="math inline">\(x_0\)</span> is eithe a critical point of <span class="math inline">\(f\)</span> or is one of the endpoints <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span>.</p>
+<p>This means we can solve constrained optimisation problems with the following technique:</p>
+<ol style="list-style-type: decimal">
+<li>Find all the critical points of <span class="math inline">\(f\)</span> in <span class="math inline">\([a,b]\)</span>, write these as <span class="math inline">\(x_0, x_1, \ldots, x_n\)</span>
+</li>
+<li>Evaluate <span class="math inline">\(f(x_0), f(x_1), \ldots, f(x_n)\)</span> and <span class="math inline">\(f(a)\)</span>, <span class="math inline">\(f(b)\)</span>
+</li>
+<li>Find
+<span class="math display">\[ \max \{ f(x_0), f(x_1), \ldots, f(x_n), f(a), f(b)\}\]</span>
+or the minimum.</li>
+</ol>
+</div>
+<div id="example-3" class="section level3" number="4.5.2">
+<h3>
+<span class="header-section-number">4.5.2</span> Example<a class="anchor" aria-label="anchor" href="#example-3"><i class="fas fa-link"></i></a>
+</h3>
+<p>Find the maximum point for the function
+<span class="math display">\[
+\begin{aligned}
+    f\colon \mathbb{R}&amp;\to\mathbb{R}\\
+    x&amp;\mapsto 1-x+|2x^2-13x+15|
+\end{aligned}
+\]</span>
+for <span class="math inline">\(0\le x\le 4\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>First we find the points where this function is not differentiable. These are the points where <span class="math inline">\(|2x^2-13x+15| = 0\)</span>. Factorising we have <span class="math inline">\(2x^2-13x+15=(2x-3)(x-5)\)</span>. The critical point that lies in <span class="math inline">\([0,4]\)</span> is at <span class="math inline">\(x_0 = 1.5\)</span>.</li>
+<li>Next we find the derivative of this function. Note that The quadratic expression <span class="math inline">\(2x^2-13x+15\)</span> is positive for <span class="math inline">\(0&lt;x&lt;3/2\)</span> and negative for <span class="math inline">\(3/2&lt;x&lt;4\)</span>. We take these two cases separately,</li>
+</ol>
+<p><span class="math inline">\(0&lt;x&lt;3/2\)</span></p>
+<p>Here <span class="math inline">\(2x^2-13x+15 &gt; 0\)</span> so <span class="math inline">\(|2x^2-13x+15| = 2x^2-13x+15\)</span> and we can write,
+<span class="math display">\[ f(x) = 1 - x + 2x^2-13x+15 = 2x^2 - 14x +16.\]</span>
+Solving <span class="math inline">\(f'(x) = 0\)</span> we find
+<span class="math display">\[ 4x - 14 = 0,\qquad\text{so that } x = 7/2\]</span>
+This value is outside the interval <span class="math inline">\((0,3/2)\)</span> so is not a critical point.</p>
+<p><span class="math inline">\(3/2 &lt; x&lt; 4\)</span></p>
+<p>Here <span class="math inline">\(2x^2-13x+15&lt;0\)</span> so <span class="math inline">\(|2x^2-13x+15| = - (2x^2-13x+15)\)</span> and we may write,
+<span class="math display">\[f(x) = 1 - x - (2x^2-13x+15) = -2x^2 +12x - 14.\]</span>
+Solving <span class="math inline">\(f'(x) = 0\)</span> we find
+<span class="math display">\[ -4x + 12 = 0,\qquad\text{so that } x = 3.\]</span>
+This is our second critical point <span class="math inline">\(x_1 = 3\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Finally we evaluate <span class="math inline">\(f\)</span> at each of the critical points and at the endpoints <span class="math inline">\(0\)</span> and <span class="math inline">\(4\)</span>.</li>
+</ol>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th><span class="math inline">\(x\)</span></th>
+<th><span class="math inline">\(f(x)\)</span></th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1.5</td>
+<td>-0.5</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<p>From the table we see that
+<span class="math display">\[ \max_{x\in[0,4]} f(x) = f(0) = 16\]</span>
+and
+<span class="math display">\[ \min_{x\in[0,4]} f(x) = f(1.5) = -0.5\]</span></p>
+</div>
+</div>
+<div id="unconstrained-optimisation-for-multivariate-functions" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> Unconstrained optimisation for multivariate functions<a class="anchor" aria-label="anchor" href="#unconstrained-optimisation-for-multivariate-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose now we want to solve the same problem but for a multivariate function:
+<span class="math display">\[ f\colon\mathbb{R}^n\to \mathbb{R}\]</span></p>
+<p><strong>Note:</strong> in order to avoid unnecessary complications when we learn about optimisation for multivariate functions we will assume they are <strong>differentiable</strong>. This is stronger than our assumption for functions of one variable, but it does mean we don’t have to deal with non-differentiable points like we did there.</p>
+</div>
+<div id="local-maximums-and-minimums-and-stationary-points" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> Local maximums and minimums and stationary points<a class="anchor" aria-label="anchor" href="#local-maximums-and-minimums-and-stationary-points"><i class="fas fa-link"></i></a>
+</h2>
+<p>In the same way as with functions of one variable we can make progress towards finding optimal points by finding local maximums and local minimums. Since we are assuming our functions are differentiable these are now <strong>stationary points</strong>, i.e. points where
+<span class="math display">\[ f'(\vec{x}) = \vec{0}.\]</span>
+Suppose for simplicity <span class="math inline">\(f\colon\mathbb{R}^2\to\mathbb{R}\)</span> and write it as <span class="math inline">\(f(x,y)\)</span>. Then the equation above can be written,
+<span class="math display">\[ \begin{pmatrix} \frac{\partial f}{\partial x} &amp; \frac{\partial f}{\partial y}\end{pmatrix} = \begin{pmatrix} 0 &amp; 0 \end{pmatrix}.\]</span>
+This, in turn, can be written as the simultaneous equations
+<span class="math display">\[ \frac{\partial f}{\partial x} = 0, \qquad \frac{\partial f}{\partial y} = 0.\]</span></p>
+<div id="example-4" class="section level3" number="4.7.1">
+<h3>
+<span class="header-section-number">4.7.1</span> Example<a class="anchor" aria-label="anchor" href="#example-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose <span class="math inline">\(f(x,y) = 2x^2 +2xy - y^2 -8x+2y\)</span>.</p>
+<p>We calculate the partial derivatives first and set the equal to <span class="math inline">\(0\)</span>,
+<span class="math display">\[
+\begin{aligned}
+\frac{\partial f}{\partial x} &amp;= 4x+2y-8 =0\\
+\frac{\partial f}{\partial y} &amp;= 2x-2y+2 =0
+\end{aligned}
+\]</span>
+If we add both equations we find that
+<span class="math display">\[ 6x - 6 = 0, \qquad\text{so that }\quad x = 1.\]</span>
+Substituting back into the first equation we find that
+<span class="math display">\[ 4+2y-8=0,\qquad\text{ and so }\quad y=2.\]</span>
+The stationary point is therefore at <span class="math inline">\((1,2)\)</span>.</p>
+<p>For surfaces <span class="math inline">\(z = f(x,y)\)</span> we can visualise the three possible types of stationary points. They are the <strong>local maximum</strong>, Figure <span class="math inline">\(\ref{local maximum}\)</span>, the <strong>local minimum</strong> Figure <span class="math inline">\(\ref{local minimum}\)</span>, and the <strong>local saddle</strong>, Figure <span class="math inline">\(\ref{local saddle}\)</span>.</p>
+<div class="figure">
+<img src="img/localmaximum3d.png" alt=""><p class="caption">Local maximum</p>
+</div>
+<div class="figure">
+<img src="img/localminimum3d.png" alt=""><p class="caption">Local minimum</p>
+</div>
+<div class="figure">
+<img src="img/localsaddlepoint3d.png" alt=""><p class="caption">Local saddle</p>
+</div>
+<p>It is possible to classify a stationary point using the second derivatives. Unfortunately this requires us to further restrict the generality of the problem since we have to assume that our functions have second order derivatives.</p>
+<p>Nevertheless we define the Hessian of the function <span class="math inline">\(f\)</span> as the matrix,
+<span class="math display">\[\operatorname{Hess} f =  \begin{pmatrix} \dfrac{\partial^2 f}{\partial x^2} &amp; \dfrac{\partial^2 f}{\partial x\partial y} \\[10pt]
+            \dfrac{\partial^2 f}{\partial y\partial x} &amp; \dfrac{\partial^2 f}{\partial x^2}\end{pmatrix}\]</span></p>
+<p>If we evaluate the Hessian at each of the stationary point <span class="math inline">\((a,b)\)</span> and determine the eigenvalues we have the following:</p>
+<ul>
+<li>If all eigenvalues of <span class="math inline">\(\operatorname{Hess} f(a,b)\)</span> are negative then <span class="math inline">\((a,b)\)</span> represents a local maximum</li>
+<li>If all eigenvalues of <span class="math inline">\(\operatorname{Hess} f(a,b)\)</span> are positive then <span class="math inline">\((a,b)\)</span> represents a local minimum</li>
+<li>If the eigenvalues of <span class="math inline">\(\operatorname{Hess} f(a,b)\)</span> are a mixture of positive and negative values then <span class="math inline">\((a,b)\)</span> represents a local saddle</li>
+</ul>
+</div>
+<div id="example-continued" class="section level3" number="4.7.2">
+<h3>
+<span class="header-section-number">4.7.2</span> Example (continued)<a class="anchor" aria-label="anchor" href="#example-continued"><i class="fas fa-link"></i></a>
+</h3>
+<p>With <span class="math inline">\(f(x,y) = 2x^2 +2xy - y^2 -8x+2y\)</span> we found that
+<span class="math display">\[
+\begin{aligned}
+\frac{\partial f}{\partial x} &amp;= 4x+2y-8\\
+\frac{\partial f}{\partial y} &amp;= 2x-2y+2
+\end{aligned}
+\]</span>
+Calculating the second derivatives,
+<span class="math display">\[
+\frac{\partial^2 f}{\partial x^2} = 4, \qquad \frac{\partial^2 f}{\partial x\partial y} = 2,\qquad \frac{\partial^2 f}{\partial y^2} = -2.
+\]</span>
+Hence,
+<span class="math display">\[
+\operatorname{Hess} f(1,2) = \begin{pmatrix} 4 &amp; 2 \\ 2 &amp; -2\end{pmatrix}
+\]</span>
+To calculate the eigenvalues, we find the following determinant,
+<span class="math display">\[
+\begin{aligned}
+0 = \det \begin{pmatrix} 4-\lambda &amp; 2 \\ 2 &amp; -2-\lambda\end{pmatrix}
+&amp;= (4-\lambda)(-2-\lambda) - 4\\
+&amp;= \lambda^2 -2\lambda -12
+\end{aligned}
+\]</span>
+Solving we find <span class="math inline">\(\lambda = 1 \pm \sqrt{13}\)</span>. One of these is positive and one is negative, meaning that the point <span class="math inline">\((1,2)\)</span> represents a saddle point.</p>
+<p>In general, for <span class="math inline">\(f\colon\mathbb{R}^n\to \mathbb{R}\)</span>, the Hessian is given by,
+<span class="math display">\[
+\operatorname{Hess} f =
+\begin{pmatrix} \frac{\partial^2 f}{\partial x_1^2} &amp; \frac{\partial^2 f}{\partial x_1\partial x_2} &amp; \cdots &amp;  \frac{\partial^2 f}{\partial x_1\partial x_n} \\[6pt]
+        \frac{\partial^2 f}{\partial x_2\partial x_1} &amp; \frac{\partial^2 f}{\partial x_2^2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_2\partial x_n} \\[6pt]
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\[6pt]
+        \frac{\partial^2 f}{\partial x_n\partial x_1} &amp; \frac{\partial^2 f}{\partial x_n\partial x_2} &amp; \cdots &amp; \frac{\partial^2 f}{\partial x_n^2}
+        \end{pmatrix}
+\]</span>
+The classification above generalises to this case.</p>
+</div>
+</div>
+<div id="special-classification-method-for-functions-of-two-variables" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> Special classification method for functions of two variables<a class="anchor" aria-label="anchor" href="#special-classification-method-for-functions-of-two-variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>The technique for classifying can be simplified when <span class="math inline">\(f\)</span> is a function of two variables. However this doesn’t generalise so it is very much a special case. Nevertheless many books use this technique and it is easier than calculating eigenvalues.</p>
+<p>First we find the <strong>discriminant</strong>
+<span class="math display">\[ D =  \frac{\partial^2 f}{\partial x^2}\;\frac{\partial^2 f}{\partial y^2} - \left(\frac{\partial^2 f}{\partial x\partial y}\right)^2\]</span>
+Then we follow the following decision tree.</p>
+<div class="figure">
+<img src="img/decisiontree.png" alt=""><p class="caption">Decision tree for classifying stationary points</p>
+</div>
+</div>
+<div id="convex-functions-and-convex-optimisation" class="section level2" number="4.9">
+<h2>
+<span class="header-section-number">4.9</span> Convex functions and convex optimisation<a class="anchor" aria-label="anchor" href="#convex-functions-and-convex-optimisation"><i class="fas fa-link"></i></a>
+</h2>
+<p>For unconstrained problems with differentiable functions finding and classifying stationary points can be useful since an optimal point if it exists is certainly a stationary point. However since it is not always clear whether or not an optimal point exists at all it can be a bit misleading to simply rely on this.</p>
+<p>In this section we will introduce a special class of unconstrained problems that have the very special property that local optimum points are also global optimum points. This means finding stationary points and classifying them will solve the optimisation problem. These are such an important class of problems that much of data science, machine learning, statistics set up optimisation problems with this specific property in mind.</p>
+</div>
+<div id="convex-sets" class="section level2" number="4.10">
+<h2>
+<span class="header-section-number">4.10</span> Convex sets<a class="anchor" aria-label="anchor" href="#convex-sets"><i class="fas fa-link"></i></a>
+</h2>
+<p>A set <span class="math inline">\(S\)</span> is convex if the line joining any two points <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> in <span class="math inline">\(S\)</span> is entirely contained in <span class="math inline">\(S\)</span>.</p>
+<p>Figure <span class="math inline">\(\ref{convex sets}\)</span> shows an example of a convex set and a non-convex set.</p>
+<div class="figure">
+<img src="img/convexsets.png" alt=""><p class="caption">Convex sets</p>
+</div>
+</div>
+<div id="convex-functions" class="section level2" number="4.11">
+<h2>
+<span class="header-section-number">4.11</span> Convex functions<a class="anchor" aria-label="anchor" href="#convex-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function is said to be a <strong>convex function</strong> if the region <strong>above</strong> its graph is a convex set. The archetype example is the function <span class="math inline">\(x\mapsto x^2\)</span>.</p>
+<div class="figure">
+<img src="img/convexfunctionexample1.png" alt=""><p class="caption">The graph of the convex function <span class="math inline">\(x^2\)</span></p>
+</div>
+<p>However the following functions are also convex:</p>
+<ul>
+<li><span class="math inline">\(\exp x\)</span></li>
+<li>Any line <span class="math inline">\(a + b x\)</span> for <span class="math inline">\(b\neq 0\)</span>
+</li>
+<li>Any quadratic <span class="math inline">\(ax^2 + bx + x\)</span> for <span class="math inline">\(a &gt; 0\)</span>
+</li>
+</ul>
+<p>For multivariate functions it’s more difficult to determine whether or not a function is convex. If the second order derivatives exist then the following is true:</p>
+<ul>
+<li>If all the eigenvalues of the Hessian are non-negative at all points then <span class="math inline">\(f\)</span> is convex</li>
+</ul>
+<p>Of course, this can be difficult to verify in general. However the following can be verified to be convex functions</p>
+<ul>
+<li>Linear functions <span class="math inline">\(a + b_1 x_1 + \cdots + b_n x_n\)</span> as long as at least one of the <span class="math inline">\(b\)</span>’s is non-zero</li>
+<li>Quadratic functions of the form <span class="math inline">\((a_1x_1 + b_1)^2 + (a_2x_2 + b_2)^2 + \cdots + (a_nx_n + b_n)^2\)</span>
+</li>
+</ul>
+</div>
+<div id="concave-functions" class="section level2" number="4.12">
+<h2>
+<span class="header-section-number">4.12</span> Concave functions<a class="anchor" aria-label="anchor" href="#concave-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>In contrast to convex functions, a <strong>concave function</strong> is one where the region <strong>below</strong> its graph is a convex set. Again the archetype example is a quadraric, <span class="math inline">\(f(x) = -x^2\)</span>, whose graph is given in Figure <span class="math inline">\(\ref{concave example}\)</span>.</p>
+<div class="figure">
+<img src="img/concavefunctionexample1.png" alt=""><p class="caption">The graph of the concave function <span class="math inline">\(-x^2\)</span></p>
+</div>
+<p>In general the following functions are concave:</p>
+<ul>
+<li><span class="math inline">\(\log x\)</span></li>
+<li>Any line <span class="math inline">\(a + b x\)</span> for <span class="math inline">\(b\neq 0\)</span>
+</li>
+<li>Any quadratic <span class="math inline">\(ax^2 + bx + x\)</span> for <span class="math inline">\(a &lt; 0\)</span>
+</li>
+</ul>
+<p>Again in general for multivariate functions with second order derivatives we can use the Hessian to determine if the function is concave:</p>
+<ul>
+<li>If all the eigenvalues of the Hessian are non-positive at all points then <span class="math inline">\(f\)</span> is concave</li>
+</ul>
+<p>However as with convex functions we can verify that the following functions are concave,</p>
+<ul>
+<li>Linear functions <span class="math inline">\(a + b_1 x_1 + \cdots + b_n x_n\)</span> as long as at least one of the <span class="math inline">\(b\)</span>’s is non-zero</li>
+<li>Quadratic functions of the form <span class="math inline">\(-(a_1x_1 + b_1)^2 - (a_2x_2 + b_2)^2 - \cdots - (a_nx_n + b_n)^2\)</span>
+</li>
+</ul>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></div>
+<div class="next"><a href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#week-4-optimisation"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="nav-link" href="#optimisation-and-business-modelling"><span class="header-section-number">4.1</span> Optimisation and business modelling</a></li>
+<li>
+<a class="nav-link" href="#unconstrained-optimisation-for-functions-of-one-variable"><span class="header-section-number">4.2</span> Unconstrained optimisation for functions of one variable</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-1"><span class="header-section-number">4.2.1</span> Example 1</a></li>
+<li><a class="nav-link" href="#example-2"><span class="header-section-number">4.2.2</span> Example 2</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#local-maximums-and-minimums"><span class="header-section-number">4.3</span> Local maximums and minimums</a></li>
+<li>
+<a class="nav-link" href="#constrained-optimisation-for-functions-of-one-variable"><span class="header-section-number">4.4</span> Constrained optimisation for functions of one variable</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example"><span class="header-section-number">4.4.1</span> Example</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#critical-points"><span class="header-section-number">4.5</span> Critical points</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#fermats-theorem"><span class="header-section-number">4.5.1</span> Fermat’s Theorem</a></li>
+<li><a class="nav-link" href="#example-3"><span class="header-section-number">4.5.2</span> Example</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#unconstrained-optimisation-for-multivariate-functions"><span class="header-section-number">4.6</span> Unconstrained optimisation for multivariate functions</a></li>
+<li>
+<a class="nav-link" href="#local-maximums-and-minimums-and-stationary-points"><span class="header-section-number">4.7</span> Local maximums and minimums and stationary points</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-4"><span class="header-section-number">4.7.1</span> Example</a></li>
+<li><a class="nav-link" href="#example-continued"><span class="header-section-number">4.7.2</span> Example (continued)</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#special-classification-method-for-functions-of-two-variables"><span class="header-section-number">4.8</span> Special classification method for functions of two variables</a></li>
+<li><a class="nav-link" href="#convex-functions-and-convex-optimisation"><span class="header-section-number">4.9</span> Convex functions and convex optimisation</a></li>
+<li><a class="nav-link" href="#convex-sets"><span class="header-section-number">4.10</span> Convex sets</a></li>
+<li><a class="nav-link" href="#convex-functions"><span class="header-section-number">4.11</span> Convex functions</a></li>
+<li><a class="nav-link" href="#concave-functions"><span class="header-section-number">4.12</span> Concave functions</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

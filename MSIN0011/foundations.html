@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 1 Foundations | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="1.1 Sets A set is a collection of elements. To describe a set we either list all its element (using ellipses for infinite sets), or use a predicate. For example: \(C = \{ \text{red},...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 1 Foundations | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="1.1 Sets A set is a collection of elements. To describe a set we either list all its element (using ellipses for infinite sets), or use a predicate. For example: \(C = \{ \text{red},...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 1 Foundations | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="1.1 Sets A set is a collection of elements. To describe a set we either list all its element (using ellipses for infinite sets), or use a predicate. For example: \(C = \{ \text{red},...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="active" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="foundations" class="section level1" number="1">
+<h1>
+<span class="header-section-number">Topic 1</span> Foundations<a class="anchor" aria-label="anchor" href="#foundations"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sets" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> Sets<a class="anchor" aria-label="anchor" href="#sets"><i class="fas fa-link"></i></a>
+</h2>
+<p>A <strong>set</strong> is a collection of <strong>elements</strong>. To describe a set we either
+list all its element (using <strong>ellipses</strong> for infinite sets), or use a
+<strong>predicate</strong>. For example:</p>
+<ul>
+<li><span class="math inline">\(C = \{ \text{red}, \text{orange}, \text{yellow} \}\)</span></li>
+<li><span class="math inline">\(\mathbb{N} = \{1, 2, 3, 4, \ldots \}\)</span></li>
+<li><span class="math inline">\(P = \{ p \colon p \text{ is a prime number}\}\)</span></li>
+</ul>
+<p>To indicate an element is contained in a set we use the symbol <span class="math inline">\(\in\)</span>.
+For example, <span class="math display">\[ \text{orange} \in C.\]</span> Similarly if an item is <strong>not</strong>
+in a set we use the symbol <span class="math inline">\(\not\in\)</span>. For example,
+<span class="math display">\[\text{blue} \not\in C.\]</span></p>
+<div id="subsets" class="section level3" number="1.1.1">
+<h3>
+<span class="header-section-number">1.1.1</span> Subsets<a class="anchor" aria-label="anchor" href="#subsets"><i class="fas fa-link"></i></a>
+</h3>
+<p>If all the elements of a set are also elements of another set then we
+say the first set is a <strong>subset</strong> of the second. This is written, for
+example, <span class="math display">\[P \subset \mathbb{N}.\]</span></p>
+</div>
+<div id="unions-and-intersections" class="section level3" number="1.1.2">
+<h3>
+<span class="header-section-number">1.1.2</span> Unions and intersections<a class="anchor" aria-label="anchor" href="#unions-and-intersections"><i class="fas fa-link"></i></a>
+</h3>
+<p>The <strong>union</strong> of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set</p>
+<p><span class="math display">\[A \cup B = \{ x\colon x \in A\text{ or } x\in B\}.\]</span></p>
+<p>The <strong>intersection</strong> of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set
+<span class="math display">\[A \cap B = \{ x\colon x \in A\text{ and } x\in B\}.\]</span></p>
+</div>
+<div id="the-empty-set" class="section level3" number="1.1.3">
+<h3>
+<span class="header-section-number">1.1.3</span> The empty set<a class="anchor" aria-label="anchor" href="#the-empty-set"><i class="fas fa-link"></i></a>
+</h3>
+<p>The set that contains <strong>no element</strong> is called the <strong>empty set</strong> and is
+denoted by the special symbol <span class="math display">\[\emptyset\]</span> The empty set is a subset
+for every set. In notation, for any set <span class="math inline">\(A\)</span>,</p>
+<p><span class="math display">\[\emptyset \subset A.\]</span></p>
+</div>
+</div>
+<div id="intervals" class="section level2" number="1.2">
+<h2>
+<span class="header-section-number">1.2</span> Intervals<a class="anchor" aria-label="anchor" href="#intervals"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Intervals</strong> are especially useful sets of real numbers that lie
+between two values. The notation for intervals is the following:</p>
+<p><span class="math display">\[
+\begin{aligned}[]
+    [a, b] &amp;= \{ x\colon a\le x \le b\} \\
+    (a, b) &amp;= \{ x\colon a&lt; x &lt; b\}, \\
+    (a, b] &amp;= \{ x\colon a&lt; x \le b\},\\
+    [a, b) &amp;= \{ x\colon a\le x &lt; b\}.
+\end{aligned}
+\]</span></p>
+<ul>
+<li>The values <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are called the <strong>endpoints</strong>
+</li>
+<li>Intervals of the form <span class="math inline">\([a,b]\)</span> are called <strong>closed intervals</strong>
+</li>
+<li>Intervals of the form <span class="math inline">\((a,b)\)</span> are called <strong>open intervals</strong>
+</li>
+</ul>
+<p>Note: the values <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> must satisfy <span class="math inline">\(a\le b\)</span> otherwise the
+interval is the empty set. Also <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span> or both can be <span class="math inline">\(\pm \infty\)</span>.</p>
+<p>For example, <span class="math display">\[\mathbb{R} = (-\infty, \infty)\]</span></p>
+<hr>
+</div>
+<div id="special-sets" class="section level2" number="1.3">
+<h2>
+<span class="header-section-number">1.3</span> Special sets<a class="anchor" aria-label="anchor" href="#special-sets"><i class="fas fa-link"></i></a>
+</h2>
+<p>There are a number of special sets that we will routinely use so they
+have their own special characters:</p>
+<ul>
+<li>
+<span class="math inline">\(\mathbb{N} = \{ 1, 2, 3, 4, \ldots \}\)</span>, the <strong>natural numbers</strong>;</li>
+<li>
+<span class="math inline">\(\mathbb{Z} = \{ \ldots, -2, -1, 0, 1, 2, \ldots \}\)</span>, the
+<strong>integers</strong>;</li>
+<li>
+<span class="math inline">\(\mathbb{Q} = \{ p/q \colon p, q \in \mathbb{Z}, q \neq 0\}\)</span>, the
+<strong>rationals</strong>; and</li>
+<li>
+<span class="math inline">\(\mathbb{R}\)</span> the <strong>real numbers</strong>.</li>
+</ul>
+<p>You might also have encountered</p>
+<ul>
+<li>
+<span class="math inline">\(\mathbb{C} = \{ a + \mathrm{i}b\colon a, b \in \mathbb{R}\}\)</span>, the
+<strong>complex numbers</strong>.</li>
+</ul>
+<p>Note: we have the following chain of subsets,</p>
+<p><span class="math display">\[ \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}.\]</span></p>
+<p>Note: there is also a bigger set of numbers called Hamiltonians that
+include the complex numbers as a subset, they’re useful when
+manipulating 3d vectors in computer graphics. They are denoted
+<span class="math inline">\(\mathbb{H}\)</span>.</p>
+<hr>
+</div>
+<div id="tuples" class="section level2" number="1.4">
+<h2>
+<span class="header-section-number">1.4</span> Tuples<a class="anchor" aria-label="anchor" href="#tuples"><i class="fas fa-link"></i></a>
+</h2>
+<p>A <strong>tuple</strong> is an <strong>ordered pair of items</strong>, for example <span class="math inline">\((1,2)\)</span>. If <span class="math inline">\(A\)</span>
+and <span class="math inline">\(B\)</span> are sets then the set of tuples <span class="math inline">\((a,b)\)</span> where <span class="math inline">\(a\in A\)</span> and
+<span class="math inline">\(b\in B\)</span> is denoted <span class="math display">\[ A \times B. \]</span> Hence,
+<span class="math display">\[ A \times B = \{ (a,b) \colon a\in A, \text{and } b\in B \}.\]</span></p>
+<p>For example,
+<span class="math display">\[ [0,1] \times [-1,1] = \{ (x,y)\colon 0 \le x \le 1, -1 \le y \le 1\}.\]</span>
+As a special case we write <span class="math inline">\(A\times A = A^2\)</span>. For example,</p>
+<p><span class="math display">\[\mathbb{R}^2 = \{ (x,y)\colon x, y \in\mathbb{R}\}.\]</span></p>
+<p>Tuples can be extended to an arbittary number of items, for example,</p>
+<p><span class="math display">\[ (3, -2, 1) \]</span> is a <span class="math inline">\(3\)</span>-tuple and in general an ordered list of <span class="math inline">\(n\)</span>
+items is called a <span class="math inline">\(n\)</span>-tuple.</p>
+<p>The definitions above extend to these higher order tuples. For example,</p>
+<p><span class="math display">\[[0,2]\times [-1,1]\times [2,3] = \{ (x,y,z)\colon x\in [0,2], y\in [-1,1], z\in [2,3]\}\]</span></p>
+<p>Hence <span class="math inline">\((1, 0, 2) \in [0,2]\times [-1,1]\times [2,3]\)</span>, for example.</p>
+<p>The set <span class="math inline">\(\mathbb{R}^n\)</span> is an important case, it consists of all the
+<span class="math inline">\(n\)</span>-tuples of the form <span class="math display">\[ (x_1, x_2, \ldots, x_n)\]</span> where each <span class="math inline">\(x_i\)</span> is
+a real number.</p>
+<hr>
+</div>
+<div id="functions" class="section level2" number="1.5">
+<h2>
+<span class="header-section-number">1.5</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>A <strong>function</strong> <span class="math inline">\(f\)</span> is a rule that associates to each element of a set
+<span class="math inline">\(A\)</span> - called the <strong>domain</strong> - an element of a second set <span class="math inline">\(B\)</span> - called
+the co-domain. We write this as</p>
+<p><span class="math display">\[f\colon A \to B\]</span></p>
+<p>The range of the function <span class="math inline">\(f\)</span> is the set of all elements of <span class="math inline">\(B\)</span> that are
+mapped by <span class="math inline">\(f\)</span> from some element of <span class="math inline">\(A\)</span>. We write this as</p>
+<p><span class="math display">\[
+f(A).
+\]</span> For example suppose <span class="math inline">\(f\colon \mathbb{R}\to \mathbb{R}\)</span> is defined by</p>
+<p><span class="math display">\[ f(x) = x^2.\]</span></p>
+<p>Then <span class="math inline">\(f(\mathbb{R}) = [0,\infty)\)</span>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<iframe src="https://www.desmos.com/calculator/avyhcjhrsm?embed" width="672" height="400px" data-external="1">
+</iframe>
+<p class="caption">
+Figure 1.1: The graph of <span class="math inline">\(f(x) = x^2\)</span>
+</p>
+</div>
+<p>The graph of this function is given in Figure <span class="math inline">\(\ref{fig:squarefunction}\)</span>.</p>
+<p>Note: the graph of a function <span class="math inline">\(f\colon A \to B\)</span> is a subset of
+<span class="math inline">\(A\times B\)</span>.</p>
+<p>We often define a function using the following two-line format, where
+the special arrow <span class="math inline">\(\mapsto\)</span> is used to show that a variable is <strong>mapped
+to</strong> and expression.</p>
+<p><span class="math display">\[
+\begin{aligned}
+f\colon &amp;A \to B \\
+        &amp;x \mapsto f(x)
+\end{aligned}
+\]</span></p>
+<p>For example,</p>
+<p><span class="math display">\[
+\begin{aligned}
+f \colon &amp;\mathbb{N} \to \mathbb{N}\\
+         &amp;x \mapsto 3x + 1
+\end{aligned}
+\]</span></p>
+<p>Sometimes a function can be defined with different expressions in
+different subsets of its domain. In this case we use the following
+format.</p>
+<p><span class="math display">\[
+\begin{aligned}
+f\colon &amp;\mathbb{R}\to \mathbb{R}\\
+    &amp;x \mapsto \begin{cases}
+                    1, &amp; \text{if } x &lt; 1;\\
+                    x^2, &amp; \text{if } 1 \le x \le 2\\
+                    4, &amp; \text{if } x &gt; 2.
+                \end{cases}
+\end{aligned}
+\]</span></p>
+<p>This is called a <strong>piecewise</strong> function. It graph is given in Figure
+<span class="math inline">\(\ref{piecewise function}\)</span>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<iframe src="https://www.desmos.com/calculator/zpdhprmi5a?embed" width="672" height="400px" data-external="1">
+</iframe>
+<p class="caption">
+Figure 1.2: The graph of a piecewise function
+</p>
+</div>
+<p>Note: the range of this function is <span class="math inline">\(f(\mathbb{R}) = [1,4]\)</span>.</p>
+<p>The domain and range of a function need not be one of the <strong>nice</strong> sets
+we’ve seen so far. Let <span class="math inline">\(X = (-1,1) \cup (2\pi,\infty)\)</span>. Then we may
+define,</p>
+<p><span class="math display">\[
+\begin{aligned}
+g\colon &amp;X\to \mathbb{R}\\
+    &amp;x \mapsto \begin{cases}
+                    x^2, &amp; \text{if } x \in (-1,1);\\
+                    \sin x, &amp; \text{if } x\in (2\pi,\infty)\\
+                \end{cases}
+\end{aligned}
+\]</span></p>
+<p>This has graph given below in Figure <span class="math inline">\(\ref{disconnected domain example}\)</span></p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<iframe src="https://https://www.desmos.com/calculator/ubmmubjbbt?embed" width="672" height="400px" data-external="1">
+</iframe>
+<p class="caption">
+Figure 1.3: A domain that isn’t a single interval
+</p>
+</div>
+<p>Here, the range is <span class="math inline">\(f(X) = [-1,1]\)</span>.</p>
+<hr>
+</div>
+<div id="function-composition" class="section level2" number="1.6">
+<h2>
+<span class="header-section-number">1.6</span> Function composition<a class="anchor" aria-label="anchor" href="#function-composition"><i class="fas fa-link"></i></a>
+</h2>
+<p>We can compose two funcions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> to produce a third, <span class="math inline">\(f\circ g\)</span>
+which is defined to be <span class="math display">\[ f\circ g(x) = f( g(x) ),\]</span> for all <span class="math inline">\(x\)</span>. But we
+do need to be careful. This is only possible if the range of <span class="math inline">\(g\)</span> is a
+subset of the domain of <span class="math inline">\(f\)</span>.</p>
+<p>For example, suppose <span class="math display">\[
+\begin{aligned}
+    f\colon &amp; [0,\infty) \to \mathbb{R}\\
+            &amp; x \mapsto \sqrt{x}
+\end{aligned}
+\]</span> and <span class="math display">\[
+\begin{aligned}
+    g\colon &amp; \mathbb{R} \to \mathbb{R}\\
+            &amp; x \mapsto \mathrm{e}^x.
+\end{aligned}
+\]</span> Then <span class="math inline">\(f\circ g\)</span> is defined for all <span class="math inline">\(x\in \mathbb{R}\)</span> since the range
+of <span class="math inline">\(g\)</span> satisfies <span class="math display">\[ g(\mathbb{R}) = (0,\infty) \subset [0,\infty)\]</span>
+which is the domain of <span class="math inline">\(f\)</span>.</p>
+<p>On the other hand if we define, <span class="math display">\[
+\begin{aligned}
+    h\colon &amp; \mathbb{R} \to \mathbb{R}\\
+            &amp; x \mapsto 1-x^2.
+\end{aligned}
+\]</span> then <span class="math inline">\(f\circ h\)</span> cannot be defined because the range of <span class="math inline">\(h\)</span> is
+<span class="math display">\[h(\mathbb{R}) = (-\infty,1] \not\subset [0,\infty)\]</span></p>
+</div>
+<div id="injectivity" class="section level2" number="1.7">
+<h2>
+<span class="header-section-number">1.7</span> Injectivity<a class="anchor" aria-label="anchor" href="#injectivity"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function <span class="math inline">\(f\)</span> is said to be <strong>injective</strong> or <strong>one-to-one</strong> if whenever
+<span class="math inline">\(x\neq y\)</span>, <span class="math inline">\(f(x) \neq f(y)\)</span>.</p>
+<p>The following useful graphical technique can be used to determine if a
+function is injective:</p>
+<ul>
+<li>
+<span class="math inline">\(f\)</span> is injective if, and only if <strong>every</strong> horizontal line
+intersects the graph of <span class="math inline">\(f\)</span> at at most one point (i.e. either one
+point or no points)</li>
+</ul>
+<p>For example, the function</p>
+<p><span class="math display">\[
+\begin{aligned}
+f\colon &amp;\mathbb{R}\to \mathbb{R}\\
+    &amp;x \mapsto 1 - x - 2 x^3
+\end{aligned}
+\]</span> is injective. Its graph is in Figure
+<span class="math inline">\(\ref{injective function example}\)</span>.</p>
+<div class="figure">
+<img src="img/InjectiveExample.png" alt=""><p class="caption">An injective
+function</p>
+</div>
+<p>Whereas the function</p>
+<p><span class="math display">\[
+\begin{aligned}
+f\colon &amp;\mathbb{R}\to \mathbb{R}\\
+    &amp;x \mapsto 1 + x - 2 x^3
+\end{aligned}
+\]</span> is not injective. Its graph is given here, where the horizontal line
+drawn is an example of a line that intersects the graph at three points.</p>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<iframe src="https://www.desmos.com/calculator/mjuodylauw?embed" width="672" height="400px" data-external="1">
+</iframe>
+<p class="caption">
+Figure 1.4: A non-injective function
+</p>
+</div>
+<hr>
+</div>
+<div id="surjectivity" class="section level2" number="1.8">
+<h2>
+<span class="header-section-number">1.8</span> Surjectivity<a class="anchor" aria-label="anchor" href="#surjectivity"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function <span class="math inline">\(f\colon A \to B\)</span> is said to be <strong>surjective</strong> or <strong>onto</strong> if
+<span class="math display">\[f(A) = B.\]</span> In other words if <strong>every</strong> element of <span class="math inline">\(B\)</span> is mapped by
+some element of <span class="math inline">\(A\)</span>.</p>
+<p>For example, <span class="math display">\[
+\begin{aligned}
+f\colon &amp;\mathbb{R}\to \mathbb{R}\\
+    &amp;x \mapsto x^2
+\end{aligned}
+\]</span> is <strong>not</strong> surjective since <span class="math inline">\(f(A) = [0,\infty) \neq \mathbb{R}\)</span>.</p>
+<p>Note:</p>
+<ul>
+<li>surjectivity and injectivity have no relation, a function can be
+neither, either, or both.</li>
+<li>We always have the option of <strong>making</strong> a function <span class="math inline">\(f\colon A \to B\)</span>
+surjective by simply defining the co-domain <span class="math inline">\(B\)</span> to be the range
+<span class="math inline">\(f(A)\)</span>.</li>
+</ul>
+<p>For example if we redefine the above function as</p>
+<p><span class="math display">\[
+\begin{aligned}
+f\colon &amp;\mathbb{R}\to [0,\infty)\\
+    &amp;x \mapsto x^2
+\end{aligned}
+\]</span> then this <strong>is</strong> surjective.</p>
+<hr>
+</div>
+<div id="bijectivity-and-inverses" class="section level2" number="1.9">
+<h2>
+<span class="header-section-number">1.9</span> Bijectivity and inverses<a class="anchor" aria-label="anchor" href="#bijectivity-and-inverses"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function <span class="math inline">\(f\)</span> is said to be <strong>bijective</strong> if it is <strong>both</strong> injective
+<strong>and</strong> surjective.</p>
+<p>A function <span class="math inline">\(f\colon A \to B\)</span> is said to be invertible with inverse
+<span class="math inline">\(g\colon B \to A\)</span> if for all <span class="math inline">\(x\in A\)</span> <span class="math display">\[ g\circ f(x) = x. \]</span> We normally
+write the <strong>inverse function</strong> g as <span class="math inline">\(f^{-1}\)</span>.</p>
+<p>A function <span class="math inline">\(f\)</span> has an inverse if and only if it is bijective.</p>
+<p>A useful technique for finding the inverse of a bijective function is to
+introduce a new variable, <span class="math inline">\(y\)</span> say and change the subject of the equation
+<span class="math inline">\(y = f(x)\)</span>. For example, to find the inverse of <span class="math inline">\(f(x) = x^3 + 1\)</span>, <span class="math display">\[
+\begin{aligned}
+    y &amp;= x^3 + 1\\
+    y -1 &amp;= x^3 \\
+    (y-1)^{1/3} &amp;= x
+\end{aligned}
+\]</span> So that <span class="math inline">\(f^{-1} (y) = (y-1)^{1/3}\)</span>.</p>
+<hr>
+</div>
+<div id="increasing-and-decreasing-functions" class="section level2" number="1.10">
+<h2>
+<span class="header-section-number">1.10</span> Increasing and decreasing functions<a class="anchor" aria-label="anchor" href="#increasing-and-decreasing-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function <span class="math inline">\(f\colon A \to \mathbb{R}\)</span>, where <span class="math inline">\(A \subset\mathbb{R}\)</span>
+defined to be:</p>
+<ul>
+<li>
+<strong>inceasing</strong> if whenever <span class="math inline">\(a &gt; b\)</span>, we have that <span class="math inline">\(f(a) \ge f(b)\)</span>;</li>
+<li>
+<strong>strictly increasing</strong> if whenever <span class="math inline">\(a &gt; b\)</span>, we have that
+<span class="math inline">\(f(a) &gt; f(b)\)</span>;</li>
+<li>
+<strong>decreasing</strong> if whenever <span class="math inline">\(a &gt; b\)</span>, we have that <span class="math inline">\(f(a) \le f(b)\)</span>;</li>
+<li>
+<strong>strictly decreasing</strong> if whenever <span class="math inline">\(a &gt; b\)</span>, we have that
+<span class="math inline">\(f(a) &lt; f(b)\)</span>.</li>
+</ul>
+<p>A function that satifies any of the conditions above is said to be
+<strong>monotone</strong>.</p>
+<p>A function that is either stricly increasing or strictly decreasing is
+said to be <strong>strictly monotone</strong>.</p>
+<hr>
+</div>
+<div id="continuous-functions---the-basic-idea" class="section level2" number="1.11">
+<h2>
+<span class="header-section-number">1.11</span> Continuous functions - the basic idea<a class="anchor" aria-label="anchor" href="#continuous-functions---the-basic-idea"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function such as <span class="math display">\[
+\begin{aligned}
+f\colon &amp;\mathbb{R}\to \mathbb{R}\\
+    &amp;x \mapsto \begin{cases}
+                    x^2, &amp; \text{if } x &lt; 2;\\
+                    4, &amp; \text{if } x \ge 2
+                \end{cases}
+\end{aligned}
+\]</span> is said to be <strong>continuous</strong> since its graph consists of a single
+connected curve (see Figure <span class="math inline">\(\ref{continuous function example}\)</span>).</p>
+<div class="figure">
+<img src="img/ContinuousExample.png" alt=""><p class="caption">The graph of a continuous
+functio</p>
+</div>
+<p>If the graph of a function is <strong>not</strong> a single connected curve then the
+function is said to be <strong>discontinuous</strong>. For example, <span class="math display">\[
+\begin{aligned}
+f\colon &amp;\mathbb{R}\to \mathbb{R}\\
+    &amp;x \mapsto \begin{cases}
+                    x^2, &amp; \text{if } x &lt; 2;\\
+                    2, &amp; \text{if } x \ge 2
+                \end{cases}
+\end{aligned}
+\]</span> is a discontinuous function (Figure
+<span class="math inline">\(\ref{disconnected curve example}\)</span>).</p>
+<div class="figure">
+<img src="img/DiscontinuousExample.png" alt=""><p class="caption">The graph of a discontinuous
+function</p>
+</div>
+<p>Suppose the domain of <span class="math inline">\(f\)</span> is an interval.</p>
+<p>Note: if <span class="math inline">\(f\)</span> is both strictly monotone and continuous then it is
+injective.</p>
+<p>This informal definition of continuity if fine to start with but what
+happens when we have more complicated functions. For example is the
+following function continuous? Its graph is given in Figure
+<span class="math inline">\(\ref{standard discontinuous example}\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+    f\colon \mathbb{R}&amp;\to [-1,1]\\
+    x&amp;\mapsto \begin{cases} \cos(1/x) &amp;\text{if } x\neq 0\\ 0 &amp;\text{if } x = 0\end{cases}
+\end{aligned}
+\]</span></p>
+<div class="figure">
+<img src="img/DiscontinuousCos.png" alt=""><p class="caption">The graph of
+<span class="math inline">\(\cos(1/x)\)</span></p>
+</div>
+</div>
+<div id="limits" class="section level2" number="1.12">
+<h2>
+<span class="header-section-number">1.12</span> Limits<a class="anchor" aria-label="anchor" href="#limits"><i class="fas fa-link"></i></a>
+</h2>
+<p>To understand continuity better we need to understand limits.</p>
+<p>The function <span class="math inline">\(f\colon [0,2] \to \mathbb{R}\)</span> is defined to be
+<span class="math display">\[ f(x) = \begin{cases} x^3, &amp; x\neq 1\\ 2, &amp; x = 1\end{cases} \]</span></p>
+<p>The graph of this is given in Figure <span class="math inline">\(\ref{limit example}\)</span>.</p>
+<div class="figure">
+<img src="img/GraphWithDiscontinuity.png" alt=""><p class="caption">The limit of a
+function</p>
+</div>
+<p>If <span class="math inline">\(x\)</span> approaches <span class="math inline">\(1\)</span> from either side, <span class="math inline">\(f(x)\)</span> approaches <span class="math inline">\(1\)</span> also (even
+through <span class="math inline">\(f(1) = 2\)</span>). We say that <strong>the limit of</strong> <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> tends to
+<span class="math inline">\(1\)</span>. This is written as <span class="math display">\[\lim_{x\to 1} f(x) = 1.\]</span> In general we can
+find the limit of a function at any point and this is written
+<span class="math display">\[\lim_{x\to a} f(x)\]</span> and read <strong>the limit of</strong> <span class="math inline">\(f(x)\)</span> as <span class="math inline">\(x\)</span> tends to
+<span class="math inline">\(a\)</span>.</p>
+<p>The idea of the limit is that the values <span class="math inline">\(f(x)\)</span> should be getting closer
+and closer to the limit as <span class="math inline">\(x\)</span> gets closer and closer to <span class="math inline">\(a\)</span> - although
+we don’t need <span class="math inline">\(f(a)\)</span> to be defined or to be the same as the limit.</p>
+<hr>
+</div>
+<div id="applications-of-the-limit-continuity" class="section level2" number="1.13">
+<h2>
+<span class="header-section-number">1.13</span> Applications of the limit: continuity<a class="anchor" aria-label="anchor" href="#applications-of-the-limit-continuity"><i class="fas fa-link"></i></a>
+</h2>
+<p>A function <span class="math inline">\(f\colon A \to\mathbb{R}\)</span> is said to be <strong>continuous at</strong> <span class="math inline">\(a\)</span>
+if <span class="math inline">\(a\)</span> is in the domain of <span class="math inline">\(f\)</span> and <span class="math display">\[ f(a) = \lim_{x\to a} f(x).\]</span> A
+function is said to be <strong>continuous</strong> if it is continuous at all points
+in its domain.</p>
+<p>For example, the function we previously defined,
+<span class="math display">\[ f(x) = \begin{cases} x^3, &amp; x\neq 1\\ 2, &amp; x = 1\end{cases} \]</span>
+<span class="math display">\[ \lim_{x\to 1} f(x) = 1 \neq f(1).\]</span></p>
+<hr>
+</div>
+<div id="working-with-limits" class="section level2" number="1.14">
+<h2>
+<span class="header-section-number">1.14</span> Working with limits<a class="anchor" aria-label="anchor" href="#working-with-limits"><i class="fas fa-link"></i></a>
+</h2>
+<p>To work with limits we introduce a number of important facts about them.</p>
+<div id="theorem-1" class="section level3" number="1.14.1">
+<h3>
+<span class="header-section-number">1.14.1</span> Theorem 1<a class="anchor" aria-label="anchor" href="#theorem-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>If <span class="math inline">\(L = \lim_{x\to a} f(x)\)</span> then <span class="math inline">\(L\)</span> is unique - i.e. it is not possible
+for a function to tend to two or more different limits.</p>
+</div>
+<div id="theorem-2" class="section level3" number="1.14.2">
+<h3>
+<span class="header-section-number">1.14.2</span> Theorem 2<a class="anchor" aria-label="anchor" href="#theorem-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>If <span class="math inline">\(L = \lim_{x\to a} f(x)\)</span> and <span class="math inline">\(M = \lim_{x\to a} g(x)\)</span> then:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\lim_{x \to a} f(x) + g(x) = L + M\)</span></li>
+<li><span class="math inline">\(\lim_{x \to a} f(x)g(x) = LM\)</span></li>
+<li>
+<span class="math inline">\(\lim_{x \to a} f(x)/g(x) = L/M\)</span> as long as <span class="math inline">\(M\neq 0\)</span>
+</li>
+</ol>
+<p>For example, since <span class="math display">\[
+\begin{aligned}
+    \lim_{x \to 2} x^2 &amp;= 4\\
+    \lim_{x \to 2} \cos \pi x &amp;=  1
+\end{aligned}
+\]</span> we have that <span class="math display">\[ \lim_{x\to 2} x^2 \cos \pi x = 4\times 1 = 4. \]</span> We
+can also say that
+<span class="math display">\[  \lim_{x\to 2} \frac{x^2}{\cos \pi x} = \frac{4}1 = 4. \]</span> And so on.</p>
+</div>
+<div id="theorem-3" class="section level3" number="1.14.3">
+<h3>
+<span class="header-section-number">1.14.3</span> Theorem 3<a class="anchor" aria-label="anchor" href="#theorem-3"><i class="fas fa-link"></i></a>
+</h3>
+<p>The following families of functions are continuous:</p>
+<ul>
+<li>Polynomials</li>
+<li>Exponential functions and logarithms</li>
+<li>The trigonometric functions <span class="math inline">\(\sin\)</span>, <span class="math inline">\(\cos\)</span> and <span class="math inline">\(\tan\)</span>
+</li>
+<li>The hyperbolic trigonometric functions <span class="math inline">\(\sinh\)</span>, <span class="math inline">\(\cosh\)</span> and <span class="math inline">\(\tanh\)</span>
+</li>
+<li>Any arithmetic combination of these, or any composition of functions
+including these</li>
+</ul>
+</div>
+</div>
+<div id="when-limits-dont-exist" class="section level2" number="1.15">
+<h2>
+<span class="header-section-number">1.15</span> When limits don’t exist<a class="anchor" aria-label="anchor" href="#when-limits-dont-exist"><i class="fas fa-link"></i></a>
+</h2>
+<p>It’s possible for a function not to have a limit. For example, define,
+<span class="math display">\[
+f(x) =  \begin{cases}
+            -1, &amp; x &lt; 0;\\
+            1, &amp; x \ge 0.
+        \end{cases}
+\]</span> The graph of this function shown in Figure
+<span class="math inline">\(\ref{discontinuous example}\)</span>.</p>
+<div class="figure">
+<img src="img/DiscontinuousExample2.png" alt=""><p class="caption">Grpah of a function without a
+limit</p>
+</div>
+<p>As <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span> from the negative side (the left-hand side) <span class="math inline">\(f(x)\)</span>
+tends to <span class="math inline">\(-1\)</span>.</p>
+<p>On the other hand as <span class="math inline">\(x\)</span> approaches <span class="math inline">\(0\)</span> from the positive side (the
+right-hand side) <span class="math inline">\(f(x)\)</span> tends to <span class="math inline">\(1\)</span>.</p>
+<p>This is an example where the limit does not exist at the point <span class="math inline">\(a = 0\)</span>.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html">Introduction</a></div>
+<div class="next"><a href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#foundations"><span class="header-section-number">1</span> Foundations</a></li>
+<li>
+<a class="nav-link" href="#sets"><span class="header-section-number">1.1</span> Sets</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#subsets"><span class="header-section-number">1.1.1</span> Subsets</a></li>
+<li><a class="nav-link" href="#unions-and-intersections"><span class="header-section-number">1.1.2</span> Unions and intersections</a></li>
+<li><a class="nav-link" href="#the-empty-set"><span class="header-section-number">1.1.3</span> The empty set</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#intervals"><span class="header-section-number">1.2</span> Intervals</a></li>
+<li><a class="nav-link" href="#special-sets"><span class="header-section-number">1.3</span> Special sets</a></li>
+<li><a class="nav-link" href="#tuples"><span class="header-section-number">1.4</span> Tuples</a></li>
+<li><a class="nav-link" href="#functions"><span class="header-section-number">1.5</span> Functions</a></li>
+<li><a class="nav-link" href="#function-composition"><span class="header-section-number">1.6</span> Function composition</a></li>
+<li><a class="nav-link" href="#injectivity"><span class="header-section-number">1.7</span> Injectivity</a></li>
+<li><a class="nav-link" href="#surjectivity"><span class="header-section-number">1.8</span> Surjectivity</a></li>
+<li><a class="nav-link" href="#bijectivity-and-inverses"><span class="header-section-number">1.9</span> Bijectivity and inverses</a></li>
+<li><a class="nav-link" href="#increasing-and-decreasing-functions"><span class="header-section-number">1.10</span> Increasing and decreasing functions</a></li>
+<li><a class="nav-link" href="#continuous-functions---the-basic-idea"><span class="header-section-number">1.11</span> Continuous functions - the basic idea</a></li>
+<li><a class="nav-link" href="#limits"><span class="header-section-number">1.12</span> Limits</a></li>
+<li><a class="nav-link" href="#applications-of-the-limit-continuity"><span class="header-section-number">1.13</span> Applications of the limit: continuity</a></li>
+<li>
+<a class="nav-link" href="#working-with-limits"><span class="header-section-number">1.14</span> Working with limits</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#theorem-1"><span class="header-section-number">1.14.1</span> Theorem 1</a></li>
+<li><a class="nav-link" href="#theorem-2"><span class="header-section-number">1.14.2</span> Theorem 2</a></li>
+<li><a class="nav-link" href="#theorem-3"><span class="header-section-number">1.14.3</span> Theorem 3</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#when-limits-dont-exist"><span class="header-section-number">1.15</span> When limits don’t exist</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

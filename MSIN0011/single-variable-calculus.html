@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 2 Single Variable Calculus | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="2.1 Applications of the limit: differentiation The derivative of a function \(f\colon \mathbb{R} \to \mathbb{R}\) at a point \(a\) is the gradient of the tangent to the function at the point \((a,...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 2 Single Variable Calculus | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 Applications of the limit: differentiation The derivative of a function \(f\colon \mathbb{R} \to \mathbb{R}\) at a point \(a\) is the gradient of the tangent to the function at the point \((a,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 2 Single Variable Calculus | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="2.1 Applications of the limit: differentiation The derivative of a function \(f\colon \mathbb{R} \to \mathbb{R}\) at a point \(a\) is the gradient of the tangent to the function at the point \((a,...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="active" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="single-variable-calculus" class="section level1" number="2">
+<h1>
+<span class="header-section-number">Topic 2</span> Single Variable Calculus<a class="anchor" aria-label="anchor" href="#single-variable-calculus"><i class="fas fa-link"></i></a>
+</h1>
+<div id="applications-of-the-limit-differentiation" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Applications of the limit: differentiation<a class="anchor" aria-label="anchor" href="#applications-of-the-limit-differentiation"><i class="fas fa-link"></i></a>
+</h2>
+<p>The derivative of a function <span class="math inline">\(f\colon \mathbb{R} \to \mathbb{R}\)</span> at a point <span class="math inline">\(a\)</span> is the <strong>gradient</strong> of the <strong>tangent</strong> to the function at the point <span class="math inline">\((a, f(a))\)</span> in its graph (Figure <span class="math inline">\(\ref{tangent}\)</span>).</p>
+<div class="figure">
+<img src="img/DerivativeAsATangent.png" alt=""><p class="caption">The derivative as the gradient of a tangent</p>
+</div>
+<p>The technique to calculate this is to calculate the gradient of successive approximations of the tangent as in Figure <span class="math inline">\(\ref{tangent approximations}\)</span>.</p>
+<p>Take a value <span class="math inline">\(h \neq 0\)</span> and calculate the gradient of the line joining <span class="math inline">\((a, f(a))\)</span> to <span class="math inline">\((a + h, f(a + h))\)</span>.</p>
+<p>We can calculate this gradient using the usual formula:
+<span class="math display">\[
+\begin{aligned}
+    \text{gradient} &amp;= \frac{\text{difference in $y$ values}}{\text{difference in $x$ values}} \\
+                    &amp;= \frac{f(a + h) - f(a)}{a + h - a} \\
+                    &amp;= \frac{f(a + h) - f(a)}{h}
+\end{aligned}
+\]</span></p>
+<div class="figure">
+<img src="img/DerivativeAsALimit.png" alt=""><p class="caption">Successive approximations of the gradient</p>
+</div>
+<p>The derivative is then the following limit:
+<span class="math display">\[ \lim_{h\to 0} \frac{f(a + h) - f(a)}h \]</span>
+If we can find this limit then we call it the <strong>derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(a\)</span></strong> and write it as
+<span class="math display">\[f'(a)\quad\text{or} \quad \frac{\mathrm{d}f}{\mathrm{d}x} (a)\]</span></p>
+<p>For example suppose <span class="math inline">\(f(x) = x^2\)</span>. Then to find the the derivative when <span class="math inline">\(a = 2\)</span> we calculate:
+<span class="math display">\[
+    \begin{aligned}
+        \frac{f(2 + h) - f(2)}h &amp;= \frac{(2 + h)^2 - 4}h \\
+                                &amp;= \frac{4 + 4h + h^2 - 4}h\\
+                                &amp;= \frac{4h + h^2}h
+    \end{aligned}
+\]</span>
+The graph of this function is given in Figure <span class="math inline">\(\ref{derivative calculation example}\)</span>.</p>
+<div class="figure">
+<img src="img/SquareDerivative.png" alt=""><p class="caption">The derivative of the square function</p>
+</div>
+<p>Although this is not defined at <span class="math inline">\(h = 0\)</span>, the limit is <span class="math inline">\(4\)</span>. Hence,
+<span class="math display">\[f'(2) = 4\]</span></p>
+<p>Note: all the common rules of differentiation follow from this description of the derivative and the definition of the limit.</p>
+<p>Suppose we do the same for <span class="math inline">\(g(x) = |x|\)</span>. Let <span class="math inline">\(h \neq 0\)</span>. Then to find the derivative at <span class="math inline">\(a = 0\)</span> we calculate,</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \frac{g(0 + h) - g(0)}h &amp;= \frac{|h|}h \\
+                            &amp;=  \begin{cases}
+                                    -1, &amp; h &lt; 0;\\
+                                    1, &amp; h &gt;0.
+                                \end{cases}
+\end{aligned}
+\]</span>
+This is the example we have seen previously. The limit
+<span class="math display">\[\lim_{h\to 0} \frac{g(0 + h) - g(0)}h \]</span>
+does not exist.</p>
+<p>Therefore, <span class="math inline">\(|x|\)</span> does not have a derivative at <span class="math inline">\(0\)</span>.</p>
+<p>In fact this is self-evident if you consider the graph. There is no tangent at the point <span class="math inline">\((0,0)\)</span> in its graph, Figure <span class="math inline">\(\ref{modulus graph}\)</span>.</p>
+<div class="figure">
+<img src="img/GraphOfAbs.png" alt=""><p class="caption">The graph of <span class="math inline">\(|x|\)</span></p>
+</div>
+<div id="differentiability" class="section level3" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> Differentiability<a class="anchor" aria-label="anchor" href="#differentiability"><i class="fas fa-link"></i></a>
+</h3>
+<p>If a function <span class="math inline">\(f\)</span> has a derivative at a point <span class="math inline">\(a\)</span> then we say it is <strong>differentiable at <span class="math inline">\(a\)</span></strong>. A function that is differentiable at each point of its domain is called <strong>differentiable</strong>.</p>
+</div>
+</div>
+<div id="lhopitals-rule" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> L’Hopital’s rule<a class="anchor" aria-label="anchor" href="#lhopitals-rule"><i class="fas fa-link"></i></a>
+</h2>
+<p>If <span class="math inline">\(\lim_{x\to a} g(x) = 0\)</span> then we can’t normally calculate <span class="math inline">\(\lim_{x\to a} f(x)/g(x)\)</span>.</p>
+<p>However if we also know that <span class="math inline">\(\lim_{x\to a} f(x) = 0\)</span> then we may be able to do something.</p>
+<p>For example, if <span class="math inline">\(f(x) = 2x^2\)</span> and <span class="math inline">\(g(x) = x^2\)</span> and <span class="math inline">\(a = 0\)</span>. Then
+<span class="math display">\[
+\lim_{x\to 0} \frac{f(x)}{g(x)} = 2.
+\]</span>
+Another approach is to use the following result, which works for differentiable functions.</p>
+<div id="lhopitals-rule-1" class="section level3" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> L’Hopital’s rule<a class="anchor" aria-label="anchor" href="#lhopitals-rule-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>If</p>
+<ul>
+<li>
+<span class="math inline">\(\lim_{x\to a} f(x) = 0\)</span>,</li>
+<li>
+<span class="math inline">\(\lim_{x\to a} g(x) = 0\)</span>,</li>
+<li>
+<span class="math inline">\(f'(a)\)</span> and <span class="math inline">\(g'(a)\)</span> exist and <span class="math inline">\(g'(a) \neq 0\)</span>,</li>
+</ul>
+<p>then</p>
+<p><span class="math display">\[
+\lim_{x\to a} \frac{f(x)}{g(x)} = \frac{f'(a)}{g'(a)}
+\]</span>
+To understand why this is true notice that <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous at <span class="math inline">\(a\)</span> and so <span class="math inline">\(f(a) = g(a) = 0\)</span>. And hence</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\to a} \frac{f(x)}{g(x)} &amp;= \lim_{h\to 0} \frac{f(a + h) - f(a)}{g(a+h) - g(a)} \\
+                                &amp;= \lim_{h\to 0} \frac{f(a + h) - f(a)}h \frac{h}{g(a+h) - g(a)}\\
+                                &amp;= \frac{f'(a)}{g'(a)}
+\end{aligned}
+\]</span></p>
+<p>For example, if <span class="math inline">\(f(x) = e^x - 1\)</span> and <span class="math inline">\(g(x) = x\)</span> then both these tend to <span class="math inline">\(0\)</span> as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(0\)</span>. Hence,</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \lim_{x\to 0} \frac{e^x - 1}{x} = \frac{e^0}{1} = 1.
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="differentiable-implies-continuous" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Differentiable implies continuous<a class="anchor" aria-label="anchor" href="#differentiable-implies-continuous"><i class="fas fa-link"></i></a>
+</h2>
+<p>If a function has a derivative at a point <span class="math inline">\(a\)</span>, <span class="math inline">\(f'(a)\)</span>, then it is continuous there. To see this note that we need to show that <span class="math inline">\(\lim_{x\to a} f(x) = f(a)\)</span>, or equivalently that <span class="math inline">\(\lim_{x\to a} f(x) - f(a) = 0\)</span>. But
+<span class="math display">\[
+\begin{aligned}
+\lim_{x\to a} f(x) - f(a) &amp;= \lim_{h\to 0} f(a + h) - f(a) \\
+                          &amp;= \lim_{h\to 0} h \frac{f(a + h) - f(a)}h \\
+                          &amp;= 0 \times f'(a) = 0
+\end{aligned}
+\]</span></p>
+</div>
+<div id="higher-order-derivatives" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Higher order derivatives<a class="anchor" aria-label="anchor" href="#higher-order-derivatives"><i class="fas fa-link"></i></a>
+</h2>
+<p>The derivative of a differentiable function is itself a function with the same domain as <span class="math inline">\(f\)</span>. If it is differentiable at a point <span class="math inline">\(a\)</span> then we write this as <span class="math inline">\(f''(a)\)</span> and call it the <strong>second derivative</strong>.</p>
+<p>In general the <span class="math inline">\(n\)</span>th derivative of a function <span class="math inline">\(f\)</span> at a point <span class="math inline">\(a\)</span> is written as
+<span class="math display">\[ f^{(n)}(a).\]</span>
+For the <span class="math inline">\(n\)</span>th derivative to exists, the <span class="math inline">\(k\)</span>th derivative must exist for <span class="math inline">\(k=1,2,\ldots, n\)</span>.</p>
+</div>
+<div id="smoothness-of-functions" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Smoothness of functions<a class="anchor" aria-label="anchor" href="#smoothness-of-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the previous two sections, if <span class="math inline">\(f^{(n)}(a)\)</span> exists then <span class="math inline">\(f^{(n-1)}(a)\)</span> not only exists, it is continuous there. In general however the derivative of a function need not be continuous. The example
+<span class="math display">\[
+\begin{aligned}
+    f\colon \mathbb{R} &amp;\to \mathbb{R}\\
+        x&amp;\mapsto   \begin{cases}
+                        x^2 \sin (1/x) &amp; \text{if } x \neq 0\\
+                        0 &amp; \text{if } x = 0,
+                    \end{cases}
+\end{aligned}
+\]</span>
+has derivative <span class="math inline">\(f'(0) = 0\)</span>. However, for other values of <span class="math inline">\(x\)</span>,
+<span class="math display">\[
+f'(x) = 2x \sin(1/x) - \cos(1/x)
+\]</span>
+which doesn’t have a limit at <span class="math inline">\(0\)</span>.</p>
+<p>However for many results to be true we often need the derivative to be continuous. This leads to the following classification of <strong>smoothness</strong>.</p>
+<p>Suppose <span class="math inline">\(X\)</span> is an interval (or more generally any subset of <span class="math inline">\(\mathbb{R}\)</span>).</p>
+<ul>
+<li>
+<span class="math inline">\(C(X)\)</span> is the set of all <strong>continuous functions</strong> whose domain is <span class="math inline">\(X\)</span>
+</li>
+<li>
+<span class="math inline">\(C^1(X)\)</span> is the set of all <strong>continuously differentiable functions</strong> whose domain is <span class="math inline">\(X\)</span>. Continuously differentiable means it has a derivative <strong>and</strong> the derivative is continuous.</li>
+<li>In general, <span class="math inline">\(C^n(X)\)</span> is the set of all functions that have <span class="math inline">\(n\)</span> continuous derivatives.</li>
+<li>The set <span class="math inline">\(C^\infty (X)\)</span> denotes the collection of functions that have derivatives of <strong>all</strong> orders. These functions are often called <strong>smooth</strong> functions.</li>
+</ul>
+<hr>
+</div>
+<div id="approximating-differentiable-functions" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Approximating differentiable functions<a class="anchor" aria-label="anchor" href="#approximating-differentiable-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>If <span class="math inline">\(f\in C^1(\mathbb{R})\)</span> the equation of a tangent to the curve <span class="math inline">\(y=f(x)\)</span> at the point <span class="math inline">\((x_0, f(x_0))\)</span> is given by</p>
+<p><span class="math display">\[
+y = f(x_0) + f'(x_0)(x-x_0)
+\]</span>
+Since the tangent approximates the graph of <span class="math inline">\(f\)</span> this gives us the following useful approximation to <span class="math inline">\(f(x)\)</span> for values of <span class="math inline">\(x\)</span> close to <span class="math inline">\(x_0\)</span></p>
+<p><span class="math display">\[
+f(x) \approx f(x_0) + f'(x_0)(x-x_0).
+\]</span>
+For example, for <span class="math inline">\(x\)</span> near <span class="math inline">\(1\)</span>,
+<span class="math display">\[
+\sqrt{x} \approx 1 +  \frac{1}2 (x-1)
+\]</span></p>
+<p>This can be generalised to functions <span class="math inline">\(f\in C^n(X)\)</span>. This is called the <strong>Taylor polynomial</strong>.</p>
+<p><span class="math display">\[
+f(x) \approx f(x_0) + f'(x_0) (x-x_0) + \cdots + \frac{f^{(n)} (x_0)}{n!} (x-x_0)^n.
+\]</span>
+For example,</p>
+<p><span class="math display">\[
+\sqrt{x} \approx 1+\frac{1}{2}(x-1)-\frac{1}{8} (x-1)^2+\frac{1}{16} (x-1)^3.
+\]</span>
+These can provide useful approximations for functions, but we will see they have much more practical use in obtaining information about functions from their derivatives.</p>
+</div>
+<div id="applications-of-the-limit-integration" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Applications of the limit: integration<a class="anchor" aria-label="anchor" href="#applications-of-the-limit-integration"><i class="fas fa-link"></i></a>
+</h2>
+<p>The integral of a function between two points <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the signed area between the graph of the function and the horizontal axis for <span class="math inline">\(x \in [a,b]\)</span>, where “signed” means areas underneath the axis count negatively to the total area, as in Figure <span class="math inline">\(\ref{an integral}\)</span>.</p>
+<div class="figure">
+<img src="img/IntegralImage.png" alt=""><p class="caption">The integral of a function</p>
+</div>
+<p>We write it as
+<span class="math display">\[ \int_a^b f(x) \mathrm{d}x\]</span></p>
+<p>Note:</p>
+<ul>
+<li>We don’t define the integral as the opposite of differentiation as you may have done in your previous eduation. There is a link between the two that seems to imply that but it is not true in general.</li>
+<li>The integral is not defined as a limit, but it <em>almost</em> is, so we will develop it in this way.</li>
+<li>The area under a curve can be defined for functions that aren’t continuous by taking different parts of the interval and calculating the areas separately.</li>
+</ul>
+<p>Defining the integral properly is important, but difficult. One way is to partition the interval <span class="math inline">\([a,b]\)</span> into a sequence of smaller strips as shown in Figure <span class="math inline">\(\ref{riemann integral partition}\)</span>.</p>
+<div class="figure">
+<img src="img/IntegralDefinition.png" alt=""><p class="caption">The definition of the integral</p>
+</div>
+<p>We then approximate these strips by rectangles. The main difficulty is ensuring that the limit, as the width of the stips tends to <span class="math inline">\(0\)</span>, is well-defined. This can be shown to be true in many cases and is called <strong>Riemann Integration</strong>, but the machinery you need to develop before you can do this is too far away from what we need to do in this module.</p>
+<p>The important thing to understand is that if we think of the integral of a function as the area between its graph and the horizontal azis, then this makes sense even for functions that are not continuous.</p>
+<p>Note: all the common rules of integration follow from this description of the integral.</p>
+<hr>
+</div>
+<div id="the-fundamental-theorem-of-calculus" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> The fundamental theorem of calculus<a class="anchor" aria-label="anchor" href="#the-fundamental-theorem-of-calculus"><i class="fas fa-link"></i></a>
+</h2>
+<p>We can bring all of these three ideas together: continuity, differentiation and integration. This highlights the link between integration and differentiation. It is called the Fundamental Theorem of Calculus.</p>
+<div id="fundamental-theorem-of-calculus" class="section level3" number="2.8.1">
+<h3>
+<span class="header-section-number">2.8.1</span> Fundamental Theorem of Calculus<a class="anchor" aria-label="anchor" href="#fundamental-theorem-of-calculus"><i class="fas fa-link"></i></a>
+</h3>
+<p>Let <span class="math inline">\(f\colon [a,b] \to\mathbb{R}\)</span>, and define
+<span class="math display">\[ G(x) = \int_a^x f(t) \mathrm{d}t\]</span>
+for <span class="math inline">\(x \in [a,b]\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(G\)</span> is continuous. Furthermore if <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x_0\in [a,b]\)</span> then <span class="math inline">\(G'(x_0)\)</span> exists and is equal to <span class="math inline">\(f(x_0)\)</span>.</li>
+<li>If there is a function <span class="math inline">\(F\)</span> such that <span class="math inline">\(F'(x) = f(x)\)</span> for all <span class="math inline">\(x\in [a,b]\)</span> then
+<span class="math display">\[
+\int_a^b f(x) \mathrm{d}x = F(b) - F(a)
+\]</span>
+</li>
+</ol>
+<p>The function <span class="math inline">\(F\)</span> in the second part is called the <strong>anti-derivative</strong> or you may have seen it as the <strong>indefinite integral</strong>.</p>
+<p>The Fundamental Theorem of Calculus says quite formally this: if <span class="math inline">\(f\)</span> is <strong>continuous</strong> then it has an antiderivative, <span class="math inline">\(F\)</span>, (i.e. <span class="math inline">\(F' = f\)</span>), and
+<span class="math display">\[\int_a^b f(x) \mathrm{d}x = F(b) - F(a).\]</span>
+However, it gives us the ability to deal with more difficult functions.</p>
+<p>For example, suppose,
+<span class="math display">\[
+f(x) =  \begin{cases}
+            -1, &amp; x &lt; 0;\\
+            1, &amp; x \ge 0.
+        \end{cases}
+\]</span>
+Then <span class="math inline">\(f\)</span> is not continuous, so it has no antiderivative. So, for example, the integral,
+<span class="math display">\[ \int_{-1}^2 f(x) \mathrm{d}x\]</span>
+cannot be evaluated using the method you would normaly use, even though calculating the area between the graph and the horizontal axis is easy, and it’s <span class="math inline">\(1\)</span>, see Figure <span class="math inline">\(\ref{basic discontinuous integrable example}\)</span></p>
+<div class="figure">
+<img src="img/NonIntegrableExample.png" alt=""><p class="caption">An example of an function without an antiderivative</p>
+</div>
+<p>However, if we define <span class="math inline">\(G(x)\)</span> as in the theorem then
+<span class="math display">\[
+    G(x) =  \begin{cases}
+                -x, &amp; x &lt;0; \\
+                x, &amp; x\ge 0.
+            \end{cases}
+\]</span>
+You might recognise this as <span class="math inline">\(|x|\)</span>. And we have already seen that this can’t be differentiated at <span class="math inline">\(x = 0\)</span>.</p>
+</div>
+</div>
+<div id="improper-integrals" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> Improper integrals<a class="anchor" aria-label="anchor" href="#improper-integrals"><i class="fas fa-link"></i></a>
+</h2>
+<p>So far we’ve seen integrals over intervals <span class="math inline">\([a,b]\)</span>. We also need to understand integrals over an <strong>unbounded</strong> interval - this means integrals where one or both of the limits are <span class="math inline">\(\pm\infty\)</span>.</p>
+<p>For example, what is
+<span class="math display">\[
+\int_1^\infty \frac{1}{x^2} \mathrm{d} x.
+\]</span></p>
+<p>These kinds of integrals are called <strong>improper integrals</strong>. We will approach this problem by approximating this improper integral by the <strong>proper integral</strong>
+<span class="math display">\[
+\int_1^y \frac{1}{x^2} \mathrm{d} x = 1 - \frac{1}y.
+\]</span>
+If we think of <span class="math inline">\(y\)</span> as being a very large number then <span class="math inline">\(1/y\)</span> is a very small number. Indeed the bigger <span class="math inline">\(y\)</span> gets, the smaller <span class="math inline">\(1/y\)</span> gets. In the end <span class="math inline">\(1/y\)</span> gets so vanishingly small we can conclude that <strong>in the limit</strong> this integral tends to <span class="math inline">\(1\)</span>.</p>
+<p>We write this as follows:</p>
+<p><span class="math display">\[
+\int_1^\infty \frac{1}{x^2} \mathrm{d} x = \lim_{y\to\infty} \int_1^y \frac{1}{x^2} \mathrm{d} x = 1.
+\]</span></p>
+<p>Of course we haven’t encountered limits at infinity before. So let’s pause and gather some information.</p>
+</div>
+<div id="limits-at-infinity" class="section level2" number="2.10">
+<h2>
+<span class="header-section-number">2.10</span> Limits at infinity<a class="anchor" aria-label="anchor" href="#limits-at-infinity"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose <span class="math inline">\(f\colon [0,\infty) \to \mathbb{R}\)</span> is a function. We say that <span class="math inline">\(f(x)\)</span> has a limit at infinity, <span class="math inline">\(L\)</span> say, written
+<span class="math display">\[
+\lim_{x\to \infty} f(x) = L,
+\]</span>
+if <span class="math inline">\(f(x)\)</span> gets closer and closer to <span class="math inline">\(L\)</span> (and only <span class="math inline">\(L\)</span>) as <span class="math inline">\(x\)</span> gets larger and larger. More formally, if <span class="math inline">\(f(x)\)</span> is as close to <span class="math inline">\(L\)</span> as we like for large values of <span class="math inline">\(x\)</span>.</p>
+<p>It is more useful to understand this by studying examples. First we have the following facts about limits.</p>
+<div id="theorem-3-1" class="section level3" number="2.10.1">
+<h3>
+<span class="header-section-number">2.10.1</span> Theorem 3<a class="anchor" aria-label="anchor" href="#theorem-3-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>If <span class="math inline">\(L = \lim_{x\to \infty} f(x)\)</span> then <span class="math inline">\(L\)</span> is unique - i.e. it is not possible for a function to tend to two or more different limits.</p>
+</div>
+<div id="theorem-4" class="section level3" number="2.10.2">
+<h3>
+<span class="header-section-number">2.10.2</span> Theorem 4<a class="anchor" aria-label="anchor" href="#theorem-4"><i class="fas fa-link"></i></a>
+</h3>
+<p>If <span class="math inline">\(L = \lim_{x\to \infty} f(x)\)</span> and <span class="math inline">\(M = \lim_{x\to \infty} g(x)\)</span> then:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\lim_{x \to \infty} f(x) + g(x) = L + M\)</span></li>
+<li><span class="math inline">\(\lim_{x \to \infty} f(x)g(x) = LM\)</span></li>
+<li>
+<span class="math inline">\(\lim_{x \to \infty} f(x)/g(x) = L/M\)</span> as long as <span class="math inline">\(M\neq 0\)</span>
+</li>
+</ol>
+</div>
+<div id="example-1-rational-functions" class="section level3" number="2.10.3">
+<h3>
+<span class="header-section-number">2.10.3</span> Example 1: rational functions<a class="anchor" aria-label="anchor" href="#example-1-rational-functions"><i class="fas fa-link"></i></a>
+</h3>
+<p>A <strong>rational function</strong> is a function of the form <span class="math inline">\(p(x) / q(x)\)</span> where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are polynomials.</p>
+<p>For example, suppose <span class="math inline">\(f(x) = 1 / x^2\)</span>. Then as we argued earlier, the value of <span class="math inline">\(1/x^2\)</span> gets smaller and smaller as <span class="math inline">\(x\)</span> gets larger and larger. So for this reason,
+<span class="math display">\[
+\lim_{x\to\infty} \frac{1}{x^2} = 0.
+\]</span>
+In general we have for any polynomial, <span class="math inline">\(p\)</span>, of order <span class="math inline">\(1\)</span> or above,
+<span class="math display">\[
+\lim_{x\to\infty} \frac{1}{p(x)} = 0.
+\]</span></p>
+<p>We can use this to find the limits of any rational function using Theorem 4 and some algebra. The following example illustrates the technique.</p>
+<p>Suppose
+<span class="math display">\[
+f(x) = \frac{2x^2 - x + 1}{3x^2 + 2x - 8}.
+\]</span>
+We argue as follows:
+<span class="math display">\[
+\begin{aligned}
+\lim_{x\to \infty} f(x) &amp;= \lim_{x\to \infty}\frac{2x^2 - x + 1}{3x^2 + 2x - 8} \\
+                        &amp;= \lim_{x\to \infty}\frac{(2x^2 - x + 1)/x^2}{(3x^2 + 2x - 8)/x^2} \\
+                        &amp;= \lim_{x\to \infty}\frac{2 - 1/x + 1/x^2}{3 + 2/x - 8/x^2} \\
+                        &amp;= \frac{2 - 0 + 0}{3 + 0 - 0} = \frac{2}3
+\end{aligned}
+\]</span>
+For another example consider
+<span class="math display">\[
+g(x) = \frac{2x^2 + 5x}{4x^3 + 2x^2 - 3}
+\]</span>
+Here we have a quadratic divided by a cubic polynomial. We divide numerator and denominator by <span class="math inline">\(x^3\)</span>, thus,
+<span class="math display">\[
+\begin{aligned}
+\lim_{x\to \infty} g(x) &amp;= \lim_{x\to \infty}\frac{(2x^2 + 5x)/x^3}{(4x^3 + 2x^2 - 3)/x^3}\\
+                        &amp;= \lim_{x\to \infty}\frac{2/x + 5/x^2}{4 + 2/x - 3/x^3}\\
+                        &amp;= \frac{0 + 0}{4 + 0 - 0} = 0.
+\end{aligned}
+\]</span></p>
+<p>As another example we consider the exponential function <span class="math inline">\(\exp x = e^x\)</span>. Quite simply, <span class="math inline">\(\exp -ax\)</span> tends to <span class="math inline">\(0\)</span> as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(\infty\)</span> for any <span class="math inline">\(a &gt; 0\)</span>. In fact it tends to <span class="math inline">\(0\)</span> so quickly that</p>
+<p><span class="math display">\[
+\lim_{x\to\infty} p(x) \exp (-x) = 0,
+\]</span>
+for <strong>any</strong> polynomial. For example,
+<span class="math display">\[
+\lim_{x\to\infty} x^4 \exp (-x) = 0.
+\]</span>
+In the seminar you will develop a library of examples that help you understand how to calculate limits at infinity, and hence improper integrals. We finish with this example.</p>
+<p>What is,
+<span class="math display">\[
+\int_0^\infty \exp(-2x) \mathrm{d}x?
+\]</span>
+Here we go back to our limit definition of this improper integral.</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \int_0^\infty \exp(-2x) \mathrm{d}x &amp;= \lim_{y\to\infty} \int_0^y \exp(-2x) \mathrm{d}x\\
+                    &amp;= \lim_{y\to\infty} \frac{1}2 \left( 1 - \exp(-2y)\right)\\
+                    &amp;= \frac{1}2.
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="applications-of-the-integral-the-mean-value" class="section level2" number="2.11">
+<h2>
+<span class="header-section-number">2.11</span> Applications of the integral: The mean value<a class="anchor" aria-label="anchor" href="#applications-of-the-integral-the-mean-value"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose <span class="math inline">\(f\colon [a,b] \to \mathbb{R}\)</span>. The <strong>mean value</strong> of <span class="math inline">\(f\)</span> over the interval <span class="math inline">\([a,b]\)</span> is given by the formula:</p>
+<p><span class="math display">\[
+\frac{1}{b-a} \int_a^b f(x)\,\mathrm{d}x.
+\]</span>
+For example suppose the interest rate for an inverstment is 2% for the first year and then steadily increases to 3.5% over the next three years, then we can model this as the following function.</p>
+<p><span class="math display">\[
+\begin{aligned}
+    r\colon [0,4] &amp;\to\mathbb{R} \\
+            t &amp;\mapsto \begin{cases}
+                            2, &amp; t\in [0,1]\\
+                            2 + \frac{1}2 (t-1) &amp; t\in (1,4]
+                       \end{cases}
+\end{aligned}
+\]</span>
+The average interest rate over the four years is
+<span class="math display">\[
+\frac{1}4 \int_0^4 r(t)\,\mathrm{d}t = \frac{41}{16} \approx 2.56
+\]</span></p>
+</div>
+<div id="extension-material-optional" class="section level2" number="2.12">
+<h2>
+<span class="header-section-number">2.12</span> Extension material (optional)<a class="anchor" aria-label="anchor" href="#extension-material-optional"><i class="fas fa-link"></i></a>
+</h2>
+<p>The function
+<span class="math display">\[
+f(x) =  \begin{cases}
+            -1, &amp; x &lt; 0;\\
+            1, &amp; x \ge 0.
+        \end{cases}
+\]</span>
+approaches <span class="math inline">\(-1\)</span> as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(0\)</span> from the left-hand side. Similarly it approaches <span class="math inline">\(1\)</span> as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(0\)</span> for the right-hand side.</p>
+<p>These two values are called the <strong>left-hand limit</strong> and the <strong>right-hand limit</strong>.</p>
+<p>We write these as follows,
+<span class="math display">\[
+\begin{aligned}
+    \lim_{x\to 0^-} f(x) &amp;= -1,\\
+    \lim_{x\to 0^+} f(x) &amp;= 1.
+\end{aligned}
+\]</span>
+This gives us a bit more flexibility.</p>
+<p>Note: the limit exists if and only if <strong>both</strong> the left-hand and right-hand limits exist <strong>and are equal</strong>.</p>
+<p>We can also now define the following. A function is said to be:</p>
+<ul>
+<li>
+<strong>Continuous from the left</strong> or simply <strong>left continuous</strong> at <span class="math inline">\(a\)</span> if, <span class="math inline">\(f(a) = \lim_{x\to a^-} f(x)\)</span>;</li>
+<li>
+<strong>Continuous from the right</strong> or <strong>right continuous</strong> at <span class="math inline">\(a\)</span> if, <span class="math inline">\(f(a) = \lim_{x\to a^+} f(x)\)</span>.</li>
+</ul>
+<p>For example consider the <strong>floor function</strong>:
+<span class="math display">\[ f(x) = \lfloor x \rfloor\]</span>
+which gives the largest integer smaller than <span class="math inline">\(x\)</span>, e.g. <span class="math inline">\(f(2.3) = 2\)</span>, <span class="math inline">\(f(-12.3) = -13\)</span>, and so on.</p>
+<p>This function is <strong>right continuous</strong> but not left continuous. Its graph is shown in Figure <span class="math inline">\(\ref{floor function}\)</span>.</p>
+<div class="figure">
+<img src="img/GraphOfFloor.png" alt=""><p class="caption">The graph of the floor function</p>
+</div>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="foundations.html"><span class="header-section-number">1</span> Foundations</a></div>
+<div class="next"><a href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#single-variable-calculus"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li>
+<a class="nav-link" href="#applications-of-the-limit-differentiation"><span class="header-section-number">2.1</span> Applications of the limit: differentiation</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#differentiability"><span class="header-section-number">2.1.1</span> Differentiability</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#lhopitals-rule"><span class="header-section-number">2.2</span> L’Hopital’s rule</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#lhopitals-rule-1"><span class="header-section-number">2.2.1</span> L’Hopital’s rule</a></li></ul>
+</li>
+<li><a class="nav-link" href="#differentiable-implies-continuous"><span class="header-section-number">2.3</span> Differentiable implies continuous</a></li>
+<li><a class="nav-link" href="#higher-order-derivatives"><span class="header-section-number">2.4</span> Higher order derivatives</a></li>
+<li><a class="nav-link" href="#smoothness-of-functions"><span class="header-section-number">2.5</span> Smoothness of functions</a></li>
+<li><a class="nav-link" href="#approximating-differentiable-functions"><span class="header-section-number">2.6</span> Approximating differentiable functions</a></li>
+<li><a class="nav-link" href="#applications-of-the-limit-integration"><span class="header-section-number">2.7</span> Applications of the limit: integration</a></li>
+<li>
+<a class="nav-link" href="#the-fundamental-theorem-of-calculus"><span class="header-section-number">2.8</span> The fundamental theorem of calculus</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#fundamental-theorem-of-calculus"><span class="header-section-number">2.8.1</span> Fundamental Theorem of Calculus</a></li></ul>
+</li>
+<li><a class="nav-link" href="#improper-integrals"><span class="header-section-number">2.9</span> Improper integrals</a></li>
+<li>
+<a class="nav-link" href="#limits-at-infinity"><span class="header-section-number">2.10</span> Limits at infinity</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#theorem-3-1"><span class="header-section-number">2.10.1</span> Theorem 3</a></li>
+<li><a class="nav-link" href="#theorem-4"><span class="header-section-number">2.10.2</span> Theorem 4</a></li>
+<li><a class="nav-link" href="#example-1-rational-functions"><span class="header-section-number">2.10.3</span> Example 1: rational functions</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#applications-of-the-integral-the-mean-value"><span class="header-section-number">2.11</span> Applications of the integral: The mean value</a></li>
+<li><a class="nav-link" href="#extension-material-optional"><span class="header-section-number">2.12</span> Extension material (optional)</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

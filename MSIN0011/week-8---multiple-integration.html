@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 8 Week 8 - Multiple Integration | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="In this final week’s work you will learn how to integrate functions \[f\colon\mathbb{R}^2 \to \mathbb{R}.\] The methods can be generalised to any number of variables, but the calculations are...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 8 Week 8 - Multiple Integration | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="In this final week’s work you will learn how to integrate functions \[f\colon\mathbb{R}^2 \to \mathbb{R}.\] The methods can be generalised to any number of variables, but the calculations are...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 8 Week 8 - Multiple Integration | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="In this final week’s work you will learn how to integrate functions \[f\colon\mathbb{R}^2 \to \mathbb{R}.\] The methods can be generalised to any number of variables, but the calculations are...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="active" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="week-8---multiple-integration" class="section level1" number="8">
+<h1>
+<span class="header-section-number">Topic 8</span> Week 8 - Multiple Integration<a class="anchor" aria-label="anchor" href="#week-8---multiple-integration"><i class="fas fa-link"></i></a>
+</h1>
+<p>In this final week’s work you will learn how to integrate functions
+<span class="math display">\[f\colon\mathbb{R}^2 \to \mathbb{R}.\]</span>
+The methods can be generalised to any number of variables, but the calculations are quite awkward. So we’ll stick to two variables.</p>
+<div id="introduction-to-integration" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Introduction to integration<a class="anchor" aria-label="anchor" href="#introduction-to-integration"><i class="fas fa-link"></i></a>
+</h2>
+<p>First let’s review some important concepts from integration. First we define the integral to be the area beneath the graph of a function <span class="math inline">\(f\)</span> between two points <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<div class="figure">
+<img src="img/IntegralImage.png" alt=""><p class="caption">The intgral</p>
+</div>
+<p>The notation for this is normally
+<span class="math display">\[\int_a^b f(x) \,\mathrm{d}x,\]</span>
+however we might also write it as
+<span class="math display">\[\int_{[a,b]} f(x) \,\mathrm{d}x\]</span>
+to make clear that it is the area under the curve for all values in the closed interval <span class="math inline">\([a,b]\)</span>. In general we can, if we wanted, replace <span class="math inline">\([a,b]\)</span> with any nice enough set <span class="math inline">\(E\)</span> and write this as
+<span class="math display">\[\int_E f(x) \,\mathrm{d}x.\]</span></p>
+<p>For functions of two variables we do the same thing. We start with a set <span class="math inline">\(E\subset \mathbb{R}^2\)</span> and define the integral to be the <strong>volume under the surface</strong>. In Figure <span class="math inline">\(\ref{volume under a surface}\)</span> we have drawn a typical example, with the set <span class="math inline">\(E\)</span> being a square on the <span class="math inline">\(x,y\)</span>-plane.</p>
+<p>We call this a <strong>double integral</strong> and write it as
+<span class="math display">\[\iint_E f(x,y)  \,\mathrm{d}x\mathrm{d}y.\]</span></p>
+<div class="figure">
+<img src="img/volumeundersurface.png" alt=""><p class="caption">The volume under a surface</p>
+</div>
+</div>
+<div id="the-integral-over-a-rectangle" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> The integral over a rectangle<a class="anchor" aria-label="anchor" href="#the-integral-over-a-rectangle"><i class="fas fa-link"></i></a>
+</h2>
+<p>To illustrate the method we start with a rectangle,
+<span class="math display">\[ E = \{ (x,y)\colon 1\le x\le 2,\; 2\le y\le 4\}.\]</span>
+This is drawn in Figure <span class="math inline">\(\ref{example rectangle integral}\)</span>.</p>
+<div class="sourceCode" id="cb3" caption="The rectangle $E$ \label{example rectangle integral}" additionalpackages="\usepackage{adjustbox}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb3-1"><a href="week-8---multiple-integration.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{10cm}{!}{</span>
+<span id="cb3-2"><a href="week-8---multiple-integration.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[scale = 2, every node/.style = {scale = 1.8}]</span>
+<span id="cb3-3"><a href="week-8---multiple-integration.html#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [ultra thin, gray] (-.5,-.5) grid (4.5,4.5);</span>
+<span id="cb3-4"><a href="week-8---multiple-integration.html#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [thick,-latex] (0,0) -- (4,0) node [below] {<span class="ss">$x$</span>};</span>
+<span id="cb3-5"><a href="week-8---multiple-integration.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [thick,-latex] (0,0) -- (0,4) node [left] {<span class="ss">$y$</span>};</span>
+<span id="cb3-6"><a href="week-8---multiple-integration.html#cb3-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-7"><a href="week-8---multiple-integration.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\foreach</span> <span class="fu">\p</span> in {0,1,2,3} {</span>
+<span id="cb3-8"><a href="week-8---multiple-integration.html#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\draw</span> [thick] (0,<span class="fu">\p</span>) --++ (-.1,0) node [left] {<span class="ss">$</span><span class="sc">\p</span><span class="ss">$</span>};</span>
+<span id="cb3-9"><a href="week-8---multiple-integration.html#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\draw</span> [thick] (<span class="fu">\p</span>,0) --++ (0,-.1) node [below] {<span class="ss">$</span><span class="sc">\p</span><span class="ss">$</span>};</span>
+<span id="cb3-10"><a href="week-8---multiple-integration.html#cb3-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-11"><a href="week-8---multiple-integration.html#cb3-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-12"><a href="week-8---multiple-integration.html#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\filldraw</span> [opacity = 0.5, fill = red, draw = black, ultra thick] (1,2) -- (2,2) -- (2,4) -- (1,4) -- cycle;</span>
+<span id="cb3-13"><a href="week-8---multiple-integration.html#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb3-14"><a href="week-8---multiple-integration.html#cb3-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>To integrate the function <span class="math inline">\(f(x,y) = x^2 y\)</span> over this rectangle we treat each variable separately, reminiscent of when we were calculating partial derivatives. So with <span class="math inline">\(E = \{ (x,y)\colon 1\le x\le 2,\; 2\le y\le 4\}.\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+    \iint_E x^2 y \,\mathrm{d}x\mathrm{d}y &amp;= \int_2^4 \int_1^2 x^2 y \,\mathrm{d}x\mathrm{d}y\\
+    &amp;= \int_2^4 \left(\int_1^2 x^2 y \,\mathrm{d}x\right) \mathrm{d}y\\
+    &amp;= \int_2^4 \left[ \frac{x^3 y}3 \right]_1^2 \,\mathrm{d}y\\
+    &amp;= \int_2^4 \frac{7y}3  \,\mathrm{d}y\\
+    &amp;= \left[ \frac{7y^2}6\right]_2^4\\
+    &amp;=\frac{84}6 = 14
+\end{aligned}
+\]</span></p>
+<p><strong>Note</strong>: when integrating over a rectangle be careful to match the limits on the single integrals with the differential <span class="math inline">\(\mathrm{d}x\)</span> or <span class="math inline">\(\mathrm{d}y\)</span>.</p>
+<p><strong>Note</strong>: For a rectangle it does not matter which variable you integrate with respect to first, the answer is the same. Again, reminiscent of the mixed second partial derivatives. This is called <strong>Fubini’s Theorem</strong> in its full glory and is so far beyond the scope of this course I’d have to spend years teaching all the incredible theory of integration before we even got to the point where you could revel in it.</p>
+</div>
+<div id="sets-between-a-curve-and-the-horizontal-axis" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> Sets between a curve and the horizontal axis<a class="anchor" aria-label="anchor" href="#sets-between-a-curve-and-the-horizontal-axis"><i class="fas fa-link"></i></a>
+</h2>
+<p>The next level of complexity for our set <span class="math inline">\(E\)</span> is when it is between two curves. In this case we have to be careful how we write the limits.</p>
+<div id="example-18" class="section level3" number="8.3.1">
+<h3>
+<span class="header-section-number">8.3.1</span> Example<a class="anchor" aria-label="anchor" href="#example-18"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose we want to find the volume beneath the surface <span class="math inline">\(z = x^2 y\)</span> over the set <span class="math inline">\(E\)</span>, drawn in Figure <span class="math inline">\(\ref{example area between axes and curve integral}\)</span>. The set <span class="math inline">\(E\)</span> is the area between the <span class="math inline">\(x\)</span>-axis and the curve <span class="math inline">\(y=-x(x-4)\)</span> between <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=4\)</span>.</p>
+<div class="sourceCode" id="cb4" caption="The area between the $x$-axis and the curve $y = -x(x-4)$\label{example area between axes and curve integral}" additionalpackages="\usepackage{adjustbox}\usepackage{pgfplots}\pgfplotsset{compat=newest}\usepgfplotslibrary{fillbetween}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb4-1"><a href="week-8---multiple-integration.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{10cm}{!}{</span>
+<span id="cb4-2"><a href="week-8---multiple-integration.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[scale = 2]</span>
+<span id="cb4-3"><a href="week-8---multiple-integration.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb4-4"><a href="week-8---multiple-integration.html#cb4-4" aria-hidden="true" tabindex="-1"></a>    axis lines = middle,</span>
+<span id="cb4-5"><a href="week-8---multiple-integration.html#cb4-5" aria-hidden="true" tabindex="-1"></a>    xlabel = {<span class="ss">$x$</span>},</span>
+<span id="cb4-6"><a href="week-8---multiple-integration.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    ylabel = {<span class="ss">$y$</span>},</span>
+<span id="cb4-7"><a href="week-8---multiple-integration.html#cb4-7" aria-hidden="true" tabindex="-1"></a>    xmin=0, xmax=4.5,</span>
+<span id="cb4-8"><a href="week-8---multiple-integration.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    ymin=0, ymax=4.5,</span>
+<span id="cb4-9"><a href="week-8---multiple-integration.html#cb4-9" aria-hidden="true" tabindex="-1"></a>    grid=both,</span>
+<span id="cb4-10"><a href="week-8---multiple-integration.html#cb4-10" aria-hidden="true" tabindex="-1"></a>    grid style={line width=.1pt, draw=gray!80}]</span>
+<span id="cb4-11"><a href="week-8---multiple-integration.html#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="week-8---multiple-integration.html#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [name path = A,</span>
+<span id="cb4-13"><a href="week-8---multiple-integration.html#cb4-13" aria-hidden="true" tabindex="-1"></a>    thick,</span>
+<span id="cb4-14"><a href="week-8---multiple-integration.html#cb4-14" aria-hidden="true" tabindex="-1"></a>    red,</span>
+<span id="cb4-15"><a href="week-8---multiple-integration.html#cb4-15" aria-hidden="true" tabindex="-1"></a>    domain = 0:4,</span>
+<span id="cb4-16"><a href="week-8---multiple-integration.html#cb4-16" aria-hidden="true" tabindex="-1"></a>    samples = 1000] {4-(x-2)^2} </span>
+<span id="cb4-17"><a href="week-8---multiple-integration.html#cb4-17" aria-hidden="true" tabindex="-1"></a>    node [near end, right, black] {<span class="ss">$y=-x(x-4)$</span>};</span>
+<span id="cb4-18"><a href="week-8---multiple-integration.html#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="week-8---multiple-integration.html#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\path</span>[name path=axis] (axis cs:0,0) -- (axis cs:1,0);</span>
+<span id="cb4-20"><a href="week-8---multiple-integration.html#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="week-8---multiple-integration.html#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [gray!50!white, opacity = 0.5] fill between [of = A and axis, soft clip={domain=0:4}];</span>
+<span id="cb4-22"><a href="week-8---multiple-integration.html#cb4-22" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb4-23"><a href="week-8---multiple-integration.html#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb4-24"><a href="week-8---multiple-integration.html#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb4-25"><a href="week-8---multiple-integration.html#cb4-25" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>To do this we need limits for the integral with respect to <span class="math inline">\(x\)</span> and limits for the integral with respect to <span class="math inline">\(y\)</span>.</p>
+<p>The set <span class="math inline">\(E\)</span> can be described as
+<span class="math display">\[ E = \{ (x,y)\colon 0\le x\le 4,\; 0\le y \le -x(x-4)\}. \]</span>
+Notice how the <span class="math inline">\(y\)</span> limits depend on <span class="math inline">\(x\)</span>. This means we will need to integrate with respect to <span class="math inline">\(y\)</span> first. Therefore,
+<span class="math display">\[
+\begin{aligned}
+    \iint_E x^2 y \,\mathrm{d}x\mathrm{d}y &amp;= \int_0^4 \int_0^{-x(x-4)}x^2 y \,\mathrm{d}y\mathrm{d}x\\
+    &amp;= \int_0^4 \left[ \frac{x^2y^2}2 \right]_0^{-x(x-4)} \mathrm{d}x\\
+    &amp;= \int_0^4 \frac{1}2 x^4(x-4)^2 \,\mathrm{d}x = \int_0^4 \frac{1}2x^6 -4x^5+8x^4 \,\mathrm{d}x\\
+    &amp;= \left[\frac{1}{14}x^7 - \frac{2}3 x^6+\frac{8}5x^5\right]_0^4\\
+    &amp;= \frac{8192}{105}\approx 78.02 \qquad\text{to 2 d.p.}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="integrating-over-areas-between-two-curves" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> Integrating over areas between two curves<a class="anchor" aria-label="anchor" href="#integrating-over-areas-between-two-curves"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose we want to find the volume of the region beneath the surface <span class="math inline">\(z=x^2y\)</span> above the set <span class="math inline">\(E\)</span> shown in Figure <span class="math inline">\(\ref{example area between two curves integral}\)</span>.</p>
+<div class="sourceCode" id="cb5" caption="The area between the curves $y = -x(x-4)$ and $y=-x(x-4)/2$\label{example area between two curves integral}" additionalpackages="\usepackage{adjustbox}\usepackage{pgfplots}\pgfplotsset{compat=newest}\usepgfplotslibrary{fillbetween}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb5-1"><a href="week-8---multiple-integration.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{10cm}{!}{</span>
+<span id="cb5-2"><a href="week-8---multiple-integration.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[scale = 2]</span>
+<span id="cb5-3"><a href="week-8---multiple-integration.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb5-4"><a href="week-8---multiple-integration.html#cb5-4" aria-hidden="true" tabindex="-1"></a>    axis lines = middle,</span>
+<span id="cb5-5"><a href="week-8---multiple-integration.html#cb5-5" aria-hidden="true" tabindex="-1"></a>    xlabel = {<span class="ss">$x$</span>},</span>
+<span id="cb5-6"><a href="week-8---multiple-integration.html#cb5-6" aria-hidden="true" tabindex="-1"></a>    ylabel = {<span class="ss">$y$</span>},</span>
+<span id="cb5-7"><a href="week-8---multiple-integration.html#cb5-7" aria-hidden="true" tabindex="-1"></a>    xmin=0, xmax=4.5,</span>
+<span id="cb5-8"><a href="week-8---multiple-integration.html#cb5-8" aria-hidden="true" tabindex="-1"></a>    ymin=0, ymax=4.5,</span>
+<span id="cb5-9"><a href="week-8---multiple-integration.html#cb5-9" aria-hidden="true" tabindex="-1"></a>    grid=both,</span>
+<span id="cb5-10"><a href="week-8---multiple-integration.html#cb5-10" aria-hidden="true" tabindex="-1"></a>    grid style={line width=.1pt, draw=gray!80}]</span>
+<span id="cb5-11"><a href="week-8---multiple-integration.html#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="week-8---multiple-integration.html#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [name path = A,</span>
+<span id="cb5-13"><a href="week-8---multiple-integration.html#cb5-13" aria-hidden="true" tabindex="-1"></a>    thick,</span>
+<span id="cb5-14"><a href="week-8---multiple-integration.html#cb5-14" aria-hidden="true" tabindex="-1"></a>    red,</span>
+<span id="cb5-15"><a href="week-8---multiple-integration.html#cb5-15" aria-hidden="true" tabindex="-1"></a>    domain = 0:4,</span>
+<span id="cb5-16"><a href="week-8---multiple-integration.html#cb5-16" aria-hidden="true" tabindex="-1"></a>    samples = 1000] {4-(x-2)^2} </span>
+<span id="cb5-17"><a href="week-8---multiple-integration.html#cb5-17" aria-hidden="true" tabindex="-1"></a>    node [near end, right, black] {<span class="ss">$y=-x(x-4)$</span>};</span>
+<span id="cb5-18"><a href="week-8---multiple-integration.html#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="week-8---multiple-integration.html#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [name path = B,</span>
+<span id="cb5-20"><a href="week-8---multiple-integration.html#cb5-20" aria-hidden="true" tabindex="-1"></a>    thick,</span>
+<span id="cb5-21"><a href="week-8---multiple-integration.html#cb5-21" aria-hidden="true" tabindex="-1"></a>    red,</span>
+<span id="cb5-22"><a href="week-8---multiple-integration.html#cb5-22" aria-hidden="true" tabindex="-1"></a>    domain = 0:4,</span>
+<span id="cb5-23"><a href="week-8---multiple-integration.html#cb5-23" aria-hidden="true" tabindex="-1"></a>    samples = 1000] {2-(x-2)^2/2} </span>
+<span id="cb5-24"><a href="week-8---multiple-integration.html#cb5-24" aria-hidden="true" tabindex="-1"></a>    node [very near end, left, black] {<span class="ss">$y=-x(x-4)/2$</span>};</span>
+<span id="cb5-25"><a href="week-8---multiple-integration.html#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="week-8---multiple-integration.html#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [gray!50!white, opacity = 0.5] fill between [of = A and B, soft clip={domain=0:4}];</span>
+<span id="cb5-27"><a href="week-8---multiple-integration.html#cb5-27" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-28"><a href="week-8---multiple-integration.html#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb5-29"><a href="week-8---multiple-integration.html#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb5-30"><a href="week-8---multiple-integration.html#cb5-30" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>This set can be described as
+<span class="math display">\[ E = \{ (x,y)\colon 0\le x\le 4, \; -x(x-4)/2 \le y \le -x(x-4)\}.\]</span>
+As before we must integrate with respect to <span class="math inline">\(y\)</span> first since its limits involve the variable <span class="math inline">\(x\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \iint_E x^2 y \,\mathrm{d}x\mathrm{d}y &amp;= \int_0^4\int_{-x(x-4)/2}^{-x(x-4)} x^2 y \,\mathrm{d}y\mathrm{d}x \\
+    &amp;= \int_0^4 \left[ \frac{x^2y^2}2 \right]_{-x(x-4)/2}^{-x(x-4)}\mathrm{d}x\\
+    &amp;= \int_0^4 \frac{3}8 x^4(x-4)^2 \,\mathrm{d}x = \int_0^4 \frac{3 x^6}{8}-3 x^5+6 x^4 \,\mathrm{d}x\\
+    &amp;= \left[ \frac{3}{56}x^7 - \frac{1}2 x^6 +\frac{6}5 x^5\right]_0^4 \\
+    &amp;= \frac{2048}{35} \approx 58.51 \qquad\text{to 2 d.p.}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="integrals-over-unbounded-sets" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> Integrals over unbounded sets<a class="anchor" aria-label="anchor" href="#integrals-over-unbounded-sets"><i class="fas fa-link"></i></a>
+</h2>
+<p>It is possible for the set <span class="math inline">\(E\)</span> over which we are integrating to be <strong>unbounded</strong>. For example we might have
+<span class="math display">\[
+E = \{ (x,y) \colon 0\le x&lt;\infty, \; -1 \le y \le 1 \}
+\]</span>
+The work we did dealing with <strong>improper integrals</strong> in Week 2 can be used here.</p>
+<div id="example-19" class="section level3" number="8.5.1">
+<h3>
+<span class="header-section-number">8.5.1</span> Example<a class="anchor" aria-label="anchor" href="#example-19"><i class="fas fa-link"></i></a>
+</h3>
+<p>With <span class="math inline">\(E\)</span> above calculate
+<span class="math display">\[\iint_E e^{-(x+y)} \,\mathrm{d}x\mathrm{d}y\]</span>
+Here we follow the same approach as above,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\iint_E e^{-(x+y)} \,\mathrm{d}x\mathrm{d}y &amp;= \int_{-1}^1 \int_0^\infty e^{-(x+y)} \,\mathrm{d}x\mathrm{d}y\\
+&amp;= \int_{-1}^1 \lim_{z\to\infty}\left[ -e^{-(x+y)}\right]_0^z \,\mathrm{d}y\\
+&amp;= \int_{-1}^1 \lim_{z\to\infty} \left(e^{-y} -e^{-(z+y)}\right) \,\mathrm{d}y\\
+&amp;= \int_{-1}^1 e^{-y}\lim_{z\to\infty} \left(1 -e^{-z}\right) \,\mathrm{d}y\\
+&amp;= \int_{-1}^1 e^{-y}\times 1 \,\mathrm{d}y= \int_{-1}^1 e^{-y} \,\mathrm{d}y\\
+&amp;= \left[ - e^{-y}\right]_{-1}^1\\
+&amp;= e-\frac{1}e.
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="changing-variables-from-cartesian-to-polar-coordinates" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> Changing variables from cartesian to polar coordinates<a class="anchor" aria-label="anchor" href="#changing-variables-from-cartesian-to-polar-coordinates"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose now that <span class="math inline">\(E\)</span> is given in Figure <span class="math inline">\(\ref{example quarter circle integral}\)</span>. This is a region between two quarter circles of radius <span class="math inline">\(1\)</span> and <span class="math inline">\(3\)</span>.</p>
+<div class="sourceCode" id="cb6" caption="A quarter circle region\label{example quarter circle integral}" additionalpackages="\usepackage{adjustbox}\usepackage{pgfplots}\pgfplotsset{compat=newest}\usepgfplotslibrary{fillbetween}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb6-1"><a href="week-8---multiple-integration.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{10cm}{!}{</span>
+<span id="cb6-2"><a href="week-8---multiple-integration.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[scale = 2]</span>
+<span id="cb6-3"><a href="week-8---multiple-integration.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb6-4"><a href="week-8---multiple-integration.html#cb6-4" aria-hidden="true" tabindex="-1"></a>    width = 7cm,</span>
+<span id="cb6-5"><a href="week-8---multiple-integration.html#cb6-5" aria-hidden="true" tabindex="-1"></a>    height = 7cm,</span>
+<span id="cb6-6"><a href="week-8---multiple-integration.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    axis lines = middle,</span>
+<span id="cb6-7"><a href="week-8---multiple-integration.html#cb6-7" aria-hidden="true" tabindex="-1"></a>    xlabel = {<span class="ss">$x$</span>},</span>
+<span id="cb6-8"><a href="week-8---multiple-integration.html#cb6-8" aria-hidden="true" tabindex="-1"></a>    ylabel = {<span class="ss">$y$</span>},</span>
+<span id="cb6-9"><a href="week-8---multiple-integration.html#cb6-9" aria-hidden="true" tabindex="-1"></a>    xmin=0, xmax=3.5,</span>
+<span id="cb6-10"><a href="week-8---multiple-integration.html#cb6-10" aria-hidden="true" tabindex="-1"></a>    ymin=0, ymax=3.5,</span>
+<span id="cb6-11"><a href="week-8---multiple-integration.html#cb6-11" aria-hidden="true" tabindex="-1"></a>    grid=both,</span>
+<span id="cb6-12"><a href="week-8---multiple-integration.html#cb6-12" aria-hidden="true" tabindex="-1"></a>    grid style={line width=.1pt, draw=gray!80}]</span>
+<span id="cb6-13"><a href="week-8---multiple-integration.html#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="week-8---multiple-integration.html#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span>[name path = A, data cs=polar,red,domain=0:90,samples=360,smooth] (x,3);</span>
+<span id="cb6-15"><a href="week-8---multiple-integration.html#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span>[name path = B, data cs=polar,red,domain=0:90,samples=360,smooth] (x,1);</span>
+<span id="cb6-16"><a href="week-8---multiple-integration.html#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="week-8---multiple-integration.html#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\path</span>[name path=xaxis] (axis cs:0,0) -- (axis cs:1,0);</span>
+<span id="cb6-18"><a href="week-8---multiple-integration.html#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">\path</span>[name path=yaxis] (axis cs:0,0) -- (axis cs:1,0);</span>
+<span id="cb6-19"><a href="week-8---multiple-integration.html#cb6-19" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb6-20"><a href="week-8---multiple-integration.html#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [gray!50!white, opacity = 0.5] fill between [of = A and B, soft clip={domain=0:4}];</span>
+<span id="cb6-21"><a href="week-8---multiple-integration.html#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb6-22"><a href="week-8---multiple-integration.html#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb6-23"><a href="week-8---multiple-integration.html#cb6-23" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>We could try to decribe this in our usual way, however note that if we change to <strong>polar coordinates</strong> then this can be more simply described as
+<span class="math display">\[ E = \{(r,\theta)\colon 1\le r\le 3, \; 0\le\theta \le \pi/2\}.\]</span></p>
+<p>If we now want to find the integral
+<span class="math display">\[\iint_E x^2 y \,\mathrm{d}x\mathrm{d}y\]</span>
+we must change from using <span class="math inline">\((x,y)\)</span> coordinates to <span class="math inline">\((r,\theta)\)</span>. This is called a <strong>change of variables</strong> and we will learn how to do it in this section.</p>
+<p>Recall for single variable integrals if we change from <span class="math inline">\(x\)</span> to another variable <span class="math inline">\(u\)</span> using a change of variable <span class="math inline">\(x = g(u)\)</span>, then
+<span class="math display">\[
+\int_a^b f(x) \,\mathrm{d}x = \int_{g^{-1}(a)}^{g^{-1}(b)} f(g(u)) \frac{\mathrm{d}x}{\mathrm{d}u} \mathrm{d}u.
+\]</span>
+<strong>Note</strong>: The function <span class="math inline">\(g\)</span> must have an inverse for us to be able to use this formula.</p>
+<p>The effect of changing from <span class="math inline">\(x\)</span> to <span class="math inline">\(u\)</span> in this integral introduces a <em>distortion</em> to the value of the integral. Multiplying by the derivative <span class="math inline">\(\dfrac{\mathrm{d}x}{\mathrm{d}u}\)</span> compensates for this distortion.</p>
+<p>When we change the variables in multiple integrals we also have to do the same thing. This time we must multiply by the <strong>Jacobian determinant</strong>.</p>
+<p>Suppose we change from <span class="math inline">\((x,y)\)</span>-coordinates to <span class="math inline">\((r,\theta)\)</span>-coordinates (polar coordinates). This is done using the equations</p>
+<p><span class="math display">\[
+\begin{aligned}
+    x &amp;= r\cos\theta\\
+    y &amp;= r\sin\theta
+\end{aligned}
+\]</span></p>
+<p>The Jacobian matrix is the <span class="math inline">\(2\times 2\)</span> matrix</p>
+<p><span class="math display">\[
+\frac{\partial (x,y)}{\partial (r,\theta)}
+=
+\begin{pmatrix}
+    \dfrac{\partial x}{\partial r} &amp; \dfrac{\partial x}{\partial \theta} \\[8pt]
+    \dfrac{\partial y}{\partial r} &amp; \dfrac{\partial y}{\partial \theta}
+\end{pmatrix}
+\]</span>
+Here we may calculate this as
+<span class="math display">\[
+\frac{\partial (x,y)}{\partial (r,\theta)}
+=
+\begin{pmatrix}
+    \cos\theta &amp; -r\sin\theta\\
+    \sin\theta &amp; r\cos\theta
+\end{pmatrix}
+\]</span>
+In general a matrix, thought of as a transformation from <span class="math inline">\(\mathbb{R}^2\)</span> to <span class="math inline">\(\mathbb{R}^2\)</span> maps a square of area <span class="math inline">\(1\)</span> onto a parallelogram whose area is the determinant of the matrix.</p>
+<p>This leads to the formula for changing the variables from <span class="math inline">\((x,y)\)</span>-coordinates to <span class="math inline">\((r,\theta)\)</span>-coordinates is
+<span class="math display">\[
+\iint_E f(x,y) \,\mathrm{d}x\mathrm{d}y = \iint_E f(r\cos\theta, r\sin\theta) \left|\det \frac{\partial (x,y)}{\partial (r,\theta)} \right| \,\mathrm{d}r\mathrm{d}\theta
+\]</span>
+Now
+<span class="math display">\[
+\det \frac{\partial (x,y)}{\partial (r,\theta)} = \det \begin{pmatrix}
+    \cos\theta &amp; -r\sin\theta\\
+    \sin\theta &amp; r\cos\theta
+\end{pmatrix} = r(\cos^2\theta + \sin^2\theta) = r.
+\]</span>
+Hence the following formula holds,
+<span class="math display">\[
+\iint_E f(x,y) \,\mathrm{d}x\mathrm{d}y = \iint_{E'} f(r\cos\theta, r\sin\theta) \,r\mathrm{d}r\mathrm{d}\theta
+\]</span>
+where we write <span class="math inline">\(E'\)</span> to be the set <span class="math inline">\(E\)</span> but in polar coordinates.</p>
+<p>Let us calculate the integral of <span class="math inline">\(x^2y\)</span> over the region <span class="math inline">\(E\)</span>, where
+<span class="math display">\[ E = \{(r,\theta)\colon 1\le r\le 3, \; 0\le\theta \le \pi/2\}.\]</span>
+Therefore,
+<span class="math display">\[
+\begin{aligned}
+    \iint_E x^2y \,\mathrm{d}x\mathrm{d}y &amp;= \int_0^{\pi/2}\int_1^3 (r\cos\theta)^2(r\sin\theta) \,r\,\mathrm{d}r\mathrm{d}\theta\\
+    &amp;= \int_0^{\pi/2}\int_1^3 r^4 \cos^2\theta\sin\theta \,\mathrm{d}r\mathrm{d}\theta\\
+    &amp;= \int_0^{\pi/2} \left[\frac{r^5}5 \cos^2\theta\sin\theta \right]_1^3 \mathrm{d}\theta\\
+    &amp;= \frac{242}5\int_0^{\pi/2} \cos^2\theta\sin\theta \,\mathrm{d}\theta\\
+    &amp;= \frac{242}5 \left[ -\frac{1}3 \cos^3 \theta\right]_0^{\pi/2}\\
+    &amp;= \frac{242}{15}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="changing-variables-in-general" class="section level2" number="8.7">
+<h2>
+<span class="header-section-number">8.7</span> Changing variables in general<a class="anchor" aria-label="anchor" href="#changing-variables-in-general"><i class="fas fa-link"></i></a>
+</h2>
+<p>Suppose we can write the coordinates <span class="math inline">\((x,y)\)</span> as functions of a second coordinate system, <span class="math inline">\((u,v)\)</span>, as follows.
+<span class="math display">\[ (x,y) = (f_1(u,v), f_2(u,v)).\]</span>
+Suppose also that <span class="math inline">\(E\)</span> can be described in the new coordinate system as the set <span class="math inline">\(F\)</span>. Then we have the change of variable formula:</p>
+<p><span class="math display">\[
+\iint_E f(x,y) \,\mathrm{d}x\mathrm{d}y = \iint_F f(u, v) \left|\det \frac{\partial (x,y)}{\partial (u,v)} \right| \,\mathrm{d}u\mathrm{d}v
+\]</span>
+where
+<span class="math display">\[
+\frac{\partial (x,y)}{\partial (u,v)} =
+\begin{pmatrix}
+    \dfrac{\partial f_1}{\partial u} &amp; \dfrac{\partial f_1}{\partial v} \\[8pt]
+    \dfrac{\partial f_2}{\partial u} &amp; \dfrac{\partial f_2}{\partial v}
+\end{pmatrix}
+\]</span></p>
+<p>Points to note about this:</p>
+<ul>
+<li>You must write <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> as functions of <span class="math inline">\((u,v)\)</span>
+</li>
+<li>The function that maps <span class="math inline">\((u,v)\)</span> to <span class="math inline">\((x,y)\)</span> must be invertible</li>
+</ul>
+<div id="example-20" class="section level3" number="8.7.1">
+<h3>
+<span class="header-section-number">8.7.1</span> Example<a class="anchor" aria-label="anchor" href="#example-20"><i class="fas fa-link"></i></a>
+</h3>
+<p>Calculate the integral
+<span class="math display">\[\iint_E x y^2 \,\mathrm{d}x\mathrm{d}y\]</span>
+where <span class="math inline">\(E\)</span> is the region shown in Figure <span class="math inline">\(\ref{integral example change of variables}\)</span> bounded by the straight lines
+<span class="math display">\[y = -2x + 2, \quad y = -2x + 3,\quad y = x,\quad y = x + 2.\]</span></p>
+<div class="sourceCode" id="cb7" caption="The set $E$\label{integral example change of variables}" additionalpackages="\usepackage{adjustbox}\usepackage{pgfplots}\pgfplotsset{compat=newest}\usepgfplotslibrary{fillbetween}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb7-1"><a href="week-8---multiple-integration.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{10cm}{!}{</span>
+<span id="cb7-2"><a href="week-8---multiple-integration.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb7-3"><a href="week-8---multiple-integration.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb7-4"><a href="week-8---multiple-integration.html#cb7-4" aria-hidden="true" tabindex="-1"></a>    height = 10cm,</span>
+<span id="cb7-5"><a href="week-8---multiple-integration.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    width = 10cm,</span>
+<span id="cb7-6"><a href="week-8---multiple-integration.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    axis lines = middle,</span>
+<span id="cb7-7"><a href="week-8---multiple-integration.html#cb7-7" aria-hidden="true" tabindex="-1"></a>    xlabel = {<span class="ss">$x$</span>},</span>
+<span id="cb7-8"><a href="week-8---multiple-integration.html#cb7-8" aria-hidden="true" tabindex="-1"></a>    ylabel = {<span class="ss">$y$</span>},</span>
+<span id="cb7-9"><a href="week-8---multiple-integration.html#cb7-9" aria-hidden="true" tabindex="-1"></a>    xmin=0, xmax=3,</span>
+<span id="cb7-10"><a href="week-8---multiple-integration.html#cb7-10" aria-hidden="true" tabindex="-1"></a>    ymin=0, ymax=3,</span>
+<span id="cb7-11"><a href="week-8---multiple-integration.html#cb7-11" aria-hidden="true" tabindex="-1"></a>    grid=both,</span>
+<span id="cb7-12"><a href="week-8---multiple-integration.html#cb7-12" aria-hidden="true" tabindex="-1"></a>    grid style={line width=.1pt, draw=gray!80},</span>
+<span id="cb7-13"><a href="week-8---multiple-integration.html#cb7-13" aria-hidden="true" tabindex="-1"></a>    xtick={1,2,3},</span>
+<span id="cb7-14"><a href="week-8---multiple-integration.html#cb7-14" aria-hidden="true" tabindex="-1"></a>    ytick={1,2,3}]</span>
+<span id="cb7-15"><a href="week-8---multiple-integration.html#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="week-8---multiple-integration.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [fill = blue, opacity = 0.2] coordinates</span>
+<span id="cb7-17"><a href="week-8---multiple-integration.html#cb7-17" aria-hidden="true" tabindex="-1"></a>        {(1,1) (1/3,7/3) (0,2) (2/3,2/3)};</span>
+<span id="cb7-18"><a href="week-8---multiple-integration.html#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="week-8---multiple-integration.html#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span>[name path = C, domain=0:1, samples=2] (x,x+2) node [very near end, below right, black, rectangle, fill = white] {<span class="ss">$y=x+2$</span>};</span>
+<span id="cb7-20"><a href="week-8---multiple-integration.html#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span>[name path = D, domain=0:2, samples=2] (x,x) node [very near end, right, black, rectangle, fill = white] {<span class="ss">$y=x$</span>};</span>
+<span id="cb7-21"><a href="week-8---multiple-integration.html#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span>[name path = B, domain=0:1.5, samples=2] (x,-2*x+3) node [very near end, above right, black, rectangle, fill = white] {<span class="ss">$y=-2x+3$</span>};</span>
+<span id="cb7-22"><a href="week-8---multiple-integration.html#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span>[name path = A, domain=0:1, samples=2] (x,-2*x+2) node [very near end, black, rectangle, fill = white] {<span class="ss">$y=-2x+2$</span>};</span>
+<span id="cb7-23"><a href="week-8---multiple-integration.html#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb7-24"><a href="week-8---multiple-integration.html#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb7-25"><a href="week-8---multiple-integration.html#cb7-25" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>If we look at the equations of the lines bounding the region then we can write them as
+<span class="math display">\[y + 2x = 2, \quad y + 2x = 3, \quad y-x = 0, \quad y-x = 2.\]</span>
+This suggests a useful change of variable would be
+<span class="math display">\[ u = y + 2x, \qquad v = y - x.\]</span>
+Then in the <span class="math inline">\((u,v)\)</span> coordinate system, <span class="math inline">\(E\)</span> becomes the rectangle,
+<span class="math display">\[F = \{ (u,v)\colon 2\le u\le 3, \; 0\le v\le 2\}.\]</span>
+Now, we need to write <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> as functions of <span class="math inline">\((u,v)\)</span>. Write
+<span class="math display">\[
+    \begin{aligned}
+        u &amp;= y + 2x\\
+        v &amp;= y-x
+    \end{aligned}
+\]</span>
+Subtracting the second from the first equation we get
+<span class="math display">\[u - v = 3x\]</span>
+so that <span class="math inline">\(x = (u - v)/3\)</span>. By the second equation,
+<span class="math display">\[y = v + x = v + \frac{u-v}3 = \frac{u+2v}{3}.\]</span>
+So that our change of variables is
+<span class="math display">\[ x = \frac{u-v}3, \qquad y =\frac{u+2v}{3}.\]</span>
+Next the Jacobian,
+<span class="math display">\[
+\begin{aligned}
+    \frac{\partial (x,y)}{\partial (u,v)} &amp;=
+    \begin{pmatrix}
+        \dfrac{\partial f_1}{\partial u} &amp; \dfrac{\partial f_1}{\partial v} \\[8pt]
+        \dfrac{\partial f_2}{\partial u} &amp; \dfrac{\partial f_2}{\partial v}
+    \end{pmatrix}\\
+    &amp;=  \begin{pmatrix}
+            1/3 &amp; -1/3\\1/3 &amp; 2/3
+        \end{pmatrix}
+\end{aligned}
+\]</span>
+And so its determinant is
+<span class="math display">\[\det \begin{pmatrix}
+            1/3 &amp; -1/3\\1/3 &amp; 2/3
+        \end{pmatrix}
+    = \frac{1}3.\]</span>
+Finally,
+<span class="math display">\[x y^2 = \frac{(u-v)(u+2v)^2}{27} = \frac{u^3+3 u^2 v-4 v^3}{27}\]</span>
+Hence, brining this all together,
+<span class="math display">\[
+\begin{aligned}
+\iint_E x y^2 \,\mathrm{d}x\mathrm{d}y &amp;=
+\iint_F \frac{1}{27}(u^3+3 u^2 v-4 v^3) \; \frac{1}3 \mathrm{d}u\mathrm{d}v\\
+&amp;= \frac{1}{81} \int_0^2 \int_2^3 u^3+3 u^2 v-4 v^3 \,\mathrm{d}u\mathrm{d}v\\
+&amp;= \frac{1}{81} \int_0^2 \left[ \frac{1}4u^4 + u^3v - 4v^3u\right]_2^3   \mathrm{d}v\\
+&amp;= \frac{1}{81} \int_0^2 \frac{65}4+19v - 4v^3 \,\mathrm{d}v\\
+&amp;= \frac{1}{81} \left[ \frac{65}4 v + \frac{19}2v^2 - v^4 \right]_0^2\\
+&amp;= \frac{1}{81} \left( \frac{65}2 + 38 - 16 \right)\\
+&amp;= \frac{109}{162} \approx 0.673 \qquad\text{to 3 s.f.}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="example-21" class="section level3" number="8.7.2">
+<h3>
+<span class="header-section-number">8.7.2</span> Example<a class="anchor" aria-label="anchor" href="#example-21"><i class="fas fa-link"></i></a>
+</h3>
+<p>Define <span class="math inline">\(E\)</span> to be the region bounded by the curves
+<span class="math display">\[ y = x^2, \quad y = 2x^2, \quad y = 4 - x^2, \quad y=6-x^2.\]</span>
+Calculate
+<span class="math display">\[
+\iint_E \frac{y}x \,\mathrm{d}x\mathrm{d}y
+\]</span></p>
+<div class="sourceCode" id="cb8" caption="The set $E$\label{integral example change of variables}" additionalpackages="\usepackage{adjustbox}\usepackage{pgfplots}\pgfplotsset{compat=newest}\usepgfplotslibrary{fillbetween}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb8-1"><a href="week-8---multiple-integration.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{10cm}{!}{</span>
+<span id="cb8-2"><a href="week-8---multiple-integration.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb8-3"><a href="week-8---multiple-integration.html#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb8-4"><a href="week-8---multiple-integration.html#cb8-4" aria-hidden="true" tabindex="-1"></a>    height = 10cm,</span>
+<span id="cb8-5"><a href="week-8---multiple-integration.html#cb8-5" aria-hidden="true" tabindex="-1"></a>    width = 10cm,</span>
+<span id="cb8-6"><a href="week-8---multiple-integration.html#cb8-6" aria-hidden="true" tabindex="-1"></a>    axis lines = middle,</span>
+<span id="cb8-7"><a href="week-8---multiple-integration.html#cb8-7" aria-hidden="true" tabindex="-1"></a>    xlabel = {<span class="ss">$x$</span>},</span>
+<span id="cb8-8"><a href="week-8---multiple-integration.html#cb8-8" aria-hidden="true" tabindex="-1"></a>    ylabel = {<span class="ss">$y$</span>},</span>
+<span id="cb8-9"><a href="week-8---multiple-integration.html#cb8-9" aria-hidden="true" tabindex="-1"></a>    xmin=0, xmax=2.25,</span>
+<span id="cb8-10"><a href="week-8---multiple-integration.html#cb8-10" aria-hidden="true" tabindex="-1"></a>    ymin=0, ymax=8.25,</span>
+<span id="cb8-11"><a href="week-8---multiple-integration.html#cb8-11" aria-hidden="true" tabindex="-1"></a>    grid=both,</span>
+<span id="cb8-12"><a href="week-8---multiple-integration.html#cb8-12" aria-hidden="true" tabindex="-1"></a>    grid style={line width=.1pt, draw=gray!80},</span>
+<span id="cb8-13"><a href="week-8---multiple-integration.html#cb8-13" aria-hidden="true" tabindex="-1"></a>    xtick={1,2},</span>
+<span id="cb8-14"><a href="week-8---multiple-integration.html#cb8-14" aria-hidden="true" tabindex="-1"></a>    ytick={1,2,3,4,5,6,7,8}]</span>
+<span id="cb8-15"><a href="week-8---multiple-integration.html#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="week-8---multiple-integration.html#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [name path = A, domain = 0:2] (x, x*x);</span>
+<span id="cb8-17"><a href="week-8---multiple-integration.html#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [name path = B, domain = 0:2] (x, 2*x*x);</span>
+<span id="cb8-18"><a href="week-8---multiple-integration.html#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="week-8---multiple-integration.html#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [name path = C, domain = 0:2] (x, 4 - x*x);</span>
+<span id="cb8-20"><a href="week-8---multiple-integration.html#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">\addplot</span> [name path = D, domain = 0:2] (x, 6 - x*x);</span>
+<span id="cb8-21"><a href="week-8---multiple-integration.html#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="week-8---multiple-integration.html#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb8-23"><a href="week-8---multiple-integration.html#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb8-24"><a href="week-8---multiple-integration.html#cb8-24" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>We may write the bounding curves as
+<span class="math display">\[\frac{y}{x^2} = 1, \quad \frac{y}{x^2}=2, \quad y + x^2 = 4, \quad y + x^2=6.\]</span>
+This suggests the change of variables,
+<span class="math display">\[ u = \frac{y}{x^2}, \qquad v = y + x^2.\]</span>
+Then in the <span class="math inline">\((u,v)\)</span> coordinate system <span class="math inline">\(E\)</span> becomes,
+<span class="math display">\[F = \{ (u,v)\colon 1\le u\le 2, \; 4\le v\le 6\}.\]</span>
+Now write <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> as functions of <span class="math inline">\((u,v)\)</span>.</p>
+<p>First we have that <span class="math inline">\(x^2 = y/u\)</span> so that
+<span class="math display">\[v = y + \frac{y}u = y\left(1 + \frac{1}u\right)\]</span>
+Hence
+<span class="math display">\[ y = \frac{uv}{1+u} \]</span>
+Therefore
+<span class="math display">\[ x^2 = \frac{y}u = \frac{v}{1+u}\]</span>
+and we have
+<span class="math display">\[ x = \left(\frac{v}{1+u}\right)^{1/2}.\]</span>
+Now
+<span class="math display">\[\frac{\partial x}{\partial u} = -\frac{v^{1/2}}{2(u+1)^{3/2}},\qquad \frac{\partial x}{\partial v} = \frac{1}{2\sqrt{v(1+u)}}\]</span>
+and</p>
+<p><span class="math display">\[\frac{\partial y}{\partial u} = \frac{v}{(u+1)^2}, \qquad \frac{\partial y}{\partial v} = \frac{u}{u+1}\]</span></p>
+<p>So the determinant of the Jacobian matrix is
+<span class="math display">\[ -\frac{v^{1/2}}{2(u+1)^{3/2}} \frac{u}{u+1} -\frac{v}{(u+1)^2} \frac{1}{2\sqrt{v(1+u)}} = -\frac{\sqrt{v}}{2(u+1)^{3/2}}\]</span>
+Now
+<span class="math display">\[
+\begin{aligned}
+\frac{y}x &amp;= \frac{uv}{1+u}\big/\left(\frac{v}{1+u}\right)^{1/2} \\
+    &amp;= u\sqrt{v(1+u)}
+\end{aligned}
+\]</span>
+Putting all this together
+<span class="math display">\[
+\begin{aligned}
+    \iint_E \frac{y}x \,\mathrm{d}x\mathrm{d}y &amp;= \iint_F u\sqrt{v(1+u)} \, \left| -\frac{\sqrt{v}}{2(u+1)^{3/2}} \right|\,\mathrm{d}u\mathrm{d}v\\
+    &amp;= \int_4^6 \int_1^2 \frac{u v}{1+u} \,\mathrm{d}u\mathrm{d}v\\
+    &amp;= \int_4^6 \int_1^2 \frac{v(1+u) - v }{1+u}\,\mathrm{d}u\mathrm{d}v\\
+    &amp;= \int_4^6 \int_1^2 v - \frac{v}{1+u} \,\mathrm{d}u\mathrm{d}v\\
+    &amp;= \int_4^6 \left[ u v - v\log (1+u) \right]_1^2 \,\mathrm{d}v\\
+    &amp;= \int_4^6 v\left(1 - \log \frac{3}2\right) \,\mathrm{d}v\\
+    &amp;= \left(1 - \log \frac{3}2\right) \left[\frac{v^2}2\right]_4^6\\
+    &amp;= 10 \left(1 - \log \frac{3}2\right) \approx 5.95 \qquad\text{to 3 s.f.}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="extra-changing-the-order-of-integration" class="section level2" number="8.8">
+<h2>
+<span class="header-section-number">8.8</span> Extra: Changing the order of integration<a class="anchor" aria-label="anchor" href="#extra-changing-the-order-of-integration"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>(This section is not assessed)</strong> Consider the example where <span class="math inline">\(E\)</span> was the set given in Figure <span class="math inline">\(\ref{example area between axes and curve integral}\)</span>. This is the set we described as
+<span class="math display">\[ E = \{ (x,y)\colon 0\le x\le 4,\; 0\le y\le -x(x-4)\}\]</span>
+We previously integrated with respect to <span class="math inline">\(y\)</span> first.</p>
+<p>Suppose we instead want to integrate with respect to <span class="math inline">\(x\)</span> first. Then we need to change the way we have described the set. We need to now have a fixed range for <span class="math inline">\(y\)</span> and a changing range for <span class="math inline">\(x\)</span> that may depend on <span class="math inline">\(y\)</span>.</p>
+<p>To do this first we look at Figure <span class="math inline">\(\ref{example area between axes and curve integral}\)</span> and note that the range of <span class="math inline">\(y\)</span> values is between <span class="math inline">\(0\)</span> and <span class="math inline">\(4\)</span>.</p>
+<p>To find the range for <span class="math inline">\(x\)</span> we consider a fixed <span class="math inline">\(y\)</span> and think of the horizontal line that intersects the set <span class="math inline">\(E\)</span>. This intersects the curve <span class="math inline">\(y=-x(x-4)\)</span> in two places. These will be the lower and upper limits for <span class="math inline">\(x\)</span>.</p>
+<p>To calculate this we need to solve
+<span class="math display">\[ y = -x(x-4) \]</span>
+for <span class="math inline">\(x\)</span>. This is a quadratic equation which, when expanded and written in standard form, is
+<span class="math display">\[ x^2 - 4x + y = 0\]</span>
+The two solutions are
+<span class="math display">\[ x = \frac{4\pm \sqrt{16-4y}}2 = 2\pm \sqrt{4-y}.\]</span>
+Therefore we have shown that we can describe <span class="math inline">\(E\)</span> as
+<span class="math display">\[ E = \{(x,y)\colon 0\le y\le 4,\; 2 - \sqrt{4-y} \le x \le 2+\sqrt{4-x} \}.\]</span></p>
+<p>Therefore we can calculate the integral as follows.
+<span class="math display">\[
+\begin{aligned}
+    \iint_E x^2 y \,\mathrm{d}x\mathrm{d}y&amp;= \int_0^4 \int_{2-\sqrt{4-y}}^{2+\sqrt{4-y}} x^2 y \,\mathrm{d}x\mathrm{d}y \\
+    &amp;= \int_0^4 \left[\frac{x^3 y}3 \right]_{2-\sqrt{4-y}}^{2+\sqrt{4-y}} \mathrm{d}y \\
+    &amp;= \int_0^4 \frac{y}3\left((2+\sqrt{4-y})^3-(2-\sqrt{4-y})^3\right) \mathrm{d}y\\
+    &amp;= \int_0^4 \frac{2}3 y(4-y)^{1/2} (16-y) \,\mathrm{d}y \\
+\end{aligned}
+\]</span>
+If we use the substitution <span class="math inline">\(u = 4 - y\)</span> then <span class="math inline">\(\mathrm{d}y = -\mathrm{d}u\)</span>. Also when <span class="math inline">\(y=0\)</span>, <span class="math inline">\(u=4\)</span>, and when <span class="math inline">\(y=4\)</span>, <span class="math inline">\(u=0\)</span> (i.e. it swaps the limits around). Then, continuing,
+<span class="math display">\[
+\begin{aligned}
+\iint_E x^2 y \,\mathrm{d}x\mathrm{d}y&amp;= \int_0^4 \frac{2}3(4-u)u^{1/2} (12+u) \,\mathrm{d}u\\
+    &amp;= \int_0^4 32u^{1/2} - \frac{16}3 u^{3/2} - \frac{2}3 u^{5/2} \,\mathrm{d}u\\
+    &amp;= \left[ \frac{64 u^{3/2}}{3}-\frac{32 u^{5/2}}{15}-\frac{4 u^{7/2}}{21} \right]_0^4\\
+    &amp;= \frac{8192}{105}
+\end{aligned}
+\]</span>
+which is the same answer we calculated before.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#week-8---multiple-integration"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+<li><a class="nav-link" href="#introduction-to-integration"><span class="header-section-number">8.1</span> Introduction to integration</a></li>
+<li><a class="nav-link" href="#the-integral-over-a-rectangle"><span class="header-section-number">8.2</span> The integral over a rectangle</a></li>
+<li>
+<a class="nav-link" href="#sets-between-a-curve-and-the-horizontal-axis"><span class="header-section-number">8.3</span> Sets between a curve and the horizontal axis</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-18"><span class="header-section-number">8.3.1</span> Example</a></li></ul>
+</li>
+<li><a class="nav-link" href="#integrating-over-areas-between-two-curves"><span class="header-section-number">8.4</span> Integrating over areas between two curves</a></li>
+<li>
+<a class="nav-link" href="#integrals-over-unbounded-sets"><span class="header-section-number">8.5</span> Integrals over unbounded sets</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-19"><span class="header-section-number">8.5.1</span> Example</a></li></ul>
+</li>
+<li><a class="nav-link" href="#changing-variables-from-cartesian-to-polar-coordinates"><span class="header-section-number">8.6</span> Changing variables from cartesian to polar coordinates</a></li>
+<li>
+<a class="nav-link" href="#changing-variables-in-general"><span class="header-section-number">8.7</span> Changing variables in general</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-20"><span class="header-section-number">8.7.1</span> Example</a></li>
+<li><a class="nav-link" href="#example-21"><span class="header-section-number">8.7.2</span> Example</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#extra-changing-the-order-of-integration"><span class="header-section-number">8.8</span> Extra: Changing the order of integration</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

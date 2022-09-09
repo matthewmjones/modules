@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 3 Multi-variable calculus | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="3.1 Multivariate functions and graphs In most real-life applications of calculus to business modelling we need to introduce more than one variable to decribe different quantities. In Data Science...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 3 Multi-variable calculus | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="3.1 Multivariate functions and graphs In most real-life applications of calculus to business modelling we need to introduce more than one variable to decribe different quantities. In Data Science...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 3 Multi-variable calculus | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="3.1 Multivariate functions and graphs In most real-life applications of calculus to business modelling we need to introduce more than one variable to decribe different quantities. In Data Science...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="active" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="multi-variable-calculus" class="section level1" number="3">
+<h1>
+<span class="header-section-number">Topic 3</span> Multi-variable calculus<a class="anchor" aria-label="anchor" href="#multi-variable-calculus"><i class="fas fa-link"></i></a>
+</h1>
+<div id="multivariate-functions-and-graphs" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Multivariate functions and graphs<a class="anchor" aria-label="anchor" href="#multivariate-functions-and-graphs"><i class="fas fa-link"></i></a>
+</h2>
+<p>In most real-life applications of calculus to business modelling we need to introduce more than one variable to decribe different quantities. In Data Science we often have hundreds or even thousands of variables that describe some quantity. This means we must generalise the tecnhniques of calculus to these situations.</p>
+<p>We have previously introduced <span class="math inline">\(\mathbb{R}^n\)</span> as the set of <span class="math inline">\(n\)</span>-tuples of real numbers. We will also frequently find that it is useful to represent <span class="math inline">\(\mathbb{R}^n\)</span> as the set of <span class="math inline">\(n\times 1\)</span> <strong>column vectors</strong>.</p>
+<p><span class="math display">\[\vec{x} = \begin{pmatrix}
+                x_1 \\ x_2 \\ \vdots \\ x_n
+             \end{pmatrix}\]</span>
+The functions we will study are of the form
+<span class="math display">\[
+f\colon \mathbb{R}^n \to \mathbb{R}.
+\]</span>
+For example we might define
+<span class="math display">\[
+f(\vec{x}) = x^2 + y^2 + z^2
+\]</span>
+where <span class="math inline">\(\vec{x} = \begin{pmatrix}x\\y\\z\end{pmatrix}\)</span>.</p>
+<p>We will also often abbreviate this to something like this:</p>
+<p><span class="math display">\[f(x,y,z) = x^2 + y^2 + z^2\]</span></p>
+<p>although it is <strong>important</strong> to always remember we are talking about vectors here.</p>
+</div>
+<div id="visualising-graphs-and-tangents" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Visualising graphs and tangents<a class="anchor" aria-label="anchor" href="#visualising-graphs-and-tangents"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before we develop calculus more generally we will start by taking a visual approach. And to do this we will start by only considering functions <span class="math inline">\(f\colon \mathbb{R}^2\to \mathbb{R}\)</span>.</p>
+<p>First, we need to generalise the notion of the derivative for <span class="math inline">\(f\)</span>. We learned that the geometric interpretation of the derivative is the <strong>gradient</strong> of the tangent line to the graph of a function. Now, the graph of a function <span class="math inline">\(f\colon \mathbb{R}^2\to \mathbb{R}\)</span> is a subset of <span class="math inline">\(\mathbb{R}^2 \times \mathbb{R} = \mathbb{R}^3\)</span>.</p>
+<p>We can plot the points <span class="math inline">\(z = f(x,y)\)</span> on a 3 dimensional plot - Mathematica does this quite nicely and allows you to move the graph around.</p>
+<p>For example the graph of <span class="math inline">\(f(x,y) = \sin (x + y^2)\)</span> is shown in Figure <span class="math inline">\(\ref{basic 3d example graph}\)</span>.</p>
+<div class="figure">
+<img src="img/SurfaceExample.png" alt=""><p class="caption">The graph of <span class="math inline">\(z = \sin (x + y^2)\)</span></p>
+</div>
+<p>Take a point on this surface. There is no single line that is tangent to the surface at our point. Instead of a tangent line however we have a <strong>tangent plane</strong>.</p>
+<p>In the diagram in Figure <span class="math inline">\(\ref{tangent plane example}\)</span> the tangent plane to the surface <span class="math inline">\(z = 10- (x^2 + y^2)\)</span> is drawn at the point <span class="math inline">\((1,2,5)\)</span>.</p>
+<div class="figure">
+<img src="img/TangentPlaneExample.png" alt=""><p class="caption">An example of a tangent plane</p>
+</div>
+<p>A plane is a <strong>2 dimensional object</strong>. This means we need <strong>two linearly independent</strong> vectors to describe it.</p>
+<p>For example, suppose we want to find the tangent plane to <span class="math inline">\(z = 10-(x^2 + y^2)\)</span> at the point <span class="math inline">\((1,2,5)\)</span> as shown in Figure <span class="math inline">\(\ref{tangent plane example}\)</span>.</p>
+<p>Suppose this plane has equation</p>
+<p><span class="math display">\[z = ax + by + c\]</span></p>
+<p>We only need to know <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> here since the plane passes through <span class="math inline">\((1,2,5)\)</span>.</p>
+<p>The value of <span class="math inline">\(a\)</span> represents the gradient of the plane <strong>in the direction of the <span class="math inline">\(x\)</span>-axis</strong>. This means if we move from <span class="math inline">\(x=1\)</span> to <span class="math inline">\(x=2\)</span> (while keeping <span class="math inline">\(y\)</span> constant) then we would expect <span class="math inline">\(z\)</span> to change by the amount <span class="math inline">\(a\)</span>. This is called the <strong>partial derivative with respect to <span class="math inline">\(x\)</span></strong>.</p>
+<p>Similarly the value of <span class="math inline">\(b\)</span> represents the change in the value of <span class="math inline">\(z\)</span> if we move from the point <span class="math inline">\((1,2,5)\)</span> in the direction of the <span class="math inline">\(y\)</span>-axis. This is called the <strong>partial derivative with respect to <span class="math inline">\(y\)</span></strong>.</p>
+</div>
+<div id="partial-derivatives" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Partial derivatives<a class="anchor" aria-label="anchor" href="#partial-derivatives"><i class="fas fa-link"></i></a>
+</h2>
+<p>The partial derivatives of a function <span class="math inline">\(f\colon \mathbb{R}^2 \to \mathbb{R}\)</span> are given by the following limits.</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \frac{\partial f}{\partial x} (a,b) &amp;= \lim_{h\to 0} \frac{f(a+h , b) - f(a,b)}h\\
+    \frac{\partial f}{\partial y} (a,b) &amp;= \lim_{h\to 0} \frac{f(a , b+h) - f(a,b)}h\\
+\end{aligned}
+\]</span>
+These tell us that when calculating, for example, the partial derivative with resepct to <span class="math inline">\(x\)</span> the value of the <span class="math inline">\(y\)</span>-variable is treated as if it were a constant. Note we use a new symbol, <span class="math inline">\(\partial\)</span>, when writing partial derivatives.</p>
+<p>Consider the example of the function we saw previously.
+<span class="math display">\[
+    \begin{aligned}
+        f\colon \mathbb{R}^2 &amp;\to \mathbb{R}\\
+            (x,y)&amp; \mapsto \sin (x + y^2)
+    \end{aligned}
+\]</span></p>
+<p>The <strong>partial derivative</strong> of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(x\)</span> can be calculated in practice by treating all expressions involving <span class="math inline">\(y\)</span> as if they are constant:</p>
+<p><span class="math display">\[
+\frac{\partial f}{\partial x} = \cos (x + y^2).
+\]</span></p>
+<p>Similarly, the partial derivative of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(y\)</span> is the derivative we obtain by treating expressions involving <span class="math inline">\(x\)</span> as if they are constant.
+<span class="math display">\[
+\frac{\partial f}{\partial y} = 2y\cos (x + y^2).
+\]</span></p>
+<p>The partial derivatives are functions from <span class="math inline">\(\mathbb{R}^2\)</span> to <span class="math inline">\(\mathbb{R}\)</span>, the same as the original funciton <span class="math inline">\(f\)</span>.</p>
+<p>As a second example suppose <span class="math inline">\(g(x,y) = 3x^2 y\)</span>. Then
+<span class="math display">\[
+\begin{aligned}
+    \dfrac{\partial g}{\partial x} &amp;= 6x y,\\[12pt]
+    \dfrac{\partial g}{\partial y} &amp;= 3x^2.
+\end{aligned}
+\]</span></p>
+</div>
+<div id="the-equation-of-the-tangent-plane" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> The equation of the tangent plane<a class="anchor" aria-label="anchor" href="#the-equation-of-the-tangent-plane"><i class="fas fa-link"></i></a>
+</h2>
+<p>In single-variable calculus if <span class="math inline">\(f\colon\mathbb{R}\to\mathbb{R}\)</span> is differentiable at <span class="math inline">\(x=x_0\)</span> then the equation of the tangent line at <span class="math inline">\((x_0, f(x_0))\)</span> is</p>
+<p><span class="math display">\[y = f(x_0) + f'(x_0) (x-x_0).\]</span></p>
+<p>There is a similar formula for the derivative of a multivariate function. Suppose <span class="math inline">\(f\colon \mathbb{R}^2 \to \mathbb{R}\)</span> is differentiable at <span class="math inline">\((x,y) = (x_0,y_0)\)</span>. Then the equation of the tangent plane at <span class="math inline">\((x_0,y_0, f(x_0,y_0))\)</span> is
+<span class="math display">\[z = f(x_0,y_0) + (x-x_0) \dfrac{\partial f}{\partial x}(x_0,y_0) + (y-y_0) \dfrac{\partial f}{\partial y}(x_0,y_0).\]</span></p>
+<p>For example, the tangent plane to <span class="math inline">\(z = 10-(x^2 + y^2)\)</span> at the point <span class="math inline">\((1,2,5)\)</span> as shown in Figure <span class="math inline">\(\ref{tangent plane example}\)</span> is given by
+<span class="math display">\[ z = 5 - 2 (x - 1) -4 (y-2).\]</span></p>
+</div>
+<div id="higher-order-derivatives-1" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> Higher order derivatives<a class="anchor" aria-label="anchor" href="#higher-order-derivatives-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>As with single-variable calculus we can continue differentiating our partial derivatives leading to higher order derivatives. If <span class="math inline">\(g(x,y) = 3x^2 y\)</span> then we saw previously that
+<span class="math display">\[
+\frac{\partial g}{\partial x} = 6xy.
+\]</span>
+Differentiating with respect to <span class="math inline">\(x\)</span> again we get</p>
+<p><span class="math display">\[
+\frac{\partial^2 g}{\partial x^2} = 6y.
+\]</span></p>
+<p>If instead of differentiating with respect to <span class="math inline">\(x\)</span>, we differentiated with respect to <span class="math inline">\(y\)</span> we get</p>
+<p><span class="math display">\[
+\frac{\partial^2 g}{\partial y \partial x} = \frac{\partial}{\partial y} \left( \frac{\partial g}{\partial x}\right)= 6x.
+\]</span>
+Notice that when the variables differ the order of the variables goes from right to left.</p>
+<p>Similarly since
+<span class="math display">\[
+\dfrac{\partial g}{\partial y} = 3x^2
+\]</span>
+we can calculate the higher order derivatives
+<span class="math display">\[
+\begin{aligned}
+\frac{\partial^2 g}{\partial y^2} &amp;= 0 \\
+\frac{\partial^2 g}{\partial x \partial y} &amp;= 6x
+\end{aligned}
+\]</span></p>
+<p>Notince that in this example
+<span class="math display">\[
+\frac{\partial^2 g}{\partial x \partial y} = \frac{\partial^2 g}{\partial y \partial x}.
+\]</span>
+This isn’t a coincidence. It is always true when the function <span class="math inline">\(g\)</span> is <strong>continuously differentiable</strong>.</p>
+</div>
+<div id="smoothness-of-multivariate-functions" class="section level2" number="3.6">
+<h2>
+<span class="header-section-number">3.6</span> Smoothness of multivariate functions<a class="anchor" aria-label="anchor" href="#smoothness-of-multivariate-functions"><i class="fas fa-link"></i></a>
+</h2>
+<p>If <span class="math inline">\(X\)</span> is a subset of <span class="math inline">\(\mathbb{R}^n\)</span> then we can generalise the smoothness classes you learned about in Week 2 as follows.</p>
+<ul>
+<li>
+<span class="math inline">\(C(X)\)</span> is the set of continuous function, <span class="math inline">\(f\colon X\to \mathbb{R}\)</span>
+</li>
+<li>
+<span class="math inline">\(C^1(X)\)</span> is the set of functions for which <strong>all</strong> partial derivatives exist and are continuous</li>
+<li>
+<span class="math inline">\(C^n(X)\)</span> is the set of functions for which <strong>all</strong> partial derivatives of order <span class="math inline">\(n\)</span> exist and are continuous</li>
+<li>
+<span class="math inline">\(C^\infty(X)\)</span> is the set of fucntions for which <strong>all</strong> partial derivatives of all orders exist.</li>
+</ul>
+</div>
+<div id="the-derivative" class="section level2" number="3.7">
+<h2>
+<span class="header-section-number">3.7</span> The derivative<a class="anchor" aria-label="anchor" href="#the-derivative"><i class="fas fa-link"></i></a>
+</h2>
+<p>The derivative of a function <span class="math inline">\(f\colon\mathbb{R}^2 \to \mathbb{R}\)</span> is the function
+<span class="math display">\[
+\begin{pmatrix} x \\ y \end{pmatrix} \mapsto \begin{pmatrix} \dfrac{\partial f}{\partial x} &amp; \dfrac{\partial f}{\partial y} \end{pmatrix}.
+\]</span>
+For example, if <span class="math inline">\(g(x,y) = 3x^2 y\)</span> then the derivative is
+<span class="math display">\[ \begin{pmatrix} 6xy &amp; 3x^2 \end{pmatrix}.\]</span></p>
+<p>It is written using the usual <span class="math inline">\(f'\)</span> symbol:
+<span class="math display">\[
+g' (x,y) = \begin{pmatrix} 6xy &amp; 3x^2 \end{pmatrix}.
+\]</span></p>
+<p>For example the derivative of <span class="math inline">\(g\)</span> at <span class="math inline">\((2,3)\)</span> is</p>
+<p><span class="math display">\[
+g'(2,3) = \begin{pmatrix} 36 &amp; 12 \end{pmatrix}.
+\]</span>
+Notice that we have switched to a row vector here rather than column vectors.</p>
+<p>We have similar rules for differentiation that we do in single-variable calculus. For example if <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are real numbers then</p>
+<p><span class="math display">\[
+(a f + bg)' = a f' + b g'
+\]</span>
+We also have the <strong>product rule</strong></p>
+<p><span class="math display">\[
+(f g)' = f g' + g f'
+\]</span></p>
+</div>
+<div id="the-equation-of-the-tangent-plane-1" class="section level2" number="3.8">
+<h2>
+<span class="header-section-number">3.8</span> The equation of the tangent plane<a class="anchor" aria-label="anchor" href="#the-equation-of-the-tangent-plane-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>In single variable calculus the derivative allows us to find the equation of the tangent line. In a similar way, the derivative of a multivariable function allows us to find the equation of the tangent plane. The tangent plane at the point <span class="math inline">\(\vec{p}\)</span> is given by the formula,</p>
+<p><span class="math display">\[
+z = f(\vec{p}) + f'(\vec{p}) (\vec{x} - \vec{p})
+\]</span>
+where <span class="math inline">\(\vec{x} = \begin{pmatrix} x &amp; y \end{pmatrix}^T\)</span>.</p>
+<p>For example for <span class="math inline">\(g(x,y) = 3x^2 y\)</span> at <span class="math inline">\((2,3)\)</span> the equation can be calculated as follows.
+<span class="math display">\[
+\begin{aligned}
+    z &amp;= 36 + \begin{pmatrix} 36 &amp; 12 \end{pmatrix} \begin{pmatrix} x - 2 \\ y - 3 \end{pmatrix} \\
+     &amp;= 36 + 36(x-2) + 12(y-3)\\
+     &amp;= 36x + 12y -72
+\end{aligned}
+\]</span>
+Note: the matrix multiplication is only possible here because <span class="math inline">\(f'\)</span> is a row vector.</p>
+</div>
+<div id="the-gradient-of-a-differentiable-function" class="section level2" number="3.9">
+<h2>
+<span class="header-section-number">3.9</span> The gradient of a differentiable function<a class="anchor" aria-label="anchor" href="#the-gradient-of-a-differentiable-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>It is often useful to think of the derivative as a column vector rather than a row vector. We write this using the “nabla” symbol,
+<span class="math display">\[
+\nabla f = (f')^T
+\]</span>
+For example if <span class="math inline">\(g(x,y) = 3x^2 y\)</span> as above, then at <span class="math inline">\((2,3)\)</span>, <span class="math inline">\(f' = \begin{pmatrix}36 &amp; 12\end{pmatrix}\)</span>. Hence,
+<span class="math display">\[
+\nabla g (2,3) = \begin{pmatrix} 36\\12\end{pmatrix}.
+\]</span>
+This now represents a vector.</p>
+</div>
+<div id="directional-derivatives" class="section level2" number="3.10">
+<h2>
+<span class="header-section-number">3.10</span> Directional derivatives<a class="anchor" aria-label="anchor" href="#directional-derivatives"><i class="fas fa-link"></i></a>
+</h2>
+<p>If we take the two basis vectors in <span class="math inline">\(\mathbb{R}^2\)</span>, <span class="math inline">\(\vec{i} = \begin{pmatrix}1 &amp; 0\end{pmatrix}^T\)</span> and <span class="math inline">\(\vec{j} = \begin{pmatrix}0 &amp; 1\end{pmatrix}^T\)</span> then we can recover our partial derivatives using the dot-product:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \dfrac{\partial f}{\partial x} &amp;= \nabla f \cdot \vec{i}\\[12pt]
+    \dfrac{\partial f}{\partial y} &amp;= \nabla f \cdot \vec{j}
+\end{aligned}
+\]</span>
+As we stated earlier these are the slopes of the lines on the tangent plane parallel to the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> axes respectively.</p>
+<p>If we now want to find the slope of the line on the tangent plane in <strong>any</strong> other particular direction, say <span class="math inline">\(\vec{u} = (a, b)^T = a \vec{i} + b \vec{j}\)</span> then we can use the linearity of the dot-product:
+<span class="math display">\[
+\begin{aligned}
+    \nabla f \cdot (a \vec{i} + b \vec{j}) &amp;= a \nabla f \cdot\vec{i} + b \nabla f \cdot\vec{j}\\
+        &amp;= a \dfrac{\partial f}{\partial x} + b\dfrac{\partial f}{\partial y}
+\end{aligned}
+\]</span>
+This can be a useful measure of the slope of the tangent plane. We usually standardise the vector <span class="math inline">\(\vec{u}\)</span> by requiring that <span class="math inline">\(| \vec{u} | = 1\)</span> (we often call this a <strong>normal vector</strong>) to avoid the size of the vector affecting the size of the slope.</p>
+<p>We thus have the following definition.</p>
+<p>Given <strong>any</strong> vector <span class="math inline">\(\vec{n}\)</span> with <span class="math inline">\(|\vec{n}| = 1\)</span> we define the <strong>directional derivative</strong> of <span class="math inline">\(f\)</span> <strong>in the direction of</strong> <span class="math inline">\(\vec{n}\)</span> as
+<span class="math display">\[
+\nabla_{\vec{n}} f = (\nabla f)\cdot \vec{n}
+\]</span></p>
+<p>For example suppose <span class="math inline">\(g(x,y) = 3x^2 y\)</span>. Then we saw that at <span class="math inline">\((2,3)\)</span></p>
+<p><span class="math display">\[
+\nabla g (2,3) = \begin{pmatrix} 36 \\ 12 \end{pmatrix}
+\]</span></p>
+<p>So if we let <span class="math inline">\(\vec{n} = \begin{pmatrix} 1/\sqrt{2} &amp; \sqrt{3}/2\end{pmatrix}^T\)</span> then the directional derivative in the direction of <span class="math inline">\(\vec{n}\)</span> is</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \nabla_{\vec{n}} g(2,3) &amp;= \begin{pmatrix} 36 \\ 12 \end{pmatrix} \cdot \begin{pmatrix} 1/\sqrt{2}  \\ \sqrt{3}/2\end{pmatrix} \\
+    &amp;= 18 \sqrt{2} + 6\sqrt{3}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="the-direction-of-greatest-descent" class="section level2" number="3.11">
+<h2>
+<span class="header-section-number">3.11</span> The direction of greatest descent<a class="anchor" aria-label="anchor" href="#the-direction-of-greatest-descent"><i class="fas fa-link"></i></a>
+</h2>
+<p>Imagine you are standing on our surface and you drop a ball - in which direction will it roll?</p>
+<p>After a little throught you should be able to convince yourself that it will be in the direction where the surface is steepest.</p>
+<p>This means the directional derivative that has the smallest negative value.</p>
+<p>We can find this direction using the definition of the dot-product, as
+<span class="math display">\[
+\vec{u}\cdot \vec{v} = |\vec{u}|\,|\vec{v}| \cos\theta
+\]</span>
+where <span class="math inline">\(\theta\)</span> is the angle between the vectors <span class="math inline">\(\vec{u}\)</span> and <span class="math inline">\(\vec{v}\)</span> if you visualise them as starting at the same position.</p>
+<p>Now suppose <span class="math inline">\(f\)</span> is a differentiable function, then we want to find the direction <span class="math inline">\(\vec{n}\)</span> that minimises the directional derivative,
+<span class="math display">\[
+\begin{aligned}
+    \nabla_{\vec{n}} f &amp;= \nabla f\cdot \vec{n}\\
+                       &amp;= |\nabla f|\,| \vec{n}| \cos \theta\\
+                       &amp;= |\nabla f| \cos \theta,\quad\qquad\text{since $|\vec{n}| = 1$.}\\
+\end{aligned}
+\]</span>
+Now the range of <span class="math inline">\(\cos\)</span> is <span class="math inline">\([-1,1]\)</span> and so the minimum value of <span class="math inline">\(\cos \theta\)</span> is <span class="math inline">\(-1\)</span> when <span class="math inline">\(\theta = \pi\)</span>.</p>
+<p>Geometrically this means that the minimum is obtained when <span class="math inline">\(\vec{n}\)</span> is point at <span class="math inline">\(\pi\)</span> radians (i.e. the opposite direction) to <span class="math inline">\(\nabla f\)</span>.</p>
+<p>This is the vector,
+<span class="math display">\[ \vec{n} = - \frac{1}{|\nabla f|} \nabla f.\]</span></p>
+<p>So the ball will always roll in the <strong>opposite direction</strong> to the gradient.</p>
+<p>For example suppose <span class="math inline">\(g(x,y) = 3x^2 y\)</span> and we drop a ball at position <span class="math inline">\((2,3, 36)\)</span>. Then we previously calculated the gradient here as
+<span class="math display">\[
+\nabla g (2,3) = \begin{pmatrix} 36 \\ 12 \end{pmatrix}
+\]</span></p>
+<p>Now <span class="math inline">\(| \nabla g (2,3) | = 12\sqrt{10}\)</span> so that the ball will fall in the direction</p>
+<p><span class="math display">\[
+-\frac{1}{12\sqrt{10}}\nabla g (2,3) =
+\begin{pmatrix}
+- 3/\sqrt{10} \\ -1/\sqrt{10}
+\end{pmatrix}
+\]</span></p>
+<p>Note: we can also calculate that the direction that maximises the value of <span class="math inline">\(\nabla_{\vec{n}} f\)</span>. In our previous calculation we used the fact that <span class="math inline">\(\cos\theta\)</span> is minimised when <span class="math inline">\(\theta = \pi\)</span>. If we want to find the maximum then this is at <span class="math inline">\(\theta = 0\)</span> when <span class="math inline">\(\cos\theta = 1\)</span>. But this direction represents a vector in the same direction as <span class="math inline">\(\nabla f\)</span>.</p>
+<p>We conclude that the <strong>maximums</strong> value of the directional derivative is in the direction
+<span class="math display">\[ \vec{n} =  \frac{1}{|\nabla f|} \nabla f,\]</span>
+at which</p>
+<p><span class="math display">\[ \nabla_{\vec{n}} f = |\nabla f|. \]</span></p>
+</div>
+<div id="level-curves" class="section level2" number="3.12">
+<h2>
+<span class="header-section-number">3.12</span> Level curves<a class="anchor" aria-label="anchor" href="#level-curves"><i class="fas fa-link"></i></a>
+</h2>
+<p>Another way of visualising the graph of a function <span class="math inline">\(f\colon\mathbb{R}^2\to \mathbb{R}\)</span> is to draw its <strong>level curves</strong>. These are the curves in <span class="math inline">\(\mathbb{R}^2\)</span> defined as
+<span class="math display">\[
+f(x,y) = c
+\]</span>
+where <span class="math inline">\(c\)</span> takes on different values.</p>
+<p>We can plot the level curves of a function for different values of <span class="math inline">\(c\)</span>, normally equally spaced. This produces a <strong>contour plot</strong>.</p>
+<p>For example suppose we have the following function,</p>
+<p><span class="math display">\[
+\begin{aligned}
+    f\colon \mathbb{R}^2 &amp;\to \mathbb{R}\\
+            \begin{pmatrix}x\\y\end{pmatrix} &amp;\mapsto (x-1)^2 + 4y^2.
+\end{aligned}
+\]</span>
+The level curves are the curves
+<span class="math display">\[
+(x-1)^2 + 4y^2 = c.
+\]</span>
+You should recognise this as the equation of an ellipse, see Figure <span class="math inline">\(\ref{a level curve}\)</span> for an example.</p>
+<div class="sourceCode" id="cb1" caption="A level curve for $(x-1)^2 + 4y^2$.\label{a level curve}" additionalpackages="\usepackage{adjustbox}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb1-1"><a href="multi-variable-calculus.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{16cm}{!}{</span>
+<span id="cb1-2"><a href="multi-variable-calculus.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[scale = 2]</span>
+<span id="cb1-3"><a href="multi-variable-calculus.html#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[step = 0.5,gray,very thin] (-1.25,-1.25) grid (3.25,1.25);</span>
+<span id="cb1-4"><a href="multi-variable-calculus.html#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [-latex] (0,-1.5) -- (0,1.5) node [left] {<span class="ss">$y$</span>};</span>
+<span id="cb1-5"><a href="multi-variable-calculus.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [-latex] (-1,0) -- (3.5,0) node [below] {<span class="ss">$x$</span>};</span>
+<span id="cb1-6"><a href="multi-variable-calculus.html#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [thick, blue] (1,0) ellipse (2 and 1);</span>
+<span id="cb1-7"><a href="multi-variable-calculus.html#cb1-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-8"><a href="multi-variable-calculus.html#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\fill</span> (1,0) node [below] {<span class="ss">$(1,0)$</span>} circle (1pt);</span>
+<span id="cb1-9"><a href="multi-variable-calculus.html#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-10"><a href="multi-variable-calculus.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb1-11"><a href="multi-variable-calculus.html#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>It is often useful to plot a number of these level curves on a single plot which lets us visualise the surface as if we are looking at it from above/below, see Figure <span class="math inline">\(\ref{contour plot example}\)</span>.</p>
+<div class="figure">
+<img src="img/levelcurvesex.png" alt=""><p class="caption">The contour plot for <span class="math inline">\((x-1)^2 + 4y^2\)</span></p>
+</div>
+<p>The plot of surface is given in Figure <span class="math inline">\(\ref{complex surface example}\)</span>.
+<span class="math display">\[
+\begin{gathered}
+z = 3 (1 - x)^2 e^{-x^2 - (y + 1)^2} - (2 x - 10 x^3 -
+        10 y^5) e^{-x^2 - y^2}\\ - \frac{1}3 e^{-(x + 1)^2 - y^2}
+\end{gathered}
+\]</span></p>
+<div class="figure">
+<img src="img/ComplicatedSurfacePlot.png" alt=""><p class="caption">The plot of this complicated function</p>
+</div>
+<p>The contour plot of this function is given in Figure <span class="math inline">\(\ref{complex contour plot}\)</span>.</p>
+<div class="figure">
+<img src="img/ComplicatedContourPlot.png" alt=""><p class="caption">The contour plot of this complicated function</p>
+</div>
+<p>On the contour plot, level curves that are close together represent a steep gradient.</p>
+<p>A contour plot can be easier to understand than a 3d plot which can often obscure information.</p>
+<p>An interesting fact about the gradient <span class="math inline">\(\nabla f\)</span> and the level curves <span class="math inline">\(f(x,y) = c\)</span> is that the gradient is always <strong>perpendicular</strong> to the level curve. This means if we calculate the graident of a point on the level curve and draw it as a vector starting at the point, then it meets the curve in a right angle.</p>
+<p>To illustrate this suppose <span class="math inline">\(f(x,y) = x^2 + 2y^2\)</span>. The level curves are then ellipses, and the gradients at various points are drawn in the diagram below.</p>
+<div class="sourceCode" id="cb2" caption="The level curves and perpendicular gradients." additionalpackages="\usepackage{adjustbox}"><pre class="sourceCode tikz"><code class="sourceCode latex"><span id="cb2-1"><a href="multi-variable-calculus.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\resizebox</span>{16cm}{!}{</span>
+<span id="cb2-2"><a href="multi-variable-calculus.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-3"><a href="multi-variable-calculus.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span>[step = 1,gray,very thin] (-5.5,-3.5) grid (5.5,3.5);</span>
+<span id="cb2-4"><a href="multi-variable-calculus.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [thick, blue] (0,0) ellipse (2 and 1);</span>
+<span id="cb2-5"><a href="multi-variable-calculus.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\draw</span> [thick, blue] (0,0) ellipse (4 and 2);</span>
+<span id="cb2-6"><a href="multi-variable-calculus.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\foreach</span> <span class="fu">\t</span> in {1.2,2} {</span>
+<span id="cb2-7"><a href="multi-variable-calculus.html#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\draw</span> [thick, red, -latex] ({2 * cos(30 * <span class="fu">\t</span>)}, {sin(30 * <span class="fu">\t</span>)}) --++ ({0.5 * cos(30 * <span class="fu">\t</span>)}, {sin(30 * <span class="fu">\t</span>)});</span>
+<span id="cb2-8"><a href="multi-variable-calculus.html#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">\draw</span> [thick, red, -latex] ({4 * cos(30 * <span class="fu">\t</span>)}, {2 * sin(30 * <span class="fu">\t</span>)}) --++ ({0.5 * cos(30 * <span class="fu">\t</span>)}, {sin(30 * <span class="fu">\t</span>)});</span>
+<span id="cb2-9"><a href="multi-variable-calculus.html#cb2-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-10"><a href="multi-variable-calculus.html#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb2-11"><a href="multi-variable-calculus.html#cb2-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Here the blue ellipse is the level curve, and the red arrows are the gradient vectors plotted at various points on the curves.</p>
+<p>Geometrically this makes sense if we know that the gradient represents the direction of maximum increase.</p>
+</div>
+<div id="higher-dimensional" class="section level2" number="3.13">
+<h2>
+<span class="header-section-number">3.13</span> Higher dimensional<a class="anchor" aria-label="anchor" href="#higher-dimensional"><i class="fas fa-link"></i></a>
+</h2>
+<p>The content of this week’s work has so far focussed on functions of 2 variables. We can extend <strong>everything</strong> to functions of more than two variables without much work. In fact I’ve made sure that the algebra is essentially unchanged.</p>
+<p>What does change is the fact that we can’t really visualise things very well.</p>
+<p>In general a function of <span class="math inline">\(n\)</span>-variables is normally written as
+<span class="math display">\[
+f(x_1, x_2, x_3, \ldots, x_n)
+\]</span>
+were each of the <span class="math inline">\(x_i\)</span> is one of the variables. So we can still define partial derivatives</p>
+<p><span class="math display">\[
+\frac{\partial f}{\partial x_i}
+\]</span></p>
+<p>by treating all other variables as constants.</p>
+<p>The derivative is then defined as</p>
+<p><span class="math display">\[
+\nabla f = \begin{pmatrix} \frac{\partial f}{\partial x_1} &amp; \frac{\partial f}{\partial x_2} &amp; \cdots &amp; \frac{\partial f}{\partial x_n} \end{pmatrix}
+\]</span></p>
+<p>Importantly this can be used to define the <strong>directional derivative</strong>. The difference now is that you have to have a vector <span class="math inline">\(\vec{n} \in \mathbb{R}^n\)</span>, but the directional derivative is still defined as
+<span class="math display">\[
+\nabla_{\vec{n}} f = \nabla f\cdot \vec{n}.
+\]</span>
+This represents the gradient in the direction of <span class="math inline">\(\vec{n}\)</span> and, again, the direction of <strong>greatest descent</strong> is</p>
+<p><span class="math display">\[
+-\frac{1}{|\nabla f|}\nabla f.
+\]</span>
+This is the same as before.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></div>
+<div class="next"><a href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#multi-variable-calculus"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="nav-link" href="#multivariate-functions-and-graphs"><span class="header-section-number">3.1</span> Multivariate functions and graphs</a></li>
+<li><a class="nav-link" href="#visualising-graphs-and-tangents"><span class="header-section-number">3.2</span> Visualising graphs and tangents</a></li>
+<li><a class="nav-link" href="#partial-derivatives"><span class="header-section-number">3.3</span> Partial derivatives</a></li>
+<li><a class="nav-link" href="#the-equation-of-the-tangent-plane"><span class="header-section-number">3.4</span> The equation of the tangent plane</a></li>
+<li><a class="nav-link" href="#higher-order-derivatives-1"><span class="header-section-number">3.5</span> Higher order derivatives</a></li>
+<li><a class="nav-link" href="#smoothness-of-multivariate-functions"><span class="header-section-number">3.6</span> Smoothness of multivariate functions</a></li>
+<li><a class="nav-link" href="#the-derivative"><span class="header-section-number">3.7</span> The derivative</a></li>
+<li><a class="nav-link" href="#the-equation-of-the-tangent-plane-1"><span class="header-section-number">3.8</span> The equation of the tangent plane</a></li>
+<li><a class="nav-link" href="#the-gradient-of-a-differentiable-function"><span class="header-section-number">3.9</span> The gradient of a differentiable function</a></li>
+<li><a class="nav-link" href="#directional-derivatives"><span class="header-section-number">3.10</span> Directional derivatives</a></li>
+<li><a class="nav-link" href="#the-direction-of-greatest-descent"><span class="header-section-number">3.11</span> The direction of greatest descent</a></li>
+<li><a class="nav-link" href="#level-curves"><span class="header-section-number">3.12</span> Level curves</a></li>
+<li><a class="nav-link" href="#higher-dimensional"><span class="header-section-number">3.13</span> Higher dimensional</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

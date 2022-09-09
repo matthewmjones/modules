@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 5 Week 5: Convex and Constrained Optimisation | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="5.1 Convex optimisation Last time we learned how to find and classify stationary points for a differentiable multivariate function. This was of limited use in general since it only allowed us to...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 5 Week 5: Convex and Constrained Optimisation | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="5.1 Convex optimisation Last time we learned how to find and classify stationary points for a differentiable multivariate function. This was of limited use in general since it only allowed us to...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 5 Week 5: Convex and Constrained Optimisation | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="5.1 Convex optimisation Last time we learned how to find and classify stationary points for a differentiable multivariate function. This was of limited use in general since it only allowed us to...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="active" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="week-5-convex-and-constrained-optimisation" class="section level1" number="5">
+<h1>
+<span class="header-section-number">Topic 5</span> Week 5: Convex and Constrained Optimisation<a class="anchor" aria-label="anchor" href="#week-5-convex-and-constrained-optimisation"><i class="fas fa-link"></i></a>
+</h1>
+<div id="convex-optimisation" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Convex optimisation<a class="anchor" aria-label="anchor" href="#convex-optimisation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Last time we learned how to find and classify stationary points for a differentiable multivariate function. This was of limited use in general since it only allowed us to find <strong>local maximums</strong> or <strong>local minimums</strong>.</p>
+<p>However if the function we want to find an optimal point for is <strong>convex</strong> or <strong>concave</strong> then local maximums and minimums are also <strong>global</strong> maximums and minimums. This simplifies the problem significantly.</p>
+<p>The study of optimisation problems where the function is convex or concave is called <strong>convex optimisation</strong>. An example of this is Least Squares is statistics and Linear Programming. The difficulty of solving such problems is significantly reduced. For example the following is a very popular algorithm for solving very large scale convex optimisation problems.</p>
+</div>
+<div id="the-gradient-descent-algorithm" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> The Gradient Descent Algorithm<a class="anchor" aria-label="anchor" href="#the-gradient-descent-algorithm"><i class="fas fa-link"></i></a>
+</h2>
+<p>For problems with very large numbers of variables the common technique for finding stationary points becomes intractible. This is often the case in practical applications of optimisation in, say, data science and statistics.</p>
+<p>The <strong>Gradient Descent Algorithm</strong> provides a way of finding, approximately, the position of a stationary point for a function <span class="math inline">\(f\colon\mathbb{R}^n\to\mathbb{R}\)</span>. Recall the gradient for such a function is
+<span class="math display">\[\nabla f (x_1,x_2,\ldots,x_n) = \begin{pmatrix} \frac{\partial f}{\partial x_1} \\[8pt] \frac{\partial f}{\partial x_2} \\[8pt] \vdots \\[8pt] \frac{\partial f}{\partial x_n} \end{pmatrix}.\]</span></p>
+<p>We introduced the gradient in Week 3. We learned that if we stand at a point on a surface and drop a ball then it falls in the direction directly opposite the gradient. The Gradient Descent Algorithm uses the idea of dropping a ball and follows its path to find where it comes to rest. The thinking is that if it comes to rest then it must do so at a local minimum.</p>
+<p>In Figure <span class="math inline">\(\ref{GDA explanation}\)</span> we have drawn the contour plot of a function. Suppose we drop the ball at the point <span class="math inline">\(\vec{x}_0\)</span>. Then this falls in the direction opposite the gradient, so following a vector of the form <span class="math inline">\(-\eta\nabla f(\vec{x}_0)\)</span> for some fixed value <span class="math inline">\(\eta &gt; 0\)</span>.</p>
+<p>The algorithm thus updates <span class="math inline">\(\vec{x}_0\)</span> to give the next guess,
+<span class="math display">\[ \vec{x}_1 = \vec{x}_0 - \eta\nabla f(\vec{x}_0).\]</span></p>
+<div class="figure">
+<img src="img/GradientDescentExplanation.png" alt=""><p class="caption">The Gradient Descent Algorithm</p>
+</div>
+<p>We continue in this way, producing better and better guesses. After a number of iterations we eventually reach the ‘bottom’ of the surface, i.e. approximately at the local minimum.</p>
+<p>Since we can’t always expect to exactly reach the stationary point, we normally just specify a level of precision <span class="math inline">\(\delta &gt; 0\)</span> that is acceptable. The algorithm is written like this.</p>
+<p><strong>Input:</strong> <span class="math inline">\(f\colon \mathbb{R}^n\to \mathbb{R}\)</span>; <span class="math inline">\(\eta &gt; 0\)</span>; <span class="math inline">\(\delta &gt; 0\)</span>, <span class="math inline">\(\vec{x}_0\)</span></p>
+<p><strong>Algorithm:</strong></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(t \leftarrow 0\)</span></li>
+<li>Define <span class="math inline">\(\vec{x}_{t+1} = \vec{x}_t -\eta \nabla f(\vec{x}_t)\)</span>
+</li>
+<li>If <span class="math inline">\(| \vec{x}_t - \vec{x}_{t+1} | &gt; \delta\)</span> let <span class="math inline">\(t \leftarrow t+1\)</span> and go to step 2.</li>
+</ol>
+<p><strong>Output:</strong> <span class="math inline">\(\vec{x}_t\)</span></p>
+<p>The value of <span class="math inline">\(\eta &gt; 0\)</span> is called the <strong>learning rate</strong>. In this version of the Gradient Descent Algorithm it is fixed.</p>
+<p>This is the basic variation of the algorithm and there are many improvements that can be made. We will discuss these in the seminars.</p>
+<div id="example-5" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Example<a class="anchor" aria-label="anchor" href="#example-5"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose we have four points in <span class="math inline">\(\mathbb{R}^2\)</span>:
+<span class="math display">\[
+(1,0)\quad (1,1)\quad (0,1)\quad (0,0)
+\]</span>
+What is the closest point to all four points?</p>
+<p>Here the euclidead distance from a point <span class="math inline">\((x,y)\)</span> to <span class="math inline">\((a,b)\)</span> is
+<span class="math display">\[ \sqrt{(x-a)^2+(y-b)^2}.\]</span>
+Since the square root is an increasing function, finding the minimum value of this is equivalent to finding the minimum value of
+<span class="math display">\[(x-a)^2+(y-b)^2.\]</span>
+If we want to find the minimum distance to <strong>all four</strong> points then we can minimise the function:
+<span class="math display">\[
+\begin{aligned}
+f(x,y) &amp;= \left((x-1)^2 + y^2\right) + \left((x-1)^2 + (y-1)^2\right) \\
+&amp;\qquad \qquad+ \left(x^2 + (y-1)^2\right) + (x^2 + y^2)\\[4pt]
+&amp;= 2x^2 + 2(x-1)^2 + 2y^2 + 2(y-1)^2\\
+&amp;=4 \left(x^2-x+y^2-y+1\right)
+\end{aligned}\]</span>
+Here
+<span class="math display">\[
+\nabla f(x,y) = 4 \begin{pmatrix} 2x-1 \\ 2y-1\end{pmatrix}
+\]</span>
+So if we start at <span class="math inline">\((1,1)\)</span> and take <span class="math inline">\(\eta = 0.1\)</span> then we may proceed as follows to calculate the next estimate:
+<span class="math display">\[
+\vec{x}_1 = \begin{pmatrix} 1\\1\end{pmatrix} - 0.1 \times 4 \begin{pmatrix}2\times 1-1\\2\times 1 - 1\end{pmatrix} = \begin{pmatrix} 0.6\\0.6\end{pmatrix}
+\]</span>
+Continuing, the next iteration is
+<span class="math display">\[
+\vec{x}_2 = \begin{pmatrix} 0.6\\0.6\end{pmatrix} - 0.1 \times 4 \begin{pmatrix}2\times 0.6-1\\2\times 0.6 - 1\end{pmatrix} = \begin{pmatrix} 0.52\\0.52\end{pmatrix}.
+\]</span>
+The next two values are:
+<span class="math display">\[
+\vec{x}_2 = \begin{pmatrix} 0.504 \\0.504\end{pmatrix}, \quad \vec{x}_3 = \begin{pmatrix} 0.5008 \\0.5008\end{pmatrix}.
+\]</span>
+The values <strong>converge</strong> to the local minimum <span class="math inline">\(\begin{pmatrix} 0.5 \\0.5\end{pmatrix}\)</span>.</p>
+</div>
+</div>
+<div id="convergence-of-gradient-descent" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Convergence of Gradient Descent<a class="anchor" aria-label="anchor" href="#convergence-of-gradient-descent"><i class="fas fa-link"></i></a>
+</h2>
+<p>If <span class="math inline">\(\vec{x}_t \to \vec{x}\)</span> as <span class="math inline">\(t\to\infty\)</span> we say that the algorithm converges. This means that
+<span class="math display">\[| \vec{x}_t - \vec{x} | \to 0,\qquad t\to\infty.\]</span>
+It doesn’t always converge because there isn’t always a minimum.</p>
+<p>The Gradient Descent Algorithm as it is given above is in its most basic form. It is possible to improve the algorithm in different ways.</p>
+<p>As for any numerical algorithm there are a number of questions that need to be understood:</p>
+<ul>
+<li>Under what circumstances does the algorithm converge to the right answer?</li>
+<li>What is the effect of the parameters on the algorithm, specifically <span class="math inline">\(\eta\)</span> here?</li>
+<li>Can the algorithm be improved by modifying parts of it?</li>
+</ul>
+<p>These questions will be studied in the seminars.</p>
+</div>
+<div id="constrained-optimisation" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Constrained optimisation<a class="anchor" aria-label="anchor" href="#constrained-optimisation"><i class="fas fa-link"></i></a>
+</h2>
+<p>We now turn our attention to <strong>constrained optimisation</strong> for multivariate functions.</p>
+<p>Profit seeking businesses are often dealing with multiple constraints that affect levels of production, such as availability of resources, levels of demand and many other factors. So it is often unrealistic to model problems as unconstrained optimisation problems.</p>
+<p>Suppose for example that a manufacturing company makes two products A and B. The profit made from selling the items, after taking costs into account, is given by the function
+<span class="math display">\[ f(x,y) = 2x+3y,\]</span>
+where <span class="math inline">\(x\)</span> is the quantity of product A and <span class="math inline">\(y\)</span> product B.</p>
+<p>There may be a number of constraints to production. With functions of one variable constraints manifested themselves simply as restrictions to the domain of <span class="math inline">\(f\)</span>. For multivariate functions we have more scope to be precise about the constraints. For example suppose the amount of available resources used when making products is
+<span class="math display">\[ (2x^2 - x y +y^2) \text{kg}\]</span>
+and we have maxmimum of <span class="math inline">\(10,000\)</span>kg available. This then becomes the <strong>constraint</strong>
+<span class="math display">\[2x^2 - x y +y^2 = 10000.\]</span>
+So we might model this problem as follows:
+<span class="math display">\[
+\begin{aligned}
+    \text{maximise }\qquad &amp;f(x,y) = 2x+3y\\
+    \text{subject to }\qquad &amp;2x^2 - x y +y^2 = 10000
+\end{aligned}
+\]</span></p>
+</div>
+<div id="analysing-contrained-optimisation-problems" class="section level2" number="5.5">
+<h2>
+<span class="header-section-number">5.5</span> Analysing contrained optimisation problems<a class="anchor" aria-label="anchor" href="#analysing-contrained-optimisation-problems"><i class="fas fa-link"></i></a>
+</h2>
+<p>We will develop a method for solving constrained optimisation problems called <strong>Lagrange Multipliers</strong> after the Italian mathematician Joseph-Louis Lagrange.</p>
+<div class="figure">
+<img src="img/constrainedexamplenotprojected.png" alt=""><p class="caption">Constrained optimisation</p>
+</div>
+<p>In Figure <span class="math inline">\(\ref{constrained example not projected}\)</span> the surface <span class="math inline">\(z=f(x,y)\)</span> is drawn. The constraint, which we’ve written as
+<span class="math display">\[2x^2 - x y +y^2 = 10000\]</span>
+is the curve on the <span class="math inline">\(x-y\)</span> plane underneath the surface.</p>
+<p>So the problem is to find the maximum <span class="math inline">\(z\)</span> value on the surface ‘above’ the curve. Figure <span class="math inline">\(\ref{constrained example projected}\)</span> projects the curve directly upwards. We’re thus trying to find the largest <span class="math inline">\(z\)</span>-coordinate on the intersection of this projected curve and the surface.</p>
+<div class="figure">
+<img src="img/constrainedexampleprojected.png" alt=""><p class="caption">Constrained optimisation - the maximum value</p>
+</div>
+</div>
+<div id="lagrange-multipliers---an-explanation" class="section level2" number="5.6">
+<h2>
+<span class="header-section-number">5.6</span> Lagrange multipliers - an explanation<a class="anchor" aria-label="anchor" href="#lagrange-multipliers---an-explanation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Draw the contour plot of the surface, as in Figure <span class="math inline">\(\ref{Lagrange explanation}\)</span>, where the red curve is the curve implicitly defined by the constraint
+<span class="math display">\[2x^2-xy+y^2=10000.\]</span>
+The green lines are the level curves
+<span class="math display">\[ f(x,y) = c\]</span>
+for <span class="math inline">\(c = 20000, 30000, 40000,\)</span> and <span class="math inline">\(50000\)</span>.</p>
+<div class="figure">
+<img src="img/LagrangeExplanation.png" alt=""><p class="caption">The contour plot and constraint curve</p>
+</div>
+<p>The key concept to notice is that at the level curve that represents the maximum is the one that is tangent to the constraint curve.</p>
+<p>Suppose the optimal point is <span class="math inline">\((x_m, y_m)\)</span>. Then we learned in Week 3 that the gradient <span class="math inline">\(\nabla f(x_m,y_m)\)</span> is a vector perpendicular to the level curve.</p>
+<p>Now let <span class="math inline">\(g(x,y) = 2x^2 - x y +y^2\)</span> then the constraint can <strong>also</strong> be thought of as a level curve,
+<span class="math display">\[g(x,y) = 10000.\]</span>
+From what we have said, since this level curve is tangent to the level curve for <span class="math inline">\(f\)</span> at <span class="math inline">\((x_m,y_m)\)</span> you would expcect the gradient <span class="math inline">\(\nabla g(x_m,y_m)\)</span> to be a vector pointing in the same direction as <span class="math inline">\(\nabla f(x_m,y_m)\)</span>.</p>
+<p>We write this as
+<span class="math display">\[ \nabla f(x_m,y_m) = \lambda \nabla g(x_m,y_m) \]</span>
+where <span class="math inline">\(\lambda\)</span> is a scalar called the <strong>Lagrange multiplier</strong>.</p>
+<p>Now we can calculate these gradients:
+<span class="math display">\[
+\nabla f = \begin{pmatrix}2\\3\end{pmatrix}, \qquad\qquad \nabla g = \begin{pmatrix}4x-y\\-x + 2y\end{pmatrix}
+\]</span>
+So if we want to find <span class="math inline">\((x_m, y_m)\)</span> we need to solve the equations
+<span class="math display">\[ \begin{pmatrix}2\\3\end{pmatrix} = \lambda\begin{pmatrix}4x-y\\-x + 2y\end{pmatrix}.\]</span>
+This can be written as two equations
+<span class="math display">\[
+\begin{aligned}
+2 &amp;= (4x-y)\lambda \\ 3 &amp;= (-x+2y)\lambda
+\end{aligned}
+\]</span>
+We have here three unknown variables and two equations, so this might seem like a problem, until we remember that we also have a third equation, the original constraint
+<span class="math display">\[
+2x^2 - x y +y^2 = 10000.
+\]</span>
+If we solve these equations we can find the optimal point.</p>
+<p>First rewrite the two original equations,
+<span class="math display">\[
+\begin{aligned}
+    \lambda^{-1} &amp;= (4x-y)/2\\
+    \lambda^{-1} &amp;= (-x+2y)/3
+\end{aligned}
+\]</span>
+So <span class="math inline">\((4x-y)/2 = (-x+2y)/3\)</span> from which we can simplify to get
+<span class="math display">\[y = 2x.\]</span>
+In the constraint equation this becomes:
+<span class="math display">\[
+\begin{aligned}
+    10000 &amp;= 2x^2 - x (2x) + (2x)^2 \\
+          &amp;= 4x^2
+\end{aligned}
+\]</span>
+Hence <span class="math inline">\(x = \pm 50\)</span>, and <span class="math inline">\(y = \pm 100\)</span>. We can also calculate
+<span class="math display">\[ \lambda = \pm\frac{1}{50}.\]</span>
+To decide which of these points is the maximum (or minimum) we can evaluate the objective function <span class="math inline">\(f\)</span>,
+<span class="math display">\[ f(-50,-100) = -400, \qquad f(50,100) = 400.\]</span>
+Therefore the optimal point is <span class="math inline">\((50,100)\)</span>.</p>
+</div>
+<div id="the-method-of-lagrange-multipliers" class="section level2" number="5.7">
+<h2>
+<span class="header-section-number">5.7</span> The method of Lagrange multipliers<a class="anchor" aria-label="anchor" href="#the-method-of-lagrange-multipliers"><i class="fas fa-link"></i></a>
+</h2>
+<p>The method of Lagrange multipliers simplifies the above method by changing out <strong>constrained optimisation</strong> problem into an <strong>unconstrained optimisation</strong> problem where we simply need to find stationary points.</p>
+<p>Suppose we want to find the optimal point for a function <span class="math inline">\(f(x,y)\)</span> subject to the constraint
+<span class="math display">\[g(x,y) = 0.\]</span>
+Here <span class="math inline">\(f,g\in C^1(\mathbb{R}^2)\)</span>.</p>
+<p>The method of Lagrange multipliers is as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Define the function <span class="math inline">\(\mathcal{L} (x,y,\lambda) = f(x,y) - \lambda g(x,y)\)</span>
+</li>
+<li>Find the stationary points for <span class="math inline">\(\mathcal{L}\)</span>
+</li>
+<li>For each stationary point <span class="math inline">\((x,y,\lambda)\)</span>, evaluate <span class="math inline">\(f(x,y)\)</span> and determine the optimal value</li>
+</ol>
+<div id="example-6" class="section level3" number="5.7.1">
+<h3>
+<span class="header-section-number">5.7.1</span> Example<a class="anchor" aria-label="anchor" href="#example-6"><i class="fas fa-link"></i></a>
+</h3>
+<p>What is the largest rectangle that we can fit into an ellipse of minor radius 1 and major radius 2?</p>
+<p>The equation for the ellipse is
+<span class="math display">\[x^2 + \frac{y^2}4 = 1.\]</span>
+If we let <span class="math inline">\((x,y)\)</span> be an arbitrary point on this ellipse then we may form the rectangle by joining the points <span class="math inline">\((\pm x, \pm y)\)</span>. This has area <span class="math inline">\(4xy\)</span>.</p>
+<p>So let
+<span class="math display">\[\mathcal{L}(x,y,\lambda) = 4xy - \lambda \left(x^2 + \frac{y^2}4 - 1\right)\]</span></p>
+<p>Finding the partial derivatives and setting them to <span class="math inline">\(0\)</span>,
+<span class="math display">\[
+\begin{aligned}
+    \frac{\partial\mathcal{L}}{\partial x} &amp;= 4y -2x\lambda=0\\
+    \frac{\partial\mathcal{L}}{\partial x} &amp;= 4x -\frac{y\lambda}2=0\\
+    \frac{\partial\mathcal{L}}{\partial \lambda} &amp;=x^2 + \frac{y^2}4 - 1 =0
+\end{aligned}
+\]</span>
+From the first two equations we get
+<span class="math display">\[ \lambda = \frac{2y}x = \frac{8x}y.\]</span>
+So that
+<span class="math display">\[ y^2 = 4x^2.\]</span>
+In the constraint equation, the third equation,
+<span class="math display">\[2x^2 - 1 = 0\]</span>
+or <span class="math inline">\(x = \pm\dfrac{1}{\sqrt{2}}\)</span>.</p>
+<p>Substituting back in we find
+<span class="math display">\[y^2 = 4x^2 = 2\]</span>
+so that <span class="math inline">\(y = \pm\sqrt{2}\)</span>.</p>
+<p>We can also find <span class="math inline">\(\lambda = \pm 4\)</span> here although it is immaterial.</p>
+<p>The largest area is when
+<span class="math display">\[(x,y) = \left( \dfrac{1}{\sqrt{2}}, \sqrt{2} \right)\]</span>
+and the largest rectangle has area <span class="math inline">\(4\)</span>.</p>
+</div>
+</div>
+<div id="extensions-of-lagrange-multipliers" class="section level2" number="5.8">
+<h2>
+<span class="header-section-number">5.8</span> Extensions of Lagrange multipliers<a class="anchor" aria-label="anchor" href="#extensions-of-lagrange-multipliers"><i class="fas fa-link"></i></a>
+</h2>
+<p>The method can be extended to any number of variables <span class="math inline">\(f\colon\mathbb{R}^n\to\mathbb{R}\)</span> by writing
+<span class="math display">\[\mathcal{L} (x_1, x_2, \ldots, x_n, \lambda) = f(x_1, x_2, \ldots, x_n) - \lambda(g(x_1, x_2, \ldots, x_n) - c).\]</span>
+It can also be extended to any number of constraints.</p>
+<p>Suppose we want to
+<span class="math display">\[
+\begin{aligned}
+    \text{maximise}\qquad &amp;f\colon\mathbb{R}^n\to \mathbb{R}\\
+    \text{subject to}\qquad &amp; g_1(\vec{x}) = 0\\
+                            &amp; g_2(\vec{x}) = 0\\
+                            &amp; \vdots\\
+                            &amp; g_m(\vec{x}) = 0\\
+\end{aligned}
+\]</span>
+Then the generalised method of Lagrange multipliers finds the stationary points of the function</p>
+<p><span class="math display">\[
+\mathcal{L}(x_1, x_2, \ldots, x_n, \lambda_1, \lambda_2, \ldots, \lambda_m) = f(x_1, x_2, \ldots, x_n) - \sum_{k=1}^m \lambda_k g_k(x_1, x_2, \ldots, x_n).
+\]</span></p>
+</div>
+<div id="lagrange-multipliers-and-gradient-descent" class="section level2" number="5.9">
+<h2>
+<span class="header-section-number">5.9</span> Lagrange multipliers and Gradient Descent<a class="anchor" aria-label="anchor" href="#lagrange-multipliers-and-gradient-descent"><i class="fas fa-link"></i></a>
+</h2>
+<p>It might be tempting to think that for large and complex constrained optimisation problems can be solved approximately using the Gradient Descent Algorithm. After all the function <span class="math inline">\(\mathcal{L}\)</span> has <span class="math inline">\(m+n\)</span> variables.</p>
+<p>Unfortunately it turns out that the stationary points for the function <span class="math inline">\(\mathcal{L}\)</span> are saddles so that the algorithm won’t work.</p>
+<p>There are other methods that can be used however. One such method is <strong>Newton’s method</strong>.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></div>
+<div class="next"><a href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#week-5-convex-and-constrained-optimisation"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="nav-link" href="#convex-optimisation"><span class="header-section-number">5.1</span> Convex optimisation</a></li>
+<li>
+<a class="nav-link" href="#the-gradient-descent-algorithm"><span class="header-section-number">5.2</span> The Gradient Descent Algorithm</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-5"><span class="header-section-number">5.2.1</span> Example</a></li></ul>
+</li>
+<li><a class="nav-link" href="#convergence-of-gradient-descent"><span class="header-section-number">5.3</span> Convergence of Gradient Descent</a></li>
+<li><a class="nav-link" href="#constrained-optimisation"><span class="header-section-number">5.4</span> Constrained optimisation</a></li>
+<li><a class="nav-link" href="#analysing-contrained-optimisation-problems"><span class="header-section-number">5.5</span> Analysing contrained optimisation problems</a></li>
+<li><a class="nav-link" href="#lagrange-multipliers---an-explanation"><span class="header-section-number">5.6</span> Lagrange multipliers - an explanation</a></li>
+<li>
+<a class="nav-link" href="#the-method-of-lagrange-multipliers"><span class="header-section-number">5.7</span> The method of Lagrange multipliers</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-6"><span class="header-section-number">5.7.1</span> Example</a></li></ul>
+</li>
+<li><a class="nav-link" href="#extensions-of-lagrange-multipliers"><span class="header-section-number">5.8</span> Extensions of Lagrange multipliers</a></li>
+<li><a class="nav-link" href="#lagrange-multipliers-and-gradient-descent"><span class="header-section-number">5.9</span> Lagrange multipliers and Gradient Descent</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

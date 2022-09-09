@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 7 Week 7 - Second order differential equations | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="A second order ordinary differential equation is an equation of the form \[F(x,y,y',y'') = 0\] where \(F\) is a function. It is called second order because there is a second order derivative. The...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 7 Week 7 - Second order differential equations | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="A second order ordinary differential equation is an equation of the form \[F(x,y,y',y'') = 0\] where \(F\) is a function. It is called second order because there is a second order derivative. The...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 7 Week 7 - Second order differential equations | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="A second order ordinary differential equation is an equation of the form \[F(x,y,y',y'') = 0\] where \(F\) is a function. It is called second order because there is a second order derivative. The...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="active" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="week-7---second-order-differential-equations" class="section level1" number="7">
+<h1>
+<span class="header-section-number">Topic 7</span> Week 7 - Second order differential equations<a class="anchor" aria-label="anchor" href="#week-7---second-order-differential-equations"><i class="fas fa-link"></i></a>
+</h1>
+<p>A second order ordinary differential equation is an equation of the form
+<span class="math display">\[F(x,y,y',y'') = 0\]</span>
+where <span class="math inline">\(F\)</span> is a function. It is called second order because there is a second order derivative.</p>
+<p>The scope of these types of differential equations is very broad and there are only a few methods for solving specific types of equation, unlike the first order equations. So will only deal with a very specific form of equation.</p>
+<div id="linear-equations-with-constant-coefficients" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Linear equations with constant coefficients<a class="anchor" aria-label="anchor" href="#linear-equations-with-constant-coefficients"><i class="fas fa-link"></i></a>
+</h2>
+<p>A linear second order ordinary differential equation is an equation of the form
+<span class="math display">\[y'' + a(x) y'+ b(x)y = r(x)\]</span>
+where <span class="math inline">\(a, b, r\)</span> are continuous functions of <span class="math inline">\(x\)</span>.</p>
+<p>A <strong>linear second order ordinary differential equation with constant coefficients</strong> is an equation of the form
+<span class="math display">\[y'' + a y'+ by = r(x)\]</span>
+where <span class="math inline">\(a, b\)</span> are constants, and <span class="math inline">\(r\)</span> is a continuous fuction of <span class="math inline">\(x\)</span>.</p>
+<p>For example,
+<span class="math display">\[
+\begin{aligned}
+    y'' + y &amp;= 0 \qquad\qquad\text{simple harmonic motion}    
+\end{aligned}
+\]</span></p>
+<p>The key to linear equations is that if <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span> are two solutions for a linear equation, then so is
+<span class="math display">\[ Af(x) + Bg(x)\]</span>
+for any constants <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. This means that to find the <strong>general solutions</strong> of a linear equation we only need to find two separate solutions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>.</p>
+</div>
+<div id="homogeneous-equations" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Homogeneous equations<a class="anchor" aria-label="anchor" href="#homogeneous-equations"><i class="fas fa-link"></i></a>
+</h2>
+<p>If <span class="math inline">\(r(x) = 0\)</span> then we get the <strong>homogeneous</strong> equation
+<span class="math display">\[y'' + a y'+ by = 0.\]</span>
+To solve, we need to find two different functions that form solutions. The standard approach is to try a function of the form
+<span class="math display">\[f(x) = e^{\lambda x}\]</span>
+Here
+<span class="math display">\[f'(x) = \lambda e^{\lambda x}, \qquad\qquad f''(x) = \lambda^2 e^{\lambda x}.\]</span>
+So <span class="math inline">\(f(x)\)</span> is a solution if
+<span class="math display">\[
+\begin{aligned}
+    \lambda^2 e^{\lambda x} + a \lambda e^{\lambda x} + b e^{\lambda x} &amp;=0 \\
+    \text{or, dividing by $e^{\lambda x}$}, \qquad\qquad\qquad\lambda^2 + a \lambda + b &amp;=0.
+\end{aligned}
+\]</span>
+It follows that <span class="math inline">\(f(x) = e^{\lambda x}\)</span> is a solution if and only if
+<span class="math inline">\(\lambda^2 + a \lambda + b = 0\)</span>. This last equation is called the <strong>auxiliary equation</strong> and <span class="math inline">\(\lambda^2 + a \lambda + b\)</span> the <strong>auxiliary function</strong>.</p>
+<p>You know that a quadratic equation like this has two solutions counting multiplicity. There are three possibilities:</p>
+<ol style="list-style-type: decimal">
+<li>Two distinct real roots</li>
+<li>One real root of multiplicity 2</li>
+<li>Two complex conjugate roots</li>
+</ol>
+<p>We will treat these separately, the objective being to find two distinct solutions that we can combine to make the general solution of the equation.</p>
+</div>
+<div id="two-distinct-roots" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Two distinct roots<a class="anchor" aria-label="anchor" href="#two-distinct-roots"><i class="fas fa-link"></i></a>
+</h2>
+<p>The most straightforward possibility is that the auxiliary function has distinct real roots, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. In this case the general solution is
+<span class="math display">\[ A e^{\alpha x} + B e^{\beta x}\]</span></p>
+<div id="example-10" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> Example<a class="anchor" aria-label="anchor" href="#example-10"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solve the homogeneous equation
+<span class="math display">\[y'' + 5 y' + 6 y = 0.\]</span>
+Here the auxiliary function is
+<span class="math display">\[\lambda^2 + 5 \lambda + 6 = (\lambda + 2)(\lambda +3).\]</span>
+This has roots <span class="math inline">\(\lambda = -2\)</span> and <span class="math inline">\(\lambda = -3\)</span>. So the general solution is
+<span class="math display">\[ y = A e^{-2x} + B e^{-3x}.\]</span></p>
+</div>
+</div>
+<div id="on-root-of-multiplicity-2" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> On root of multiplicity 2<a class="anchor" aria-label="anchor" href="#on-root-of-multiplicity-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>If the auxiliary function is of the form <span class="math inline">\((x-\alpha)^2\)</span> then the general solution is
+<span class="math display">\[ (A + Bx)e^{\alpha x}.\]</span></p>
+<div id="example-11" class="section level3" number="7.4.1">
+<h3>
+<span class="header-section-number">7.4.1</span> Example<a class="anchor" aria-label="anchor" href="#example-11"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solve the homogeneous equation
+<span class="math display">\[y'' + 2 y' + y = 0.\]</span>
+Here the auxiliary function is
+<span class="math display">\[\lambda^2 + 2 \lambda + 1 = (\lambda + 1)^2\]</span>
+This has a root at <span class="math inline">\(\lambda = -1\)</span> of multiplicity <span class="math inline">\(2\)</span> so the general solution is
+<span class="math display">\[ y = (A + Bx) e^{-x}.\]</span></p>
+</div>
+</div>
+<div id="complex-conjugate-roots" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Complex conjugate roots<a class="anchor" aria-label="anchor" href="#complex-conjugate-roots"><i class="fas fa-link"></i></a>
+</h2>
+<p>If the auxiliary function has two complex conjugate roots <span class="math inline">\(\alpha \pm \beta i\)</span> then the general solution is
+<span class="math display">\[ A e^{\alpha x} \cos \beta x + B e^{\alpha x} \sin \beta x.\]</span>
+You may wonder where this comes from. It is in fact the same as the general solution <span class="math inline">\(C e^{\alpha+i\beta} + D e^{\alpha-i\beta}\)</span> but we have simplified it using Euler’s formula <span class="math inline">\(e^{i\beta} = \cos \beta x + i \sin \beta x\)</span>.</p>
+<div id="example-12" class="section level3" number="7.5.1">
+<h3>
+<span class="header-section-number">7.5.1</span> Example<a class="anchor" aria-label="anchor" href="#example-12"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solve the homogeneous equation
+<span class="math display">\[y'' + 4y' + 5y = 0.\]</span>
+The auxiliary function here is
+<span class="math display">\[\lambda^2 + 4\lambda + 5.\]</span>
+The roots are
+<span class="math display">\[\lambda = 2 \pm i\]</span>
+so here the general solution is
+<span class="math display">\[ y = A e^{2x}\cos x + B e^{2x} \sin x\]</span></p>
+</div>
+</div>
+<div id="nonhomogeneous-equations" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> Nonhomogeneous equations<a class="anchor" aria-label="anchor" href="#nonhomogeneous-equations"><i class="fas fa-link"></i></a>
+</h2>
+<p>A <strong>nonhomogeneous</strong> linear differential equation with constant coefficients is an equation of the form
+<span class="math display">\[ y'' + a y' + b y = r(x)\]</span>
+where <span class="math inline">\(r\)</span> is a continuous function of the independent variable <span class="math inline">\(x\)</span>.</p>
+<p>The general solution to a nonhomogeneous equation is given by
+<span class="math display">\[ c(x) + p(x) \]</span>
+where <span class="math inline">\(c(x)\)</span> is the general solution to the homogeneous equation (called the <strong>complementary function</strong>)
+<span class="math display">\[ y'' + a y' + b y = 0\]</span>
+and <span class="math inline">\(p(x)\)</span> is a <strong>particular solution</strong> of the nonhomogeneous equation
+<span class="math display">\[ y'' + a y' + b y = r(x)\]</span>
+A particular solution is simply any solution to the equation, i.e. it must satisfy
+<span class="math display">\[ p''(x) + ap'(x) + b p(x) = r(x).\]</span>
+Since we’re not interesting in finding all possible solutions (that’s what the complementary function is) we only need one particular example.</p>
+<p>We will consider a number of examples that will demonstrate an approach to finding a particular solution. The general idea is that we use <span class="math inline">\(r(x)\)</span> to inform the type of function that <span class="math inline">\(p(x)\)</span> must be in order for the left hand side to be <span class="math inline">\(r(x)\)</span>.</p>
+<div id="example-13" class="section level3" number="7.6.1">
+<h3>
+<span class="header-section-number">7.6.1</span> Example<a class="anchor" aria-label="anchor" href="#example-13"><i class="fas fa-link"></i></a>
+</h3>
+<p>Find the general solution of
+<span class="math display">\[y'' + 9 y = e^x.\]</span>
+First the complementary function is
+<span class="math display">\[c(x) = A \cos 3x + B \sin 3x.\]</span>
+To find the particular solution we see we must choose <span class="math inline">\(p(x)\)</span> so that we end up with <span class="math inline">\(e^x\)</span> on the right hand side.</p>
+<p>A sensible guess will be a function of the form
+<span class="math display">\[p(x) = d e^x\]</span>
+for some constant <span class="math inline">\(d\)</span>. In order to find <span class="math inline">\(d\)</span>, we substitute <span class="math inline">\(p\)</span> into the left hand side, thus.
+<span class="math display">\[
+\begin{aligned}
+    p''(x) + 9 p(x) &amp;= e^x\\
+    d e^x + 9 d e^x &amp;= e^x\\
+    10d e^x &amp;= e^x
+\end{aligned}
+\]</span>
+So for <span class="math inline">\(p(x)\)</span> to be a particular solution we must have <span class="math inline">\(d = 1/10\)</span>,
+<span class="math display">\[p(x) = \frac{1}{10} e^x.\]</span>
+Hence, the general solution to this equation is <span class="math inline">\(c(x) + p(x)\)</span>, or
+<span class="math display">\[y = A \cos 3x + B \sin 3x + \frac{1}{10} e^x\]</span></p>
+</div>
+<div id="example-14" class="section level3" number="7.6.2">
+<h3>
+<span class="header-section-number">7.6.2</span> Example<a class="anchor" aria-label="anchor" href="#example-14"><i class="fas fa-link"></i></a>
+</h3>
+<p>Find the general solution of
+<span class="math display">\[y'' - y = e^x.\]</span>
+The complementary function here is
+<span class="math display">\[c(x) = A e^x + B e^{-x}.\]</span>
+Like the previous example we might now want to try <span class="math inline">\(p(x) = d e^x\)</span>. However note that <span class="math inline">\(e^x\)</span> is already one of the two solutions we used to make up the complementary function. This means we can’t use this again, so instead we try <span class="math inline">\(p(x) = dx e^x\)</span>.</p>
+<p>Now,
+<span class="math display">\[p'(x) = d(x+1)e^x, \qquad p''(x) = d(x+2) e^x.\]</span>
+So for <span class="math inline">\(p(x)\)</span> to be a particular solution it must satisfy
+<span class="math display">\[
+\begin{aligned}
+p''(x) - p(x) &amp;= e^x\\
+d(x+2) e^x - dx e^x &amp;= e^x\\
+2d e^x &amp;= e^x.
+\end{aligned}
+\]</span>
+So for <span class="math inline">\(p(x)\)</span> to be a particular solution, <span class="math inline">\(d = 1/2\)</span>, i.e.
+<span class="math display">\[p(x) = \frac{1}2 x e^x.\]</span>
+The general solution is therefore
+<span class="math display">\[y = A e^x + B e^{-x} + \frac{1}2 x e^x.\]</span></p>
+</div>
+<div id="example-15" class="section level3" number="7.6.3">
+<h3>
+<span class="header-section-number">7.6.3</span> Example<a class="anchor" aria-label="anchor" href="#example-15"><i class="fas fa-link"></i></a>
+</h3>
+<p>Find the general solution to the equation
+<span class="math display">\[y'' -6y' +8y = \sin 2x.\]</span>
+Here the auxhiliary equation is <span class="math inline">\(\lambda^2 - 6\lambda + 8 = 0\)</span> which has solutions <span class="math inline">\(\lambda = 2\)</span> and <span class="math inline">\(\lambda = 4\)</span>. The complementary function is therefore
+<span class="math display">\[c(x) = A e^{2x} + B e^{4x}.\]</span>
+This time <span class="math inline">\(r(x) = \sin 2x\)</span> so we will try
+<span class="math display">\[p(x) = j \sin 2x + k \cos 2x.\]</span>
+Now
+<span class="math display">\[
+\begin{aligned}
+    p'(x) &amp;= 2j\cos 2x - 2k \sin 2x\\
+    p''(x) &amp;= -4j\sin 2x - 4k \cos 2x.
+\end{aligned}
+\]</span>
+Hence for <span class="math inline">\(p(x)\)</span> to be a particular solution we must have
+<span class="math display">\[
+\begin{aligned}
+\begin{gathered}
+(-4j\sin 2x - 4k \cos 2x) - 6 (2j\cos 2x - 2k \sin 2x)\\+ 8 (j \sin 2x + k \cos 2x)
+\end{gathered}&amp;= \sin 2x\\
+(-4j +12k +8j)\sin 2x + (-4k-12j+8k)\cos 2x &amp;= \sin 2x\\
+(4j + 12k)\sin 2x + (4k-12j)\cos 2x &amp;= \sin 2x
+\end{aligned}
+\]</span>
+So for <span class="math inline">\(p(x)\)</span> to be a particular solution we must have
+<span class="math display">\[
+\begin{aligned}
+    4j + 12k &amp;= 1\\
+    -12j + 4k &amp;= 0.
+\end{aligned}
+\]</span>
+The solution to these simultaneous equations is
+<span class="math display">\[j = \frac{1}{40},\qquad k = \frac{3}{40}.\]</span>
+The general solution is therefore
+<span class="math display">\[ y = A e^{2x} + B e^{4x} + \frac{1}{40}( \sin 2x + 3\cos 2x).\]</span></p>
+<p>In summary we pick <span class="math inline">\(p(x)\)</span> so that
+1. when differentiated once or twice, <span class="math inline">\(p(x)\)</span> includes terms in <span class="math inline">\(r(x)\)</span>,
+2. it is different to the terms in the complimentary function, if not then try multiplying by powers of <span class="math inline">\(x\)</span></p>
+</div>
+</div>
+<div id="determining-values-of-constants" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> Determining values of constants<a class="anchor" aria-label="anchor" href="#determining-values-of-constants"><i class="fas fa-link"></i></a>
+</h2>
+<p>As we did with first order differential equations we can find the values of any constants in the general solution if we are given more information about the solution.</p>
+<p>With second order differential equations we normally get two constants so we need two pieces of information. These come in two forms:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Initial value problems</strong> - these are problems that include values of the solution at their initial value, normally when the independent variable is <span class="math inline">\(0\)</span>. They have the form
+<span class="math display">\[ y(0) = y_0,\qquad y'(0) = y_1.\]</span>
+</li>
+<li>
+<strong>Boundary value problems</strong> - here the solution <span class="math inline">\(y(x)\)</span> has domain <span class="math inline">\([0, x_E]\)</span>, and the conditions are boundary conditions,
+<span class="math display">\[y(0) = y_0, \qquad y(x_E) = y_E.\]</span>
+</li>
+</ol>
+<div id="example-16" class="section level3" number="7.7.1">
+<h3>
+<span class="header-section-number">7.7.1</span> Example<a class="anchor" aria-label="anchor" href="#example-16"><i class="fas fa-link"></i></a>
+</h3>
+<p>Find the solution to the initial value problem,
+<span class="math display">\[y'' -6y' +8y = \sin 2x, \qquad y(0) = 0, y'(0) = 1.\]</span>
+We found the general solution to this was
+<span class="math display">\[ y = A e^{2x} + B e^{4x} + \frac{1}{40}( \sin 2x + 3\cos 2x).\]</span>
+Hence if <span class="math inline">\(y(0) = 0\)</span>,
+<span class="math display">\[ 0 = A + B + \frac{3}{40}.\]</span>
+Differentiating the general solution gives
+<span class="math display">\[ y' = 2Ae^{2x} + 4B e^{4x} +\frac{1}{40}(2\cos 2x -3\sin 2x).\]</span>
+So if <span class="math inline">\(y'(0) = 1\)</span>,
+<span class="math display">\[ 1 = 2 A + 4B +\frac{1}{20}.\]</span>
+These can be solved to give
+<span class="math display">\[A = -\frac{5}8, \qquad B = \frac{11}{20}.\]</span>
+Hence the solution is
+<span class="math display">\[y = -\frac{5}8 e^{2x} + \frac{11}{20} e^{4x} + \frac{1}{40}( \sin 2x + 3\cos 2x).\]</span></p>
+</div>
+<div id="example-17" class="section level3" number="7.7.2">
+<h3>
+<span class="header-section-number">7.7.2</span> Example<a class="anchor" aria-label="anchor" href="#example-17"><i class="fas fa-link"></i></a>
+</h3>
+<p>Find the solution to the boundary value problem,
+<span class="math display">\[y'' + 9y = e^x,\qquad y(0) = 0, y(\pi/2) = 0.\]</span>
+Previously we found the general solution was
+<span class="math display">\[y = A \cos 3x + B \sin 3x + \frac{1}{10} e^x.\]</span>
+First, <span class="math inline">\(y(0) = 0\)</span>,
+<span class="math display">\[0 = A + \frac{1}{10}\]</span>
+so that <span class="math inline">\(A = -1/10\)</span>.
+Second, <span class="math inline">\(y(\pi/2) = 0\)</span>,
+<span class="math display">\[
+\begin{aligned}
+    0 &amp;= A\cos 3\pi/2 + B \sin 3\pi/2 + \frac{1}{10} e^{\pi/2}\\
+      &amp;= -B + \frac{1}{10} e^{\pi/2}
+\end{aligned}
+\]</span>
+so that <span class="math inline">\(B = e^{\pi/2}/10\)</span>.</p>
+<p>The solution is therefore</p>
+<p><span class="math display">\[y = -\frac{1}{10} \cos 3x + \frac{e^{\pi/2}}{10} \sin 3x + \frac{1}{10} e^x.\]</span></p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></div>
+<div class="next"><a href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#week-7---second-order-differential-equations"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="nav-link" href="#linear-equations-with-constant-coefficients"><span class="header-section-number">7.1</span> Linear equations with constant coefficients</a></li>
+<li><a class="nav-link" href="#homogeneous-equations"><span class="header-section-number">7.2</span> Homogeneous equations</a></li>
+<li>
+<a class="nav-link" href="#two-distinct-roots"><span class="header-section-number">7.3</span> Two distinct roots</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-10"><span class="header-section-number">7.3.1</span> Example</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#on-root-of-multiplicity-2"><span class="header-section-number">7.4</span> On root of multiplicity 2</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-11"><span class="header-section-number">7.4.1</span> Example</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#complex-conjugate-roots"><span class="header-section-number">7.5</span> Complex conjugate roots</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-12"><span class="header-section-number">7.5.1</span> Example</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#nonhomogeneous-equations"><span class="header-section-number">7.6</span> Nonhomogeneous equations</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-13"><span class="header-section-number">7.6.1</span> Example</a></li>
+<li><a class="nav-link" href="#example-14"><span class="header-section-number">7.6.2</span> Example</a></li>
+<li><a class="nav-link" href="#example-15"><span class="header-section-number">7.6.3</span> Example</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#determining-values-of-constants"><span class="header-section-number">7.7</span> Determining values of constants</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-16"><span class="header-section-number">7.7.1</span> Example</a></li>
+<li><a class="nav-link" href="#example-17"><span class="header-section-number">7.7.2</span> Example</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

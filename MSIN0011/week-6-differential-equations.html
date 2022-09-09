@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Topic 6 Week 6 Differential Equations | MSIN0011 Calculus and Modelling</title>
+<meta name="author" content="Matthew M. Jones">
+<meta name="description" content="6.1 Modelling Mathematical Modelling is the process of finding a mathematical description of a business problem. The purpose is not always to solve the problem, it is often a useful method for...">
+<meta name="generator" content="bookdown 0.28 with bs4_book()">
+<meta property="og:title" content="Topic 6 Week 6 Differential Equations | MSIN0011 Calculus and Modelling">
+<meta property="og:type" content="book">
+<meta property="og:description" content="6.1 Modelling Mathematical Modelling is the process of finding a mathematical description of a business problem. The purpose is not always to solve the problem, it is often a useful method for...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Topic 6 Week 6 Differential Equations | MSIN0011 Calculus and Modelling">
+<meta name="twitter:description" content="6.1 Modelling Mathematical Modelling is the process of finding a mathematical description of a business problem. The purpose is not always to solve the problem, it is often a useful method for...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.0/transition.js"></script><script src="libs/bs3compat-0.4.0/tabs.js"></script><script src="libs/bs3compat-0.4.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">MSIN0011 Calculus and Modelling</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Introduction</a></li>
+<li><a class="" href="foundations.html"><span class="header-section-number">1</span> Foundations</a></li>
+<li><a class="" href="single-variable-calculus.html"><span class="header-section-number">2</span> Single Variable Calculus</a></li>
+<li><a class="" href="multi-variable-calculus.html"><span class="header-section-number">3</span> Multi-variable calculus</a></li>
+<li><a class="" href="week-4-optimisation.html"><span class="header-section-number">4</span> Week 4: Optimisation</a></li>
+<li><a class="" href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></li>
+<li><a class="active" href="week-6-differential-equations.html"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li><a class="" href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></li>
+<li><a class="" href="week-8---multiple-integration.html"><span class="header-section-number">8</span> Week 8 - Multiple Integration</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="week-6-differential-equations" class="section level1" number="6">
+<h1>
+<span class="header-section-number">Topic 6</span> Week 6 Differential Equations<a class="anchor" aria-label="anchor" href="#week-6-differential-equations"><i class="fas fa-link"></i></a>
+</h1>
+<div id="modelling" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Modelling<a class="anchor" aria-label="anchor" href="#modelling"><i class="fas fa-link"></i></a>
+</h2>
+<p>Mathematical Modelling is the process of finding a mathematical description of a business problem. The purpose is not always to <em>solve</em> the problem, it is often a useful method for developing a clearer understanding of the main constituents of the scenario you are modelling.</p>
+<div id="example---free-market-economics" class="section level3" number="6.1.1">
+<h3>
+<span class="header-section-number">6.1.1</span> Example - free market economics<a class="anchor" aria-label="anchor" href="#example---free-market-economics"><i class="fas fa-link"></i></a>
+</h3>
+<p>The economist Adam Smith (not your MSIN0010 lecturer) said that an economy is a <strong>free market</strong> if the following three laws are the only ones that rule the change in price and excess demand (the difference between supply and demand):</p>
+<p>If at a given time,</p>
+<ol style="list-style-type: decimal">
+<li>demand is less than supply, then prices decrease so the demand increased;</li>
+<li>demand is greater than supply, then prices increase, so the supply increases</li>
+<li>demand equals supply, then prices are constant, so the excess deman remains constant</li>
+</ol>
+<p>In order to model this we first need to introduce some notation. We’ll call <span class="math inline">\(s(t)\)</span> the supply, <span class="math inline">\(d(t)\)</span> the demand, and <span class="math inline">\(r(t) = d(t) - s(t)\)</span> the excess demand.
+Assume these functions are differentiable, the laws then become:</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(r(t) &lt; 0\)</span> then <span class="math inline">\(p'(t) &lt; 0\)</span> and so <span class="math inline">\(r'(t) &gt; 0\)</span>;</li>
+<li>If <span class="math inline">\(r(t) &gt; 0\)</span> then <span class="math inline">\(p'(t) &gt; 0\)</span> and so <span class="math inline">\(r'(t) &lt; 0\)</span>;</li>
+<li>If <span class="math inline">\(r(t) = 0\)</span> then <span class="math inline">\(p'(t) = 0\)</span> and so <span class="math inline">\(r'(t) = 0\)</span>.</li>
+</ol>
+<p>So we can deal only with <span class="math inline">\(r\)</span> and <span class="math inline">\(r'\)</span> and <span class="math inline">\(p'\)</span>. Looking at these rules we can see that <span class="math inline">\(r'\)</span> and <span class="math inline">\(r\)</span> always have the opposite sign.</p>
+<p>We might model this by saying that there are constants <span class="math inline">\(a &gt; 0\)</span> and <span class="math inline">\(b &gt; 0\)</span> so that
+<span class="math display">\[
+\begin{aligned}
+    r'(t) &amp;= -a r(t)\\
+    p'(t) &amp;= b r(t)
+\end{aligned}
+\]</span>
+This example gives us an interesting (but probably not hugely convincing) mathematical model of a free market.</p>
+<p>Notice a few typical properties of the model:</p>
+<ul>
+<li>We have quantities that change, often with time but not always. We write these as fuctions.</li>
+<li>We introduce some relationships that we believe might link the quantities. We write these are equations between the functions, variables, derivatives etc.</li>
+</ul>
+</div>
+</div>
+<div id="differential-equations-and-their-solutions" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Differential Equations and their solutions<a class="anchor" aria-label="anchor" href="#differential-equations-and-their-solutions"><i class="fas fa-link"></i></a>
+</h2>
+<p>The equations given in the example are called <strong>differential equations</strong> since they describe the derivative of the function in terms of the variable and the function.</p>
+<p>A <strong>solution</strong> to a differential equation is a function that satisfies the equation.</p>
+<div id="example---free-market-continued" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Example - free market continued<a class="anchor" aria-label="anchor" href="#example---free-market-continued"><i class="fas fa-link"></i></a>
+</h3>
+<p>If we consider the first equation we had in the free market model, <span class="math inline">\(r'(t) = -a r(t)\)</span>
+we can check that the function <span class="math inline">\(r(t) = e^{-at}\)</span>
+satisfies this differential equation since
+<span class="math display">\[r'(t) = -a e^{-at} = -a r(t).\]</span>
+The second equation was <span class="math inline">\(p'(t) = b r(t)\)</span>
+which we can now write as <span class="math inline">\(p'(t) = b e^{-at}.\)</span></p>
+<p>We can integrate this to get
+<span class="math display">\[p(t) = \int b e^{-at} \,\mathrm{d}t = -\frac{b}a e^{-at}.\]</span>
+These aren’t the only solutions however, the function, <span class="math inline">\(r(t) = 2e^{-at}\)</span> is also a solution to the first equation. So is <span class="math inline">\(r(t) = -10 e^{-at}\)</span>. In fact for any real number <span class="math inline">\(A\)</span> the function
+<span class="math display">\[r(t) = Ae^{-at}\]</span>
+is a solution.</p>
+<p>Similarly you may have noticed we didn’t include the constant of integration in the calculation of <span class="math inline">\(p'(t)\)</span>. If we do, and call it <span class="math inline">\(B\)</span>, then we get
+<span class="math display">\[p(t) = \int b Ae^{-at} \,\mathrm{d}t = -A\frac{b}a e^{-at} + B.\]</span>
+These two solutions are called the <strong>general solution</strong> to the differential equation.</p>
+</div>
+<div id="example---probability" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Example - probability<a class="anchor" aria-label="anchor" href="#example---probability"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose at a particular coffee shop the length of time it takes for you to get served is random. You notice that if you know that it is going to take at least <span class="math inline">\(x\)</span>s then the probability that it takes an extra <span class="math inline">\(y\)</span>s is independent. In other words,
+<span class="math display">\[P(X &gt; x + y \mid X &gt; x ) = P(X &gt; y)\]</span>
+This is the so-called <strong>memoryless</strong> property since knowing that <span class="math inline">\(X &gt; x\)</span> means any additional wait in the queue is independent.</p>
+<p>If we let <span class="math inline">\(g(x) = P(X &gt; x)\)</span> then since <span class="math inline">\(X\ge 0\)</span>, the domain of <span class="math inline">\(g\)</span> is <span class="math inline">\([0,\infty)\)</span>. We also know,
+<span class="math display">\[g(0) = 1, \qquad \lim_{x\to\infty} g(x) = 0\]</span>
+Using Bayes’s Theorem
+<span class="math display">\[
+\begin{aligned}
+    P(X &gt; x + y \mid X &gt; x ) &amp;= \frac{P(X &gt; x + y \wedge X &gt; x )}{P(X&gt;x)}\\
+                &amp;= \frac{P(X &gt; x + y)}{P(X &gt; x)} = \frac{g(x+y)}{g(x)}
+\end{aligned}
+\]</span>
+Hence the memoryless property becomes <span class="math inline">\(\dfrac{g(x+y)}{g(x)} = g(y)\)</span>,
+or simply
+<span class="math display">\[g(x + y) = g(x) g(y)\]</span>
+Now we can calculate the derivative of this function at <span class="math inline">\(x\)</span>
+<span class="math display">\[
+\begin{aligned}
+    g'(x) &amp;= \lim_{y\to 0} \frac{g(x+y) - g(x)}{y} = \lim_{y\to 0} \frac{g(x)g(y) - g(x)}{y} \\
+          &amp;= g(x) \lim_{y\to 0} \frac{g(y) - 1}{y} = g(x) \lim_{y\to 0} \frac{g(y) - g(0)}{y} \\
+          &amp;= g'(0) g(x)
+\end{aligned}
+\]</span>
+It can be shown that <span class="math inline">\(g'(0) &lt; 0\)</span>, we will write <span class="math inline">\(-\lambda = g'(0)\)</span>. So <span class="math inline">\(g\)</span> is a solution to the differential equation
+<span class="math display">\[ g' = -\lambda g.\]</span>
+This is the same equation we had before, its solution is
+<span class="math display">\[g(x) = A e^{-\lambda x}.\]</span>
+This is the <strong>general solution</strong> to this differential equation.</p>
+<p>In this example we can do better. We know that <span class="math inline">\(g(0) = 1\)</span>. So
+<span class="math display">\[1 = A e^{-\lambda \times 0} = A.\]</span>
+Therefore,
+<span class="math display">\[g(x) = e^{-\lambda x}.\]</span>
+The condition <span class="math inline">\(g(0)=1\)</span> is called an <strong>initial condition</strong> since it gives the value of the solution at the initial point, <span class="math inline">\(x=0\)</span>. It allows us to find the value(s) of constants in the general solution.</p>
+<p>Continuing this example, the cummulative distribution function is <span class="math inline">\(F(x) = 1- P(X&gt;x) = 1-g(x)\)</span>. So <span class="math inline">\(F(x) = 1 - e^{-\lambda x}\)</span> and therefore <span class="math inline">\(X\)</span> is <strong>exponentially distributed</strong> <span class="math inline">\(X\sim Exp(\lambda)\)</span>.</p>
+<p>These two examples show that differential equations are an important tool for examining problems that occur in all sorts of areas.</p>
+</div>
+</div>
+<div id="first-order-differential-equtions" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> First order differential equtions<a class="anchor" aria-label="anchor" href="#first-order-differential-equtions"><i class="fas fa-link"></i></a>
+</h2>
+<p>A <strong>first order ordinary differential equation</strong> is an equation of the form
+<span class="math display">\[F(x, y, y') = 0,\]</span>
+where <span class="math inline">\(F\)</span> is a function - it is called first order since it only includes the first derivative <span class="math inline">\(y'\)</span>. Here <span class="math inline">\(x\)</span> is called the <strong>independent variable</strong> and <span class="math inline">\(y\)</span> is the <strong>dependent variable</strong>.</p>
+<p>A <strong>solution</strong> is a function <span class="math inline">\(f(x)\)</span> so that
+<span class="math display">\[F(x,f(x), f'(x)) = 0\]</span>
+for all <span class="math inline">\(x\)</span>.</p>
+<p>Some examples are given below (<span class="math inline">\(a\)</span> and <span class="math inline">\(r\)</span> are constants):
+<span class="math display">\[
+\begin{aligned}
+    y' &amp;= k (M - y) \qquad\text{Newton's law of cooling}\\
+    y' &amp;= a y \qquad\qquad\quad\text{exponential decay/growth}\\
+    y' &amp;= r y(1-y) \qquad\text{logistic growth}\\
+\end{aligned}
+\]</span></p>
+<p><strong>Note:</strong> since both dependent variable <span class="math inline">\(y\)</span> and independent variable <span class="math inline">\(x\)</span> often appear together in a differential equation do make sure you know which is which. Often for example if the independent variable is time, it is denoted by the letter <span class="math inline">\(t\)</span>.</p>
+<p>A differential equation together with an initial condition is called an <strong>initial value problem</strong>.</p>
+</div>
+<div id="solving-differential-equations---integration" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Solving differential equations - integration<a class="anchor" aria-label="anchor" href="#solving-differential-equations---integration"><i class="fas fa-link"></i></a>
+</h2>
+<p>If a differential equation is of the form
+<span class="math display">\[y' = f(x)\]</span>
+where <span class="math inline">\(f\)</span> is continuous, then we can integrate directly:</p>
+<div id="example-7" class="section level3" number="6.4.1">
+<h3>
+<span class="header-section-number">6.4.1</span> Example<a class="anchor" aria-label="anchor" href="#example-7"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solve the initial value problem
+<span class="math display">\[y' = x(x-1), \qquad\qquad y(0) = 1\]</span>
+Since the right hand side does not include the dependent variable <span class="math inline">\(y\)</span>, we can integrate this to find the <strong>general solution</strong>,
+<span class="math display">\[
+\begin{aligned}
+    y &amp;= \int x(x-1) \,\mathrm{d}x = \int x^2 - x\,\mathrm{d}x\\
+      &amp;= \frac{x^3}3 - \frac{x^2}2 + c
+\end{aligned}
+\]</span>
+We can now use the initial condition <span class="math inline">\(y(0) = 1\)</span>,
+<span class="math display">\[ 1 = \frac{0^3}3 - \frac{0^2}2 + c = c\]</span>
+So the <strong>solution</strong> is
+<span class="math display">\[y = \frac{x^3}3 - \frac{x^2}2 + 1\]</span></p>
+</div>
+</div>
+<div id="solving-differential-equations---separation-of-variables" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Solving differential equations - separation of variables<a class="anchor" aria-label="anchor" href="#solving-differential-equations---separation-of-variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>If a differential equation is of the form
+<span class="math display">\[y' = f(x) g(y)\]</span>
+where both <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are continuous, then we can solve this using the chain rule for integration.
+<span class="math display">\[
+\begin{aligned}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &amp;= f(x) g(y)\\
+    \frac{1}{g(y)} \frac{\mathrm{d}y}{\mathrm{d}x} &amp;= f(x)\\
+    \int \frac{1}{g(y)} \frac{\mathrm{d}y}{\mathrm{d}x}\mathrm{d}x &amp;= \int f(x) \mathrm{d}x\\
+     \int \frac{1}{g(y)} \mathrm{d}y &amp;= \int f(x) \mathrm{d}x\\
+\end{aligned}
+\]</span>
+This is often written as follows:
+<span class="math display">\[
+\begin{aligned}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &amp;= f(x) g(y)\\
+    \frac{1}{g(y)}\mathrm{d}y &amp;= f(x) \mathrm{d}x\\
+    \int \frac{1}{g(y)}\mathrm{d}y &amp;= \int f(x) \mathrm{d}x
+\end{aligned}
+\]</span>
+It is important however to realise the notation <span class="math inline">\(\dfrac{\mathrm{d}y}{\mathrm{d}x}\)</span> is <strong>not</strong> a fraction and can’t be manipulated like this. You should however appreciate that the notation for the derivative is clever enough to make it look like you can.</p>
+<div id="example-8" class="section level3" number="6.5.1">
+<h3>
+<span class="header-section-number">6.5.1</span> Example<a class="anchor" aria-label="anchor" href="#example-8"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solve the initial value problem,
+<span class="math display">\[y' = 3x^2y, \qquad\qquad y(0) = 4.\]</span></p>
+<p>Here,
+<span class="math display">\[
+\begin{aligned}
+    \frac{\mathrm{d}y}{\mathrm{d}x} &amp;= 3x^2 y\\
+    y^{-1} \mathrm{d}y &amp;=  3x^2\mathrm{d}x\\
+    \int y^{-1} \mathrm{d}y &amp;=  \int 3x^2\mathrm{d}x\\
+    \log y &amp;= x^3 + c\\
+    y &amp;= e^c e^{x^3} = A e^{x^3}
+\end{aligned}
+\]</span>
+where I’ve written <span class="math inline">\(A = e^c\)</span> to simplify the calculation. This is the <strong>general solution</strong>.</p>
+<p>Using the initial condition, <span class="math inline">\(y(0) = 4\)</span>
+<span class="math display">\[4 = A e^{0^3} = A\]</span>
+so the solution is
+<span class="math display">\[y = 4 e^{x^3}.\]</span></p>
+</div>
+<div id="example---logistic-population-growth" class="section level3" number="6.5.2">
+<h3>
+<span class="header-section-number">6.5.2</span> Example - logistic population growth<a class="anchor" aria-label="anchor" href="#example---logistic-population-growth"><i class="fas fa-link"></i></a>
+</h3>
+<p>A standard model for the growth of the population is the <strong>logistic growth model</strong>,
+<span class="math display">\[p' = k p(1-p), \qquad\qquad p(0) = p_0.\]</span>
+Here <span class="math inline">\(k&gt;0\)</span> is a constant, <span class="math inline">\(p(t)\)</span> is the size of the population at time <span class="math inline">\(t\)</span>, and <span class="math inline">\(p_0\)</span> is the initial number of people in the population at time <span class="math inline">\(t=0\)</span>.</p>
+<p>To find the general solution,
+<span class="math display">\[
+\begin{aligned}
+    \frac{\mathrm{d}p}{\mathrm{d}t} &amp;= k p (1-p)\\
+    \frac{1}{p(1-p)} \mathrm{d}p &amp;= k \,\mathrm{d}t\\
+    \log \frac{p}{1-p} &amp;= kt + c\\
+    \frac{p}{1-p} &amp;= A e^{kt}, \qquad\qquad A = e^c,\\
+    p &amp;= \frac{1}{1 + Ae^{-kt}}.
+\end{aligned}
+\]</span>
+Now, using the initial condition <span class="math inline">\(p(0) = p_0\)</span> we have
+<span class="math display">\[p_0 = \frac{1}{1+ Ae^0} = \frac{1}{1+A}\]</span>
+so that,
+<span class="math display">\[A = \frac{1-p_0}{p_0}.\]</span>
+And finally by substituting this in and simplifying we get the solution,
+<span class="math display">\[p(t) = \frac{p_0}{p_0 + (1-p_0)e^{-kt}}.\]</span></p>
+</div>
+</div>
+<div id="solving-differential-equations---integrating-factors" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Solving differential equations - integrating factors<a class="anchor" aria-label="anchor" href="#solving-differential-equations---integrating-factors"><i class="fas fa-link"></i></a>
+</h2>
+<p>A differential equation is called <strong>linear</strong> if it is of the form
+<span class="math display">\[y' + p y = q\]</span>
+where <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are functions only of the independent variable <span class="math inline">\(x\)</span>. A linear differential equation can be solved by finding a function <span class="math inline">\(F(x)\)</span> so that
+<span class="math display">\[p(x) = \frac{F'(x)}{F(x)} = \frac{\mathrm{d}}{\mathrm{d}x} (\log F(x))\]</span>
+This is called an <strong>integrating factor</strong> for the differential equation. The reason it is useful is that we have the following,
+<span class="math display">\[
+\begin{aligned}
+    \frac{\mathrm{d}}{\mathrm{d}x} (F(x)y) &amp;= F(x) y' + F'(x) y \\
+    &amp;= F(x)\left( y' + \frac{F'(x)}{F(x)} y \right)\\
+    &amp;= F(x)\left( y' + p(x) y \right)\\
+    &amp;= F(x) q(x).
+\end{aligned}
+\]</span>
+So we now have a differential equation of the type we saw initially (i.e. the right hand side does not include the dependent variable <span class="math inline">\(y\)</span>). We can solve this by integration.</p>
+<p>To find the integrating factor <span class="math inline">\(F(x)\)</span> we integrate
+<span class="math display">\[p(x) = \frac{\mathrm{d}}{\mathrm{d}x} (\log F(x))\]</span>
+to get
+<span class="math display">\[ F(x) = \exp \left(\int p(x)\,\mathrm{d}x\right)\]</span></p>
+<div id="example-9" class="section level3" number="6.6.1">
+<h3>
+<span class="header-section-number">6.6.1</span> Example<a class="anchor" aria-label="anchor" href="#example-9"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solve the initial value problem
+<span class="math display">\[y' + 2x y = x, \qquad\qquad y(0) = 1\]</span>
+Here <span class="math inline">\(p(x) = 2x\)</span> so an integrating factor is
+<span class="math display">\[F(x) = \exp \int 2x \,\mathrm{d}x = e^{x^2}\]</span>
+<strong>Note:</strong> we don’t need the constant of integration, since we only need one integrating factor.</p>
+<p>Now we solve the equation
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}x}(F(x)y) = F(x) q(x)\]</span>
+or,
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}x}(e^{x^2}y) = xe^{x^2}\]</span>
+Integrating we get
+<span class="math display">\[e^{x^2} y = \int xe^{x^2} \,\mathrm{d}x = \frac{1}2 e^{x^2} + c\]</span>
+Dividing by <span class="math inline">\(e^{x^2}\)</span> we find that the general solution is
+<span class="math display">\[ y = \frac{1}2 + c e^{-x^2}\]</span>
+Using the initial condition, <span class="math inline">\(y(0) = 1\)</span>,
+<span class="math display">\[1 = \frac{1}2 + c e^0 = \frac{1}2 + c\]</span>
+so that <span class="math inline">\(c = 1/2\)</span> and the solution is
+<span class="math display">\[y = \frac{1}2 + \frac{1}2 e^{-x^2}.\]</span></p>
+</div>
+<div id="example---exponential-growthdecay" class="section level3" number="6.6.2">
+<h3>
+<span class="header-section-number">6.6.2</span> Example - exponential growth/decay<a class="anchor" aria-label="anchor" href="#example---exponential-growthdecay"><i class="fas fa-link"></i></a>
+</h3>
+<p>A very common model of growth or decay is given by the equation
+<span class="math display">\[y' = a y, \qquad\qquad y(0) = y_0.\]</span>
+We first write this in the form
+<span class="math display">\[y' - a y = 0\]</span>
+so that <span class="math inline">\(p(x) = -a\)</span> and <span class="math inline">\(q(x) = 0\)</span>.</p>
+<p>Then an integrating factor is
+<span class="math display">\[F(x) = e^{-ax}.\]</span>
+And the general solution is found by solving
+<span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}x} (F(x) y) = F(x) q(x)\]</span>
+For this equation the right hand side is <span class="math inline">\(0\)</span> and so integrating we only get a constant, i.e. <span class="math inline">\(e^{-ax} y = c\)</span>
+and so the general solution is
+<span class="math display">\[y = c e^{ax}.\]</span>
+Substituting the initial condition in we find the solution is
+<span class="math display">\[y = y_0 e^{ax}.\]</span></p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="week-5-convex-and-constrained-optimisation.html"><span class="header-section-number">5</span> Week 5: Convex and Constrained Optimisation</a></div>
+<div class="next"><a href="week-7---second-order-differential-equations.html"><span class="header-section-number">7</span> Week 7 - Second order differential equations</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#week-6-differential-equations"><span class="header-section-number">6</span> Week 6 Differential Equations</a></li>
+<li>
+<a class="nav-link" href="#modelling"><span class="header-section-number">6.1</span> Modelling</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example---free-market-economics"><span class="header-section-number">6.1.1</span> Example - free market economics</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#differential-equations-and-their-solutions"><span class="header-section-number">6.2</span> Differential Equations and their solutions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example---free-market-continued"><span class="header-section-number">6.2.1</span> Example - free market continued</a></li>
+<li><a class="nav-link" href="#example---probability"><span class="header-section-number">6.2.2</span> Example - probability</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#first-order-differential-equtions"><span class="header-section-number">6.3</span> First order differential equtions</a></li>
+<li>
+<a class="nav-link" href="#solving-differential-equations---integration"><span class="header-section-number">6.4</span> Solving differential equations - integration</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#example-7"><span class="header-section-number">6.4.1</span> Example</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#solving-differential-equations---separation-of-variables"><span class="header-section-number">6.5</span> Solving differential equations - separation of variables</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-8"><span class="header-section-number">6.5.1</span> Example</a></li>
+<li><a class="nav-link" href="#example---logistic-population-growth"><span class="header-section-number">6.5.2</span> Example - logistic population growth</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#solving-differential-equations---integrating-factors"><span class="header-section-number">6.6</span> Solving differential equations - integrating factors</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-9"><span class="header-section-number">6.6.1</span> Example</a></li>
+<li><a class="nav-link" href="#example---exponential-growthdecay"><span class="header-section-number">6.6.2</span> Example - exponential growth/decay</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>MSIN0011 Calculus and Modelling</strong>" was written by Matthew M. Jones. It was last built on 2022-09-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
